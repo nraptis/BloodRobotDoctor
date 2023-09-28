@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBD288332AC62ADA0005A5FC /* BloodRobotDoctorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288322AC62ADA0005A5FC /* BloodRobotDoctorApp.swift */; };
-		EBD288352AC62ADA0005A5FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288342AC62ADA0005A5FC /* ContentView.swift */; };
 		EBD288372AC62ADB0005A5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD288362AC62ADB0005A5FC /* Assets.xcassets */; };
 		EBD2883B2AC62ADB0005A5FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD2883A2AC62ADB0005A5FC /* Preview Assets.xcassets */; };
 		EBD288452AC62ADB0005A5FC /* BloodRobotDoctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288442AC62ADB0005A5FC /* BloodRobotDoctorTests.swift */; };
 		EBD2884F2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2884E2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift */; };
 		EBD288512AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288502AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift */; };
+		EBF375BA2AC6477B0078695D /* BloodRobotDoctorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B32AC6477B0078695D /* BloodRobotDoctorApp.swift */; };
+		EBF375BB2AC6477B0078695D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B42AC6477B0078695D /* ContentView.swift */; };
+		EBF375BC2AC6477B0078695D /* Shape.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B62AC6477B0078695D /* Shape.metal */; };
+		EBF375BD2AC6477B0078695D /* ShapeNodeIndexed.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B72AC6477B0078695D /* ShapeNodeIndexed.metal */; };
+		EBF375BE2AC6477B0078695D /* SpriteNodeIndexed.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B82AC6477B0078695D /* SpriteNodeIndexed.metal */; };
+		EBF375BF2AC6477B0078695D /* Sprite.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B92AC6477B0078695D /* Sprite.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +39,6 @@
 
 /* Begin PBXFileReference section */
 		EBD2882F2AC62ADA0005A5FC /* BloodRobotDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodRobotDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBD288322AC62ADA0005A5FC /* BloodRobotDoctorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorApp.swift; sourceTree = "<group>"; };
-		EBD288342AC62ADA0005A5FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EBD288362AC62ADB0005A5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBD288382AC62ADB0005A5FC /* BloodRobotDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloodRobotDoctor.entitlements; sourceTree = "<group>"; };
 		EBD2883A2AC62ADB0005A5FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +47,12 @@
 		EBD2884A2AC62ADB0005A5FC /* BloodRobotDoctorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloodRobotDoctorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD2884E2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorUITests.swift; sourceTree = "<group>"; };
 		EBD288502AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EBF375B32AC6477B0078695D /* BloodRobotDoctorApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorApp.swift; sourceTree = "<group>"; };
+		EBF375B42AC6477B0078695D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EBF375B62AC6477B0078695D /* Shape.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shape.metal; sourceTree = "<group>"; };
+		EBF375B72AC6477B0078695D /* ShapeNodeIndexed.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ShapeNodeIndexed.metal; sourceTree = "<group>"; };
+		EBF375B82AC6477B0078695D /* SpriteNodeIndexed.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SpriteNodeIndexed.metal; sourceTree = "<group>"; };
+		EBF375B92AC6477B0078695D /* Sprite.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sprite.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +103,8 @@
 		EBD288312AC62ADA0005A5FC /* BloodRobotDoctor */ = {
 			isa = PBXGroup;
 			children = (
-				EBD288322AC62ADA0005A5FC /* BloodRobotDoctorApp.swift */,
-				EBD288342AC62ADA0005A5FC /* ContentView.swift */,
+				EBF375B22AC6477B0078695D /* [Code] */,
+				EBF375B52AC6477B0078695D /* [Shaders] */,
 				EBD288362AC62ADB0005A5FC /* Assets.xcassets */,
 				EBD288382AC62ADB0005A5FC /* BloodRobotDoctor.entitlements */,
 				EBD288392AC62ADB0005A5FC /* Preview Content */,
@@ -127,6 +135,26 @@
 				EBD288502AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift */,
 			);
 			path = BloodRobotDoctorUITests;
+			sourceTree = "<group>";
+		};
+		EBF375B22AC6477B0078695D /* [Code] */ = {
+			isa = PBXGroup;
+			children = (
+				EBF375B32AC6477B0078695D /* BloodRobotDoctorApp.swift */,
+				EBF375B42AC6477B0078695D /* ContentView.swift */,
+			);
+			path = "[Code]";
+			sourceTree = "<group>";
+		};
+		EBF375B52AC6477B0078695D /* [Shaders] */ = {
+			isa = PBXGroup;
+			children = (
+				EBF375B62AC6477B0078695D /* Shape.metal */,
+				EBF375B72AC6477B0078695D /* ShapeNodeIndexed.metal */,
+				EBF375B82AC6477B0078695D /* SpriteNodeIndexed.metal */,
+				EBF375B92AC6477B0078695D /* Sprite.metal */,
+			);
+			path = "[Shaders]";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD288352AC62ADA0005A5FC /* ContentView.swift in Sources */,
-				EBD288332AC62ADA0005A5FC /* BloodRobotDoctorApp.swift in Sources */,
+				EBF375BB2AC6477B0078695D /* ContentView.swift in Sources */,
+				EBF375BE2AC6477B0078695D /* SpriteNodeIndexed.metal in Sources */,
+				EBF375BF2AC6477B0078695D /* Sprite.metal in Sources */,
+				EBF375BC2AC6477B0078695D /* Shape.metal in Sources */,
+				EBF375BA2AC6477B0078695D /* BloodRobotDoctorApp.swift in Sources */,
+				EBF375BD2AC6477B0078695D /* ShapeNodeIndexed.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
