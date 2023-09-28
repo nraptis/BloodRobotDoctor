@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBD288332AC62ADA0005A5FC /* BloodRobotDoctorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288322AC62ADA0005A5FC /* BloodRobotDoctorApp.swift */; };
+		EBD288352AC62ADA0005A5FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288342AC62ADA0005A5FC /* ContentView.swift */; };
+		EBD288372AC62ADB0005A5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD288362AC62ADB0005A5FC /* Assets.xcassets */; };
+		EBD2883B2AC62ADB0005A5FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD2883A2AC62ADB0005A5FC /* Preview Assets.xcassets */; };
+		EBD288452AC62ADB0005A5FC /* BloodRobotDoctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288442AC62ADB0005A5FC /* BloodRobotDoctorTests.swift */; };
+		EBD2884F2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2884E2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift */; };
+		EBD288512AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD288502AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBD288412AC62ADB0005A5FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBD288272AC62ADA0005A5FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBD2882E2AC62ADA0005A5FC;
+			remoteInfo = BloodRobotDoctor;
+		};
+		EBD2884B2AC62ADB0005A5FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBD288272AC62ADA0005A5FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBD2882E2AC62ADA0005A5FC;
+			remoteInfo = BloodRobotDoctor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBD2882F2AC62ADA0005A5FC /* BloodRobotDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodRobotDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD288322AC62ADA0005A5FC /* BloodRobotDoctorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorApp.swift; sourceTree = "<group>"; };
+		EBD288342AC62ADA0005A5FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EBD288362AC62ADB0005A5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBD288382AC62ADB0005A5FC /* BloodRobotDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloodRobotDoctor.entitlements; sourceTree = "<group>"; };
+		EBD2883A2AC62ADB0005A5FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EBD288402AC62ADB0005A5FC /* BloodRobotDoctorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloodRobotDoctorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD288442AC62ADB0005A5FC /* BloodRobotDoctorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorTests.swift; sourceTree = "<group>"; };
+		EBD2884A2AC62ADB0005A5FC /* BloodRobotDoctorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloodRobotDoctorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD2884E2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorUITests.swift; sourceTree = "<group>"; };
+		EBD288502AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodRobotDoctorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBD2882C2AC62ADA0005A5FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD2883D2AC62ADB0005A5FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD288472AC62ADB0005A5FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBD288262AC62ADA0005A5FC = {
+			isa = PBXGroup;
+			children = (
+				EBD288312AC62ADA0005A5FC /* BloodRobotDoctor */,
+				EBD288432AC62ADB0005A5FC /* BloodRobotDoctorTests */,
+				EBD2884D2AC62ADB0005A5FC /* BloodRobotDoctorUITests */,
+				EBD288302AC62ADA0005A5FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBD288302AC62ADA0005A5FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBD2882F2AC62ADA0005A5FC /* BloodRobotDoctor.app */,
+				EBD288402AC62ADB0005A5FC /* BloodRobotDoctorTests.xctest */,
+				EBD2884A2AC62ADB0005A5FC /* BloodRobotDoctorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBD288312AC62ADA0005A5FC /* BloodRobotDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				EBD288322AC62ADA0005A5FC /* BloodRobotDoctorApp.swift */,
+				EBD288342AC62ADA0005A5FC /* ContentView.swift */,
+				EBD288362AC62ADB0005A5FC /* Assets.xcassets */,
+				EBD288382AC62ADB0005A5FC /* BloodRobotDoctor.entitlements */,
+				EBD288392AC62ADB0005A5FC /* Preview Content */,
+			);
+			path = BloodRobotDoctor;
+			sourceTree = "<group>";
+		};
+		EBD288392AC62ADB0005A5FC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EBD2883A2AC62ADB0005A5FC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EBD288432AC62ADB0005A5FC /* BloodRobotDoctorTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBD288442AC62ADB0005A5FC /* BloodRobotDoctorTests.swift */,
+			);
+			path = BloodRobotDoctorTests;
+			sourceTree = "<group>";
+		};
+		EBD2884D2AC62ADB0005A5FC /* BloodRobotDoctorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBD2884E2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift */,
+				EBD288502AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift */,
+			);
+			path = BloodRobotDoctorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBD2882E2AC62ADA0005A5FC /* BloodRobotDoctor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBD288542AC62ADB0005A5FC /* Build configuration list for PBXNativeTarget "BloodRobotDoctor" */;
+			buildPhases = (
+				EBD2882B2AC62ADA0005A5FC /* Sources */,
+				EBD2882C2AC62ADA0005A5FC /* Frameworks */,
+				EBD2882D2AC62ADA0005A5FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BloodRobotDoctor;
+			productName = BloodRobotDoctor;
+			productReference = EBD2882F2AC62ADA0005A5FC /* BloodRobotDoctor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBD2883F2AC62ADB0005A5FC /* BloodRobotDoctorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBD288572AC62ADB0005A5FC /* Build configuration list for PBXNativeTarget "BloodRobotDoctorTests" */;
+			buildPhases = (
+				EBD2883C2AC62ADB0005A5FC /* Sources */,
+				EBD2883D2AC62ADB0005A5FC /* Frameworks */,
+				EBD2883E2AC62ADB0005A5FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBD288422AC62ADB0005A5FC /* PBXTargetDependency */,
+			);
+			name = BloodRobotDoctorTests;
+			productName = BloodRobotDoctorTests;
+			productReference = EBD288402AC62ADB0005A5FC /* BloodRobotDoctorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBD288492AC62ADB0005A5FC /* BloodRobotDoctorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBD2885A2AC62ADB0005A5FC /* Build configuration list for PBXNativeTarget "BloodRobotDoctorUITests" */;
+			buildPhases = (
+				EBD288462AC62ADB0005A5FC /* Sources */,
+				EBD288472AC62ADB0005A5FC /* Frameworks */,
+				EBD288482AC62ADB0005A5FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBD2884C2AC62ADB0005A5FC /* PBXTargetDependency */,
+			);
+			name = BloodRobotDoctorUITests;
+			productName = BloodRobotDoctorUITests;
+			productReference = EBD2884A2AC62ADB0005A5FC /* BloodRobotDoctorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBD288272AC62ADA0005A5FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					EBD2882E2AC62ADA0005A5FC = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					EBD2883F2AC62ADB0005A5FC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = EBD2882E2AC62ADA0005A5FC;
+					};
+					EBD288492AC62ADB0005A5FC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = EBD2882E2AC62ADA0005A5FC;
+					};
+				};
+			};
+			buildConfigurationList = EBD2882A2AC62ADA0005A5FC /* Build configuration list for PBXProject "BloodRobotDoctor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBD288262AC62ADA0005A5FC;
+			productRefGroup = EBD288302AC62ADA0005A5FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBD2882E2AC62ADA0005A5FC /* BloodRobotDoctor */,
+				EBD2883F2AC62ADB0005A5FC /* BloodRobotDoctorTests */,
+				EBD288492AC62ADB0005A5FC /* BloodRobotDoctorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBD2882D2AC62ADA0005A5FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD2883B2AC62ADB0005A5FC /* Preview Assets.xcassets in Resources */,
+				EBD288372AC62ADB0005A5FC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD2883E2AC62ADB0005A5FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD288482AC62ADB0005A5FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBD2882B2AC62ADA0005A5FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD288352AC62ADA0005A5FC /* ContentView.swift in Sources */,
+				EBD288332AC62ADA0005A5FC /* BloodRobotDoctorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD2883C2AC62ADB0005A5FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD288452AC62ADB0005A5FC /* BloodRobotDoctorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD288462AC62ADB0005A5FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD2884F2AC62ADB0005A5FC /* BloodRobotDoctorUITests.swift in Sources */,
+				EBD288512AC62ADB0005A5FC /* BloodRobotDoctorUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBD288422AC62ADB0005A5FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBD2882E2AC62ADA0005A5FC /* BloodRobotDoctor */;
+			targetProxy = EBD288412AC62ADB0005A5FC /* PBXContainerItemProxy */;
+		};
+		EBD2884C2AC62ADB0005A5FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBD2882E2AC62ADA0005A5FC /* BloodRobotDoctor */;
+			targetProxy = EBD2884B2AC62ADB0005A5FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EBD288522AC62ADB0005A5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBD288532AC62ADB0005A5FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		EBD288552AC62ADB0005A5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BloodRobotDoctor/BloodRobotDoctor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BloodRobotDoctor/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBD288562AC62ADB0005A5FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BloodRobotDoctor/BloodRobotDoctor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BloodRobotDoctor/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBD288582AC62ADB0005A5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BloodRobotDoctor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BloodRobotDoctor";
+			};
+			name = Debug;
+		};
+		EBD288592AC62ADB0005A5FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BloodRobotDoctor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BloodRobotDoctor";
+			};
+			name = Release;
+		};
+		EBD2885B2AC62ADB0005A5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BloodRobotDoctor;
+			};
+			name = Debug;
+		};
+		EBD2885C2AC62ADB0005A5FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BloodRobotDoctor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBD2882A2AC62ADA0005A5FC /* Build configuration list for PBXProject "BloodRobotDoctor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD288522AC62ADB0005A5FC /* Debug */,
+				EBD288532AC62ADB0005A5FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBD288542AC62ADB0005A5FC /* Build configuration list for PBXNativeTarget "BloodRobotDoctor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD288552AC62ADB0005A5FC /* Debug */,
+				EBD288562AC62ADB0005A5FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBD288572AC62ADB0005A5FC /* Build configuration list for PBXNativeTarget "BloodRobotDoctorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD288582AC62ADB0005A5FC /* Debug */,
+				EBD288592AC62ADB0005A5FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBD2885A2AC62ADB0005A5FC /* Build configuration list for PBXNativeTarget "BloodRobotDoctorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD2885B2AC62ADB0005A5FC /* Debug */,
+				EBD2885C2AC62ADB0005A5FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBD288272AC62ADA0005A5FC /* Project object */;
+}
