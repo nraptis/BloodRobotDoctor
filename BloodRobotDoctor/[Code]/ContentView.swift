@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        GeometryReader { geometry in
+            ZStack {
+                MedicalSceneView(width: round(geometry.size.width),
+                                 height: round(geometry.size.height))
+            }
         }
-        .padding()
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

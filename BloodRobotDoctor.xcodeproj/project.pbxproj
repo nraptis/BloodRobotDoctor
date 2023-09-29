@@ -18,6 +18,45 @@
 		EBF375BD2AC6477B0078695D /* ShapeNodeIndexed.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B72AC6477B0078695D /* ShapeNodeIndexed.metal */; };
 		EBF375BE2AC6477B0078695D /* SpriteNodeIndexed.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B82AC6477B0078695D /* SpriteNodeIndexed.metal */; };
 		EBF375BF2AC6477B0078695D /* Sprite.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF375B92AC6477B0078695D /* Sprite.metal */; };
+		EBF375C52AC649D30078695D /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375C12AC649D30078695D /* MetalView.swift */; };
+		EBF375C62AC649D30078695D /* MetalPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375C22AC649D30078695D /* MetalPipeline.swift */; };
+		EBF375C72AC649D30078695D /* MetalEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375C32AC649D30078695D /* MetalEngine.swift */; };
+		EBF375C82AC649D30078695D /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375C42AC649D30078695D /* MetalViewController.swift */; };
+		EBF375CF2AC64A150078695D /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375CA2AC64A150078695D /* Math.swift */; };
+		EBF375D02AC64A150078695D /* Sprite2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375CB2AC64A150078695D /* Sprite2D.swift */; };
+		EBF375D12AC64A150078695D /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375CC2AC64A150078695D /* Matrix.swift */; };
+		EBF375D22AC64A150078695D /* Quaternion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375CD2AC64A150078695D /* Quaternion.swift */; };
+		EBF375D32AC64A150078695D /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375CE2AC64A150078695D /* Graphics.swift */; };
+		EBF375DA2AC64A450078695D /* UniformsShapeNodeIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375D52AC64A450078695D /* UniformsShapeNodeIndexed.swift */; };
+		EBF375DB2AC64A450078695D /* UniformsShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375D62AC64A450078695D /* UniformsShape.swift */; };
+		EBF375DC2AC64A450078695D /* UniformsSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375D72AC64A450078695D /* UniformsSprite.swift */; };
+		EBF375DD2AC64A450078695D /* UniformsSpriteNodeIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375D82AC64A450078695D /* UniformsSpriteNodeIndexed.swift */; };
+		EBF375DE2AC64A450078695D /* Uniforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375D92AC64A450078695D /* Uniforms.swift */; };
+		EBF375F52AC64A910078695D /* Recycler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375E22AC64A910078695D /* Recycler.swift */; };
+		EBF375F62AC64A910078695D /* RecyclerSprite2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375E32AC64A910078695D /* RecyclerSprite2D.swift */; };
+		EBF375F72AC64A910078695D /* RecyclerShapeQuad3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375E42AC64A910078695D /* RecyclerShapeQuad3D.swift */; };
+		EBF375F82AC64A910078695D /* RecyclerShapeTriangle2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375E52AC64A910078695D /* RecyclerShapeTriangle2D.swift */; };
+		EBF375F92AC64A910078695D /* RecyclerShapeQuad2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375E62AC64A910078695D /* RecyclerShapeQuad2D.swift */; };
+		EBF375FA2AC64A910078695D /* RecyclerShapeTriangle3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF375E72AC64A910078695D /* RecyclerShapeTriangle3D.swift */; };
+		EBF376192AC64AD40078695D /* earth_tile_0_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376082AC64AD40078695D /* earth_tile_0_1.png */; };
+		EBF3761A2AC64AD40078695D /* earth_tile_0_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376092AC64AD40078695D /* earth_tile_0_0.png */; };
+		EBF3761B2AC64AD40078695D /* earth_tile_2_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF3760A2AC64AD40078695D /* earth_tile_2_0.png */; };
+		EBF3761C2AC64AD40078695D /* earth_tile_2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF3760B2AC64AD40078695D /* earth_tile_2_1.png */; };
+		EBF3761D2AC64AD40078695D /* earth_tile_3_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF3760C2AC64AD40078695D /* earth_tile_3_0.png */; };
+		EBF3761E2AC64AD40078695D /* earth_tile_3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF3760D2AC64AD40078695D /* earth_tile_3_1.png */; };
+		EBF3761F2AC64AD40078695D /* earth_tile_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF3760E2AC64AD40078695D /* earth_tile_1_1.png */; };
+		EBF376202AC64AD40078695D /* earth_tile_1_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF3760F2AC64AD40078695D /* earth_tile_1_0.png */; };
+		EBF376212AC64AD40078695D /* star_tile_3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376112AC64AD40078695D /* star_tile_3_1.png */; };
+		EBF376222AC64AD40078695D /* star_tile_3_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376122AC64AD40078695D /* star_tile_3_0.png */; };
+		EBF376232AC64AD40078695D /* star_tile_1_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376132AC64AD40078695D /* star_tile_1_0.png */; };
+		EBF376242AC64AD40078695D /* star_tile_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376142AC64AD40078695D /* star_tile_1_1.png */; };
+		EBF376252AC64AD40078695D /* star_tile_0_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376152AC64AD40078695D /* star_tile_0_0.png */; };
+		EBF376262AC64AD40078695D /* star_tile_0_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376162AC64AD40078695D /* star_tile_0_1.png */; };
+		EBF376272AC64AD40078695D /* star_tile_2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376172AC64AD40078695D /* star_tile_2_1.png */; };
+		EBF376282AC64AD40078695D /* star_tile_2_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF376182AC64AD40078695D /* star_tile_2_0.png */; };
+		EBF3762A2AC64AEE0078695D /* EarthSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF376292AC64AEE0078695D /* EarthSceneView.swift */; };
+		EBF3762C2AC64C550078695D /* MedicalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3762B2AC64C550078695D /* MedicalScene.swift */; };
+		EBF3762E2AC64D4C0078695D /* MedicalSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3762D2AC64D4C0078695D /* MedicalSceneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +92,45 @@
 		EBF375B72AC6477B0078695D /* ShapeNodeIndexed.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ShapeNodeIndexed.metal; sourceTree = "<group>"; };
 		EBF375B82AC6477B0078695D /* SpriteNodeIndexed.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SpriteNodeIndexed.metal; sourceTree = "<group>"; };
 		EBF375B92AC6477B0078695D /* Sprite.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sprite.metal; sourceTree = "<group>"; };
+		EBF375C12AC649D30078695D /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		EBF375C22AC649D30078695D /* MetalPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalPipeline.swift; sourceTree = "<group>"; };
+		EBF375C32AC649D30078695D /* MetalEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalEngine.swift; sourceTree = "<group>"; };
+		EBF375C42AC649D30078695D /* MetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
+		EBF375CA2AC64A150078695D /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		EBF375CB2AC64A150078695D /* Sprite2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sprite2D.swift; sourceTree = "<group>"; };
+		EBF375CC2AC64A150078695D /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		EBF375CD2AC64A150078695D /* Quaternion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quaternion.swift; sourceTree = "<group>"; };
+		EBF375CE2AC64A150078695D /* Graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
+		EBF375D52AC64A450078695D /* UniformsShapeNodeIndexed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformsShapeNodeIndexed.swift; sourceTree = "<group>"; };
+		EBF375D62AC64A450078695D /* UniformsShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformsShape.swift; sourceTree = "<group>"; };
+		EBF375D72AC64A450078695D /* UniformsSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformsSprite.swift; sourceTree = "<group>"; };
+		EBF375D82AC64A450078695D /* UniformsSpriteNodeIndexed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformsSpriteNodeIndexed.swift; sourceTree = "<group>"; };
+		EBF375D92AC64A450078695D /* Uniforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniforms.swift; sourceTree = "<group>"; };
+		EBF375E22AC64A910078695D /* Recycler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recycler.swift; sourceTree = "<group>"; };
+		EBF375E32AC64A910078695D /* RecyclerSprite2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecyclerSprite2D.swift; sourceTree = "<group>"; };
+		EBF375E42AC64A910078695D /* RecyclerShapeQuad3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecyclerShapeQuad3D.swift; sourceTree = "<group>"; };
+		EBF375E52AC64A910078695D /* RecyclerShapeTriangle2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecyclerShapeTriangle2D.swift; sourceTree = "<group>"; };
+		EBF375E62AC64A910078695D /* RecyclerShapeQuad2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecyclerShapeQuad2D.swift; sourceTree = "<group>"; };
+		EBF375E72AC64A910078695D /* RecyclerShapeTriangle3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecyclerShapeTriangle3D.swift; sourceTree = "<group>"; };
+		EBF376082AC64AD40078695D /* earth_tile_0_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_0_1.png; sourceTree = "<group>"; };
+		EBF376092AC64AD40078695D /* earth_tile_0_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_0_0.png; sourceTree = "<group>"; };
+		EBF3760A2AC64AD40078695D /* earth_tile_2_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_2_0.png; sourceTree = "<group>"; };
+		EBF3760B2AC64AD40078695D /* earth_tile_2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_2_1.png; sourceTree = "<group>"; };
+		EBF3760C2AC64AD40078695D /* earth_tile_3_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_3_0.png; sourceTree = "<group>"; };
+		EBF3760D2AC64AD40078695D /* earth_tile_3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_3_1.png; sourceTree = "<group>"; };
+		EBF3760E2AC64AD40078695D /* earth_tile_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_1_1.png; sourceTree = "<group>"; };
+		EBF3760F2AC64AD40078695D /* earth_tile_1_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_tile_1_0.png; sourceTree = "<group>"; };
+		EBF376112AC64AD40078695D /* star_tile_3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_3_1.png; sourceTree = "<group>"; };
+		EBF376122AC64AD40078695D /* star_tile_3_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_3_0.png; sourceTree = "<group>"; };
+		EBF376132AC64AD40078695D /* star_tile_1_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_1_0.png; sourceTree = "<group>"; };
+		EBF376142AC64AD40078695D /* star_tile_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_1_1.png; sourceTree = "<group>"; };
+		EBF376152AC64AD40078695D /* star_tile_0_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_0_0.png; sourceTree = "<group>"; };
+		EBF376162AC64AD40078695D /* star_tile_0_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_0_1.png; sourceTree = "<group>"; };
+		EBF376172AC64AD40078695D /* star_tile_2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_2_1.png; sourceTree = "<group>"; };
+		EBF376182AC64AD40078695D /* star_tile_2_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_tile_2_0.png; sourceTree = "<group>"; };
+		EBF376292AC64AEE0078695D /* EarthSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthSceneView.swift; sourceTree = "<group>"; };
+		EBF3762B2AC64C550078695D /* MedicalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalScene.swift; sourceTree = "<group>"; };
+		EBF3762D2AC64D4C0078695D /* MedicalSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSceneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +181,7 @@
 		EBD288312AC62ADA0005A5FC /* BloodRobotDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				EBF376062AC64AD40078695D /* [Assets] */,
 				EBF375B22AC6477B0078695D /* [Code] */,
 				EBF375B52AC6477B0078695D /* [Shaders] */,
 				EBD288362AC62ADB0005A5FC /* Assets.xcassets */,
@@ -140,6 +219,12 @@
 		EBF375B22AC6477B0078695D /* [Code] */ = {
 			isa = PBXGroup;
 			children = (
+				EBF3762B2AC64C550078695D /* MedicalScene.swift */,
+				EBF376292AC64AEE0078695D /* EarthSceneView.swift */,
+				EBF3762D2AC64D4C0078695D /* MedicalSceneView.swift */,
+				EBF375E12AC64A910078695D /* [Recyclers] */,
+				EBF375C92AC64A150078695D /* [Graphics] */,
+				EBF375C02AC649D30078695D /* [Metal] */,
 				EBF375B32AC6477B0078695D /* BloodRobotDoctorApp.swift */,
 				EBF375B42AC6477B0078695D /* ContentView.swift */,
 			);
@@ -155,6 +240,94 @@
 				EBF375B92AC6477B0078695D /* Sprite.metal */,
 			);
 			path = "[Shaders]";
+			sourceTree = "<group>";
+		};
+		EBF375C02AC649D30078695D /* [Metal] */ = {
+			isa = PBXGroup;
+			children = (
+				EBF375C12AC649D30078695D /* MetalView.swift */,
+				EBF375C22AC649D30078695D /* MetalPipeline.swift */,
+				EBF375C32AC649D30078695D /* MetalEngine.swift */,
+				EBF375C42AC649D30078695D /* MetalViewController.swift */,
+			);
+			path = "[Metal]";
+			sourceTree = "<group>";
+		};
+		EBF375C92AC64A150078695D /* [Graphics] */ = {
+			isa = PBXGroup;
+			children = (
+				EBF375D42AC64A450078695D /* [Uniforms] */,
+				EBF375CA2AC64A150078695D /* Math.swift */,
+				EBF375CB2AC64A150078695D /* Sprite2D.swift */,
+				EBF375CC2AC64A150078695D /* Matrix.swift */,
+				EBF375CD2AC64A150078695D /* Quaternion.swift */,
+				EBF375CE2AC64A150078695D /* Graphics.swift */,
+			);
+			path = "[Graphics]";
+			sourceTree = "<group>";
+		};
+		EBF375D42AC64A450078695D /* [Uniforms] */ = {
+			isa = PBXGroup;
+			children = (
+				EBF375D52AC64A450078695D /* UniformsShapeNodeIndexed.swift */,
+				EBF375D62AC64A450078695D /* UniformsShape.swift */,
+				EBF375D72AC64A450078695D /* UniformsSprite.swift */,
+				EBF375D82AC64A450078695D /* UniformsSpriteNodeIndexed.swift */,
+				EBF375D92AC64A450078695D /* Uniforms.swift */,
+			);
+			path = "[Uniforms]";
+			sourceTree = "<group>";
+		};
+		EBF375E12AC64A910078695D /* [Recyclers] */ = {
+			isa = PBXGroup;
+			children = (
+				EBF375E22AC64A910078695D /* Recycler.swift */,
+				EBF375E32AC64A910078695D /* RecyclerSprite2D.swift */,
+				EBF375E42AC64A910078695D /* RecyclerShapeQuad3D.swift */,
+				EBF375E52AC64A910078695D /* RecyclerShapeTriangle2D.swift */,
+				EBF375E62AC64A910078695D /* RecyclerShapeQuad2D.swift */,
+				EBF375E72AC64A910078695D /* RecyclerShapeTriangle3D.swift */,
+			);
+			path = "[Recyclers]";
+			sourceTree = "<group>";
+		};
+		EBF376062AC64AD40078695D /* [Assets] */ = {
+			isa = PBXGroup;
+			children = (
+				EBF376072AC64AD40078695D /* earth_tiles */,
+				EBF376102AC64AD40078695D /* star_tiles */,
+			);
+			path = "[Assets]";
+			sourceTree = "<group>";
+		};
+		EBF376072AC64AD40078695D /* earth_tiles */ = {
+			isa = PBXGroup;
+			children = (
+				EBF376082AC64AD40078695D /* earth_tile_0_1.png */,
+				EBF376092AC64AD40078695D /* earth_tile_0_0.png */,
+				EBF3760A2AC64AD40078695D /* earth_tile_2_0.png */,
+				EBF3760B2AC64AD40078695D /* earth_tile_2_1.png */,
+				EBF3760C2AC64AD40078695D /* earth_tile_3_0.png */,
+				EBF3760D2AC64AD40078695D /* earth_tile_3_1.png */,
+				EBF3760E2AC64AD40078695D /* earth_tile_1_1.png */,
+				EBF3760F2AC64AD40078695D /* earth_tile_1_0.png */,
+			);
+			path = earth_tiles;
+			sourceTree = "<group>";
+		};
+		EBF376102AC64AD40078695D /* star_tiles */ = {
+			isa = PBXGroup;
+			children = (
+				EBF376112AC64AD40078695D /* star_tile_3_1.png */,
+				EBF376122AC64AD40078695D /* star_tile_3_0.png */,
+				EBF376132AC64AD40078695D /* star_tile_1_0.png */,
+				EBF376142AC64AD40078695D /* star_tile_1_1.png */,
+				EBF376152AC64AD40078695D /* star_tile_0_0.png */,
+				EBF376162AC64AD40078695D /* star_tile_0_1.png */,
+				EBF376172AC64AD40078695D /* star_tile_2_1.png */,
+				EBF376182AC64AD40078695D /* star_tile_2_0.png */,
+			);
+			path = star_tiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +434,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF376212AC64AD40078695D /* star_tile_3_1.png in Resources */,
+				EBF3761E2AC64AD40078695D /* earth_tile_3_1.png in Resources */,
+				EBF3761A2AC64AD40078695D /* earth_tile_0_0.png in Resources */,
+				EBF3761C2AC64AD40078695D /* earth_tile_2_1.png in Resources */,
+				EBF3761D2AC64AD40078695D /* earth_tile_3_0.png in Resources */,
 				EBD2883B2AC62ADB0005A5FC /* Preview Assets.xcassets in Resources */,
+				EBF3761B2AC64AD40078695D /* earth_tile_2_0.png in Resources */,
 				EBD288372AC62ADB0005A5FC /* Assets.xcassets in Resources */,
+				EBF376272AC64AD40078695D /* star_tile_2_1.png in Resources */,
+				EBF376222AC64AD40078695D /* star_tile_3_0.png in Resources */,
+				EBF376202AC64AD40078695D /* earth_tile_1_0.png in Resources */,
+				EBF376282AC64AD40078695D /* star_tile_2_0.png in Resources */,
+				EBF376262AC64AD40078695D /* star_tile_0_1.png in Resources */,
+				EBF376232AC64AD40078695D /* star_tile_1_0.png in Resources */,
+				EBF376252AC64AD40078695D /* star_tile_0_0.png in Resources */,
+				EBF376242AC64AD40078695D /* star_tile_1_1.png in Resources */,
+				EBF3761F2AC64AD40078695D /* earth_tile_1_1.png in Resources */,
+				EBF376192AC64AD40078695D /* earth_tile_0_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,12 +476,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF3762E2AC64D4C0078695D /* MedicalSceneView.swift in Sources */,
+				EBF375F72AC64A910078695D /* RecyclerShapeQuad3D.swift in Sources */,
 				EBF375BB2AC6477B0078695D /* ContentView.swift in Sources */,
+				EBF375C72AC649D30078695D /* MetalEngine.swift in Sources */,
+				EBF375F82AC64A910078695D /* RecyclerShapeTriangle2D.swift in Sources */,
+				EBF375F52AC64A910078695D /* Recycler.swift in Sources */,
+				EBF375D02AC64A150078695D /* Sprite2D.swift in Sources */,
+				EBF375D12AC64A150078695D /* Matrix.swift in Sources */,
+				EBF375DE2AC64A450078695D /* Uniforms.swift in Sources */,
+				EBF375DA2AC64A450078695D /* UniformsShapeNodeIndexed.swift in Sources */,
+				EBF375DD2AC64A450078695D /* UniformsSpriteNodeIndexed.swift in Sources */,
+				EBF375DC2AC64A450078695D /* UniformsSprite.swift in Sources */,
+				EBF3762A2AC64AEE0078695D /* EarthSceneView.swift in Sources */,
+				EBF375CF2AC64A150078695D /* Math.swift in Sources */,
+				EBF375F62AC64A910078695D /* RecyclerSprite2D.swift in Sources */,
+				EBF375DB2AC64A450078695D /* UniformsShape.swift in Sources */,
+				EBF375C82AC649D30078695D /* MetalViewController.swift in Sources */,
+				EBF375D32AC64A150078695D /* Graphics.swift in Sources */,
+				EBF375C52AC649D30078695D /* MetalView.swift in Sources */,
 				EBF375BE2AC6477B0078695D /* SpriteNodeIndexed.metal in Sources */,
 				EBF375BF2AC6477B0078695D /* Sprite.metal in Sources */,
+				EBF3762C2AC64C550078695D /* MedicalScene.swift in Sources */,
 				EBF375BC2AC6477B0078695D /* Shape.metal in Sources */,
+				EBF375F92AC64A910078695D /* RecyclerShapeQuad2D.swift in Sources */,
+				EBF375FA2AC64A910078695D /* RecyclerShapeTriangle3D.swift in Sources */,
 				EBF375BA2AC6477B0078695D /* BloodRobotDoctorApp.swift in Sources */,
+				EBF375D22AC64A150078695D /* Quaternion.swift in Sources */,
 				EBF375BD2AC6477B0078695D /* ShapeNodeIndexed.metal in Sources */,
+				EBF375C62AC649D30078695D /* MetalPipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,10 +676,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,10 +712,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raptis.nick.hematology.classifier.BloodRobotDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
