@@ -26,6 +26,36 @@ extension GraphicsDelegate {
 
 class Graphics {
     
+#if os(macOS)
+    lazy var assetsDirectory: String = {
+        "\(FileManager.default.currentDirectoryPath)/Assets/"
+    }()
+    
+    lazy var documentsDirectory: String = {
+        "\(FileManager.default.currentDirectoryPath)/Documents/"
+    }()
+    
+    lazy var exportsDirectory: String = {
+        "\(FileManager.default.currentDirectoryPath)/Exports/"
+    }()
+    
+    func assetsPath(_ fileName: String) -> String {
+        assetsDirectory + fileName
+    }
+    
+    func documentsPath(_ fileName: String) -> String {
+        documentsDirectory + fileName
+    }
+    
+    func exportsPath(_ fileName: String) -> String {
+        exportsDirectory + fileName
+    }
+    
+#else
+    
+#endif
+    
+    
     enum PipelineState {
         case invalid
         
@@ -150,7 +180,30 @@ class Graphics {
         return try? loader.newTexture(URL: url, options: nil)
     }
     
+#if os(macOS)
+    
     func loadTexture(fileName: String) -> MTLTexture? {
+        
+        
+        let filePath = assetsPath(fileName)
+        
+        print("filePath = \(filePath)")
+        
+        let fileURL = URL(fileURLWithPath: filePath)
+        
+        let data = try? Data(contentsOf: fileURL, options: .uncached)
+        
+        print("data = \(data)")
+        
+        return loadTexture(url: fileURL)
+        
+    }
+    
+#else
+    
+    func loadTexture(fileName: String) -> MTLTexture? {
+        
+        
         if let bundleResourcePath = Bundle.main.resourcePath {
             let filePath = bundleResourcePath + "/" + fileName
             let fileURL = URL(filePath: filePath)
@@ -158,6 +211,10 @@ class Graphics {
         }
         return nil
     }
+    
+#endif
+    
+    
     
     func buffer<Element>(array: Array<Element>) -> MTLBuffer! {
         let length = MemoryLayout<Element>.size * array.count

@@ -6,13 +6,52 @@
 //
 
 #include "OpenCVUtils.hpp"
-//#include "opencv2/opencv.hpp"
-
+#include "opencv2/opencv.hpp"
 #include <opencv2/core/core_c.h>
 #include <opencv2/core/core.hpp>
-#include <opencv2/opencv.hpp>
 
 using namespace cv;
+
+/*
+
+
+
+#include <opencv2/imgproc/imgproc_c.h>
+#include <opencv2/calib3d/calib3d.hpp>
+//#include <opencv2/legacy/compat.hpp>
+#include <opencv2/features2d/features2d.hpp>
+#include <opencv2/imgproc/imgproc_c.h>
+#include <opencv2/calib3d/calib3d.hpp>
+#include <opencv2/video/tracking.hpp>
+
+void IplImageCopy(IplImage *pIPLImage, unsigned char *pDestination, int pWidth, int pHeight) {
+    
+    //let bytesPerPixel = 4
+    //let bytesPerRow = width * bytesPerPixel
+    
+    int bytesPerPixel = 4;
+    int aArea = pWidth * pHeight * bytesPerPixel;
+    
+    unsigned char *aSource = pDestination;
+    unsigned char *aDest = (unsigned char *)(pIPLImage->imageData);
+    
+    for (int i=0;i<aArea;i++) {
+        *aDest = *aSource;
+        aDest++;
+        aSource++;
+    }
+}
+*/
+
+/*
+cv::Mat a(int width, int height) {
+    cv::Mat result(width, height, CV_8UC1);
+    
+    
+    
+    return result;
+}
+*/
 
 Mat convertToMat(unsigned char *data, int width, int height) {
     Mat tmp(width, height, CV_8UC1, data);
@@ -88,6 +127,7 @@ void process(unsigned char *input, unsigned char *output, int width, int height)
     
     //matty = matty.inv();
     
+    
     matty.col(3).data[5] = 255;
     matty.col(3).data[6] = 255;
     matty.col(3).data[7] = 255;
@@ -98,6 +138,36 @@ void process(unsigned char *input, unsigned char *output, int width, int height)
     matty.col(3).data[12] = 255;
     matty.col(3).data[13] = 255;
     matty.col(3).data[14] = 255;
+    
+    
+    matty.col(32).data[5] = 255;
+    matty.col(32).data[6] = 255;
+    matty.col(32).data[7] = 255;
+    matty.col(32).data[8] = 255;
+    matty.col(32).data[9] = 255;
+    matty.col(52).data[10] = 255;
+    matty.col(52).data[11] = 255;
+    matty.col(52).data[12] = 255;
+    matty.col(32).data[13] = 255;
+    matty.col(32).data[14] = 255;
+    matty.col(32).data[15] = 255;
+    matty.col(32).data[16] = 255;
+    matty.col(32).data[17] = 255;
+    matty.col(32).data[18] = 255;
+    matty.col(32).data[19] = 255;
+    matty.col(32).data[20] = 255;
+    matty.col(32).data[21] = 255;
+    matty.col(32).data[22] = 255;
+    matty.col(32).data[23] = 255;
+    matty.col(32).data[24] = 255;
+    matty.col(32).data[25] = 255;
+    matty.col(32).data[26] = 255;
+    matty.col(52).data[27] = 255;
+    matty.col(52).data[28] = 255;
+    matty.col(52).data[29] = 255;
+    
+    
+    
     
     
     //cv::Mat img3;

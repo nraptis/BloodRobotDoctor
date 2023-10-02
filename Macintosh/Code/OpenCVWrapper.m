@@ -6,7 +6,7 @@
 //
 
 #import "OpenCVWrapper.hpp"
-#import "BloodyMac-Swift.h"
+#import "Macintosh-Swift.h"
 //#import "opencv2/opencv2.h"
 //#import "opencv2/opencv.hpp"
 #include "OpenCVCPP.hpp"
