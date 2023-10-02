@@ -11,12 +11,12 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                MedicalSceneView(width: 1024.0,
-                                 height: 768.0)
+                MedicalSceneView(width: 900.0,
+                                 height: 900.0)
             }
         }
         .edgesIgnoringSafeArea(.all)
-        .frame(width: 1024.0, height: 768.0, alignment: .center)
+        .frame(width: 900.0, height: 900.0, alignment: .center)
     }
 }
 

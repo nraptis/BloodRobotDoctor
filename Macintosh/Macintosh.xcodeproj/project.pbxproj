@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */; };
 		EB478EA92ACA402700213214 /* libopencv_alphamat.4.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC49F5F2ACA37EA002E75E5 /* libopencv_alphamat.4.8.1.dylib */; };
 		EB478EAA2ACA402700213214 /* libopencv_alphamat.4.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = EBC49F5F2ACA37EA002E75E5 /* libopencv_alphamat.4.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EB478EAB2ACA402700213214 /* libopencv_aruco.4.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC49F5D2ACA37EA002E75E5 /* libopencv_aruco.4.8.1.dylib */; };
@@ -222,6 +223,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSceneSlice.swift; sourceTree = "<group>"; };
 		EB478E032ACA3CE200213214 /* libopencv_phase_unwrapping.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_phase_unwrapping.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_phase_unwrapping.4.8.1.dylib; sourceTree = "<group>"; };
 		EB478E042ACA3CE200213214 /* libopencv_optflow.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_optflow.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_optflow.4.8.1.dylib; sourceTree = "<group>"; };
 		EB478E052ACA3CE200213214 /* libopencv_videostab.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_videostab.4.8.1.dylib; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				EB63A73C2ACA51F8008C2D6E /* ContentView.swift */,
 				EB63A7222ACA51F8008C2D6E /* MacintoshApp.swift */,
 				EB63A7212ACA51F8008C2D6E /* MedicalScene.swift */,
+				EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */,
 				EB63A72F2ACA51F8008C2D6E /* MedicalSceneView.swift */,
 				EB63A72A2ACA51F8008C2D6E /* OpenCVCPP.hpp */,
 				EB63A72D2ACA51F8008C2D6E /* OpenCVCPP.mm */,
@@ -870,6 +873,7 @@
 				EB63A74D2ACA51F8008C2D6E /* MetalViewController.swift in Sources */,
 				EB63A75A2ACA51F8008C2D6E /* UniformsShape.swift in Sources */,
 				EB63A74A2ACA51F8008C2D6E /* MetalView.swift in Sources */,
+				EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */,
 				EB63A7532ACA51F8008C2D6E /* MedicalSceneView.swift in Sources */,
 				EB63A75E2ACA51F8008C2D6E /* ContentView.swift in Sources */,
 				EB63A7592ACA51F8008C2D6E /* UniformsShapeNodeIndexed.swift in Sources */,

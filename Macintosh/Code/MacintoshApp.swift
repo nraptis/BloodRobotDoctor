@@ -12,7 +12,7 @@ struct MacintoshApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(width: 1280.0, height: 800.0)
+                .frame(width: 1280.0, height: 960.0)
         }
     }
 }

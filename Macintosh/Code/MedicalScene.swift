@@ -12,49 +12,115 @@ import simd
 class MedicalScene: GraphicsDelegate {
     var graphics: Graphics!
     
-    let recycler = RecyclerShapeQuad2D()
-    
-    let recyclerSprite2D = RecyclerSprite2D()
-    
-    let sprite = Sprite2D()
+    var slices = [MedicalSceneSlice]()
     
     func load() {
         //sprite.load(graphics: graphics, fileName: "test_image_8_4.png")
         
-        let tex = graphics.loadTexture(fileName: "test_platelet.png")
-        //let tex = graphics.loadTexture(fileName: "test_image_8_4.png")
+        let centerX = graphics.width * 0.5
+        let centerY = graphics.height * 0.5
+        let sliceWidth = 256
+        let sliceHeight = 256
+        let gridWidth = 3
+        let gridHeight = 3
+        let gridSpacing = Float(16.0)
         
-        let rg = RGBImage(texture: tex)
+        var startX = centerX
+        startX -= Float(sliceWidth) * Float(gridWidth) * 0.5
+        if gridWidth > 1 {
+            startX -= Float(gridSpacing) * Float(gridWidth - 1) * 0.5
+        }
         
-        let w = rg.width
-        let h = rg.height
-        
-        rg.set(x: 0, y: 0, red: 255, green: 0, blue: 0)
-        rg.set(x: 1, y: 0, red: 192, green: 64, blue: 64)
-        rg.set(x: 0, y: 1, red: 192, green: 64, blue: 64)
-        
-        rg.set(x: w - 1, y: 0, red: 0, green: 255, blue: 0)
-        rg.set(x: w - 2, y: 0, red: 64, green: 192, blue: 64)
-        rg.set(x: w - 1, y: 1, red: 64, green: 192, blue: 64)
-        
-        
-        rg.set(x: 0, y: h - 1, red: 0, green: 0, blue: 255)
-        rg.set(x: 1, y: h - 1, red: 64, green: 64, blue: 192)
-        rg.set(x: 0, y: h - 2, red: 64, green: 64, blue: 192)
+        //- (Float(sliceWidth) * Float(gridWidth) * 0.5 + gridSpacing * Float(gridWidth - 1))
+        var startY = centerY
+        startY -= Float(sliceHeight) * Float(gridHeight) * 0.5
+        if gridHeight > 1 {
+            startY -= Float(gridSpacing) * Float(gridHeight - 1) * 0.5
+        }
         
         
-        rg.set(x: w - 1, y: h - 1, red: 255, green: 255, blue: 255)
-        rg.set(x: w - 2, y: h - 1, red: 128, green: 128, blue: 192)
-        rg.set(x: w - 1, y: h - 2, red: 128, green: 128, blue: 192)
+        //- (Float(sliceHeight) * Float(gridHeight) * 0.5 + gridSpacing * Float(gridHeight - 1))
         
-        if let ggg = OpenCVWrapper.process(rg) {
-            
-            if let ttt = ggg.texture(device: graphics.device) {
-                sprite.load(graphics: graphics, texture: ttt)
+        var imageNameList = [
+            "callib_image_256_00.png",
+            "callib_image_256_01.png",
+            "callib_image_256_02.png",
+            "callib_image_256_03.png",
+            "callib_image_256_04.png",
+            "callib_image_256_05.png",
+            "callib_image_256_06.png",
+            "callib_image_256_07.png",
+            "callib_image_256_08.png"]
+        
+        var xList = [Float]()
+        var yList = [Float]()
+        
+        var gridX = 0
+        var gridY = 0
+        var x = startX
+        var y = startY
+        for _ in 0..<imageNameList.count {
+            xList.append(x)
+            yList.append(y)
+            gridX += 1
+            if gridX == gridWidth {
+                gridX = 0
+                gridY += 1
+                y += Float(sliceHeight) + gridSpacing
+                x = startX
+            } else {
+                x += Float(sliceWidth) + gridSpacing
             }
         }
         
-        let poo = RGBImage(texture: sprite.texture)
+        for index in imageNameList.indices {
+            let imageName = imageNameList[index]
+            let x = xList[index]
+            let y = yList[index]
+            
+            if let texture = graphics.loadTexture(fileName: imageName) {
+                let rgbImage = RGBImage(texture: texture)
+                let slice = MedicalSceneSlice(graphics: graphics,
+                                              x: x,
+                                              y: y,
+                                              width: Float(sliceWidth),
+                                              height: Float(sliceHeight),
+                                              image: rgbImage)
+                slices.append(slice)
+            }
+        }
+        
+        
+        
+        
+        
+        /*
+         callib_image_256_00.png
+         callib_image_256_01.png
+         callib_image_256_02.png
+         callib_image_256_03.png
+         callib_image_256_04.png
+         callib_image_256_05.png
+         callib_image_256_06.png
+         callib_image_256_07.png
+         callib_image_256_08.png
+
+         callib_image_512_08.png
+         callib_image_512_00.png
+         callib_image_512_01.png
+         callib_image_512_02.png
+         callib_image_512_03.png
+         callib_image_512_04.png
+         callib_image_512_05.png
+         callib_image_512_06.png
+         callib_image_512_07.png
+        */
+        
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.jax()
+        }
     }
     
     @objc func receive(notification: Notification) {
@@ -62,6 +128,12 @@ class MedicalScene: GraphicsDelegate {
     }
     
     var ROTATEEE = Float(0.0)
+    
+    func jax() {
+        for slice in slices {
+            slice.jax()
+        }
+    }
     
     func update() {
         
@@ -75,67 +147,11 @@ class MedicalScene: GraphicsDelegate {
     
     func draw3D(renderEncoder: MTLRenderCommandEncoder) {
         
-        /*
-        recyclerShapeQuad3D.reset()
-        
-        
-        graphics.set(depthState: .disabled, renderEncoder: renderEncoder)
-        renderEncoder.setCullMode(.front)
-        stars.draw3D(graphics: graphics,
-                     renderEncoder: renderEncoder)
-        
-        graphics.set(depthState: .lessThan, renderEncoder: renderEncoder)
-        renderEncoder.setCullMode(.back)
-        earth.draw3D(graphics: graphics,
-                     renderEncoder: renderEncoder)
-        */
     }
     
     func draw2D(renderEncoder: MTLRenderCommandEncoder) {
-        
-        recycler.reset()
-        recyclerSprite2D.reset()
-        
-        
-        var projection = matrix_float4x4()
-        projection.ortho(width: graphics.width,
-                         height: graphics.height)
-        
-        
-        
-        graphics.set(pipelineState: .sprite2DAlphaBlending,
-                     renderEncoder: renderEncoder)
-        
-        var modelView = matrix_identity_float4x4
-        modelView.translate(x: graphics.width * 0.5, y: graphics.height * 0.5, z: 0.0)
-        modelView.scale(2.0)
-        //modelView.scale(60.0)
-        
-        
-        recyclerSprite2D.set(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        recyclerSprite2D.draw(graphics: graphics,
-                              renderEncoder: renderEncoder,
-                              projection: projection,
-                              modelView: modelView,
-                              sprite: sprite)
-        
-        /*
-        recyclerShapeQuad2D.reset()
-        
-        earth.draw2D(graphics: graphics,
-                     renderEncoder: renderEncoder)
-        
-        dimensionBridge.drawQuads2D(recyclerShapeQuad2D: recyclerShapeQuad2D,
-                                    renderEncoder: renderEncoder)
-        dimensionBridge.drawLines2D(recyclerShapeQuad2D: recyclerShapeQuad2D,
-                                    renderEncoder: renderEncoder)
-        dimensionBridge.drawHits2D(recyclerShapeQuad2D: recyclerShapeQuad2D,
-                                   renderEncoder: renderEncoder)
-        
-        gestureProcessor.draw2D(graphics: graphics,
-                                recyclerShapeQuad2D: recyclerShapeQuad2D,
-                                renderEncoder: renderEncoder)
-        */
-        
+        for slice in slices {
+            slice.draw2D(renderEncoder: renderEncoder)
+        }
     }
 }

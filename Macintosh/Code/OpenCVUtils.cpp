@@ -81,19 +81,7 @@ void process(unsigned char *input, unsigned char *output, int width, int height)
     
     
     Mat matty = rgbToMatRGBA(input, width, height);
-    
-    
-    //IplImage *aIPLImage = cvCreateImage(cvSize(width, width), 8, 4);
-    //IplImageCopy(aIPLImage, input, width, height);
-    
-    //cv::Mat(1, 1, 0);
-    
-    //Mat m;
-    
-    for (int i=0;i<44;i++) {
-        output[i] = input[i];
-    }
-    
+
     
     // Convert to graycsale
 
@@ -109,16 +97,22 @@ void process(unsigned char *input, unsigned char *output, int width, int height)
     
     matty = matToGrayscale(matty);
     
-    
-    
     cv::Mat contours;
-
-    cv::Canny(matty,contours,10,350);
+    
+    if (rand() % 2 == 0) {
+        
+        Mat contours;
+        //Canny(matty,contours,10,350);
+        Canny(matty,contours,6,100);
+        
+        matty = contours;
+    }
+    //cv::Canny(matty,contours,10,350);
+    
+    //matty = matToRGBA(contours);
     
     
-    
-    
-    matty = matToRGBA(contours);
+    matty = matToRGBA(matty);
     
     
     matRGBAToRGB(matty, output, width, height);
