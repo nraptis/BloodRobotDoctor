@@ -37,7 +37,7 @@ unsigned char *rgbaArrayFromSize(int width, int height) {
 }
 
 RGBImage * rgbImageFromRGBAArray(unsigned char *data, int width, int height) {
-    RGBImage *result = [[RGBImage alloc] initWithWidth:width height:height];
+    RGBImage *result = [[RGBImage alloc] initWithWidth: width height: height];
     for (int x=0;x<width;x++) {
         for (int y=0;y<height;y++) {
             int index = (y * width + x) * 4 * sizeof(unsigned char);
@@ -86,10 +86,6 @@ unsigned char *rgbaArrayFromRGBImage(RGBImage *rgbImage) {
     
     int width = (int)rgbImage.width;
     int height = (int)rgbImage.height;
-    
-    //ANYTHING();
-    
-    [OpenCVCPP helloDumb];
     
     unsigned char *input = rgbaArrayFromRGBImage(rgbImage);
     unsigned char *output = rgbaArrayFromSize(width, height);

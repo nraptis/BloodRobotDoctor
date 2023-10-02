@@ -12,8 +12,6 @@
 
 @interface OpenCVCPP : NSObject
 
-+(void)helloDumb;
-
 + (void)process:(unsigned char *)input dest: (unsigned char *)output width: (int)width height: (int)height;
 
 @end
