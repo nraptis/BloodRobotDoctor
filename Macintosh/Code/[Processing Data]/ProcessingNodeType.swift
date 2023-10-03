@@ -14,10 +14,6 @@ enum ProcessingNodeType: Int, CaseIterable {
     case erosion
     case dilation
     
-    //case gauss
-    //case gauss
-    
-    
     /*
     void Erosion( int, void* )
     {

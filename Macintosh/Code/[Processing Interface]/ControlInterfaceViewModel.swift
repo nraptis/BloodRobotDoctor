@@ -19,6 +19,17 @@ class ControlInterfaceViewModel: ObservableObject {
         ControlInterfaceViewModel()
     }
     
+    init() {
+        addNode()
+        updateNodeType(node: selectedNode, type: .gray)
+        
+        addNode()
+        updateNodeType(node: selectedNode, type: .gauss)
+        
+        addNode()
+        updateNodeType(node: selectedNode, type: .dilation)
+    }
+    
     func select(node: ProcessingNode) {
         
         if let selectedNode = selectedNode {
@@ -68,16 +79,7 @@ class ControlInterfaceViewModel: ObservableObject {
         postUpdateAndEnqueueRebuild()
     }
     
-    func nodeType(node: ProcessingNode) -> ProcessingNodeType {
-        for index in 0..<nodes.count {
-            if nodes[index].id == node.id {
-                return nodes[index].type
-            }
-        }
-        return .none
-    }
-    
-    func updateNodeType(node: ProcessingNode, type: ProcessingNodeType) {
+    func updateNodeType(node: ProcessingNode?, type: ProcessingNodeType) {
         if let index = nodeIndex(node) {
             nodes[index].type = type
             postUpdateAndEnqueueRebuild()
