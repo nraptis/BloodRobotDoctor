@@ -14,10 +14,10 @@ class MedicalSceneSlice {
     let recyclerSprite2D = RecyclerSprite2D()
     
     let graphics: Graphics
-    let x: Float
-    let y: Float
-    let width: Float
-    let height: Float
+    var x: Float
+    var y: Float
+    var width: Float
+    var height: Float
     var image: RGBImage
     let sprite = Sprite2D()
     
@@ -28,18 +28,14 @@ class MedicalSceneSlice {
         self.width = width
         self.height = height
         self.image = image
-        
         if let texture = image.texture(device: graphics.device) {
             sprite.load(graphics: graphics, texture: texture)
         }
-        
     }
     
     func draw2D(renderEncoder: MTLRenderCommandEncoder) {
         
-        
         recyclerSprite2D.reset()
-        
         
         var projection = matrix_float4x4()
         projection.ortho(width: graphics.width,

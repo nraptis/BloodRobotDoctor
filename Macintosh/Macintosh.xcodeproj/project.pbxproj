@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB1BF12F2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12B2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift */; };
+		EB1BF1302ACB98F0006C25B4 /* ProcessingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12C2ACB98F0006C25B4 /* ProcessingStep.swift */; };
+		EB1BF1312ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12D2ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift */; };
+		EB1BF1322ACB98F0006C25B4 /* ProcessingStepRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12E2ACB98F0006C25B4 /* ProcessingStepRGBA.swift */; };
+		EB1BF1342ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */; };
+		EB1BF1362ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */; };
+		EB1BF1382ACBBD91006C25B4 /* AppContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1372ACBBD91006C25B4 /* AppContainerView.swift */; };
+		EB1BF13A2ACBBDED006C25B4 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1392ACBBDED006C25B4 /* ApplicationController.swift */; };
+		EB1BF13C2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */; };
+		EB1BF13E2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF13D2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift */; };
+		EB1BF1402ACBDA53006C25B4 /* ProcessingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */; };
 		EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */; };
 		EB478EA92ACA402700213214 /* libopencv_alphamat.4.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC49F5F2ACA37EA002E75E5 /* libopencv_alphamat.4.8.1.dylib */; };
 		EB478EAA2ACA402700213214 /* libopencv_alphamat.4.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = EBC49F5F2ACA37EA002E75E5 /* libopencv_alphamat.4.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -144,7 +155,6 @@
 		EB63A75B2ACA51F8008C2D6E /* UniformsSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63A7392ACA51F8008C2D6E /* UniformsSprite.swift */; };
 		EB63A75C2ACA51F8008C2D6E /* UniformsSpriteNodeIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63A73A2ACA51F8008C2D6E /* UniformsSpriteNodeIndexed.swift */; };
 		EB63A75D2ACA51F8008C2D6E /* Uniforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63A73B2ACA51F8008C2D6E /* Uniforms.swift */; };
-		EB63A75E2ACA51F8008C2D6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63A73C2ACA51F8008C2D6E /* ContentView.swift */; };
 		EB63A75F2ACA51F8008C2D6E /* Recycler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63A73E2ACA51F8008C2D6E /* Recycler.swift */; };
 		EB63A7602ACA51F8008C2D6E /* RecyclerSprite2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63A73F2ACA51F8008C2D6E /* RecyclerSprite2D.swift */; };
 		EB63A7612ACA51F8008C2D6E /* RecyclerShapeQuad3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63A7402ACA51F8008C2D6E /* RecyclerShapeQuad3D.swift */; };
@@ -223,6 +233,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB1BF12B2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStepGrayscale.swift; sourceTree = "<group>"; };
+		EB1BF12C2ACB98F0006C25B4 /* ProcessingStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStep.swift; sourceTree = "<group>"; };
+		EB1BF12D2ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStepGaussianBlur.swift; sourceTree = "<group>"; };
+		EB1BF12E2ACB98F0006C25B4 /* ProcessingStepRGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStepRGBA.swift; sourceTree = "<group>"; };
+		EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceViewModel.swift; sourceTree = "<group>"; };
+		EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceContainerView.swift; sourceTree = "<group>"; };
+		EB1BF1372ACBBD91006C25B4 /* AppContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerView.swift; sourceTree = "<group>"; };
+		EB1BF1392ACBBDED006C25B4 /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
+		EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceToolbarView.swift; sourceTree = "<group>"; };
+		EB1BF13D2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceContentContainerView.swift; sourceTree = "<group>"; };
+		EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNode.swift; sourceTree = "<group>"; };
 		EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSceneSlice.swift; sourceTree = "<group>"; };
 		EB478E032ACA3CE200213214 /* libopencv_phase_unwrapping.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_phase_unwrapping.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_phase_unwrapping.4.8.1.dylib; sourceTree = "<group>"; };
 		EB478E042ACA3CE200213214 /* libopencv_optflow.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_optflow.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_optflow.4.8.1.dylib; sourceTree = "<group>"; };
@@ -307,7 +328,6 @@
 		EB63A7392ACA51F8008C2D6E /* UniformsSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformsSprite.swift; sourceTree = "<group>"; };
 		EB63A73A2ACA51F8008C2D6E /* UniformsSpriteNodeIndexed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniformsSpriteNodeIndexed.swift; sourceTree = "<group>"; };
 		EB63A73B2ACA51F8008C2D6E /* Uniforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniforms.swift; sourceTree = "<group>"; };
-		EB63A73C2ACA51F8008C2D6E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB63A73E2ACA51F8008C2D6E /* Recycler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recycler.swift; sourceTree = "<group>"; };
 		EB63A73F2ACA51F8008C2D6E /* RecyclerSprite2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecyclerSprite2D.swift; sourceTree = "<group>"; };
 		EB63A7402ACA51F8008C2D6E /* RecyclerShapeQuad3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecyclerShapeQuad3D.swift; sourceTree = "<group>"; };
@@ -497,6 +517,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB1BF1292ACB98F0006C25B4 /* [Processing Interface] */ = {
+			isa = PBXGroup;
+			children = (
+				EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */,
+				EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */,
+				EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */,
+				EB1BF13D2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift */,
+			);
+			path = "[Processing Interface]";
+			sourceTree = "<group>";
+		};
+		EB1BF12A2ACB98F0006C25B4 /* [Processing Data] */ = {
+			isa = PBXGroup;
+			children = (
+				EB1BF12C2ACB98F0006C25B4 /* ProcessingStep.swift */,
+				EB1BF12D2ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift */,
+				EB1BF12B2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift */,
+				EB1BF12E2ACB98F0006C25B4 /* ProcessingStepRGBA.swift */,
+				EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */,
+			);
+			path = "[Processing Data]";
+			sourceTree = "<group>";
+		};
 		EB63A71A2ACA51F8008C2D6E /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,14 +554,17 @@
 		EB63A71F2ACA51F8008C2D6E /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				EB1BF12A2ACB98F0006C25B4 /* [Processing Data] */,
+				EB1BF1292ACB98F0006C25B4 /* [Processing Interface] */,
 				EB63A7302ACA51F8008C2D6E /* [Graphics] */,
 				EB63A7242ACA51F8008C2D6E /* [Metal] */,
 				EB63A73D2ACA51F8008C2D6E /* [Recyclers] */,
-				EB63A73C2ACA51F8008C2D6E /* ContentView.swift */,
 				EB63A7222ACA51F8008C2D6E /* MacintoshApp.swift */,
+				EB1BF1372ACBBD91006C25B4 /* AppContainerView.swift */,
 				EB63A7212ACA51F8008C2D6E /* MedicalScene.swift */,
 				EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */,
 				EB63A72F2ACA51F8008C2D6E /* MedicalSceneView.swift */,
+				EB1BF1392ACBBDED006C25B4 /* ApplicationController.swift */,
 				EB63A72A2ACA51F8008C2D6E /* OpenCVCPP.hpp */,
 				EB63A72D2ACA51F8008C2D6E /* OpenCVCPP.mm */,
 				EB63A72E2ACA51F8008C2D6E /* OpenCVUtils.cpp */,
@@ -860,23 +906,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1BF1382ACBBD91006C25B4 /* AppContainerView.swift in Sources */,
 				EB63A7512ACA51F8008C2D6E /* OpenCVCPP.mm in Sources */,
 				EB63A7472ACA51F8008C2D6E /* Sprite.metal in Sources */,
 				EB63A75D2ACA51F8008C2D6E /* Uniforms.swift in Sources */,
 				EB63A7522ACA51F8008C2D6E /* OpenCVUtils.cpp in Sources */,
 				EB63A7582ACA51F8008C2D6E /* Graphics.swift in Sources */,
 				EB63A74C2ACA51F8008C2D6E /* MetalEngine.swift in Sources */,
+				EB1BF13E2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift in Sources */,
+				EB1BF1362ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift in Sources */,
 				EB63A74F2ACA51F8008C2D6E /* OpenCVWrapper.m in Sources */,
 				EB63A7572ACA51F8008C2D6E /* Quaternion.swift in Sources */,
 				EB63A7502ACA51F8008C2D6E /* RGBImage.swift in Sources */,
+				EB1BF1312ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift in Sources */,
 				EB63A74E2ACA51F8008C2D6E /* RGB.swift in Sources */,
 				EB63A74D2ACA51F8008C2D6E /* MetalViewController.swift in Sources */,
 				EB63A75A2ACA51F8008C2D6E /* UniformsShape.swift in Sources */,
 				EB63A74A2ACA51F8008C2D6E /* MetalView.swift in Sources */,
 				EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */,
 				EB63A7532ACA51F8008C2D6E /* MedicalSceneView.swift in Sources */,
-				EB63A75E2ACA51F8008C2D6E /* ContentView.swift in Sources */,
+				EB1BF1302ACB98F0006C25B4 /* ProcessingStep.swift in Sources */,
 				EB63A7592ACA51F8008C2D6E /* UniformsShapeNodeIndexed.swift in Sources */,
+				EB1BF13C2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift in Sources */,
 				EB63A7542ACA51F8008C2D6E /* Math.swift in Sources */,
 				EB63A7482ACA51F8008C2D6E /* MedicalScene.swift in Sources */,
 				EB63A7622ACA51F8008C2D6E /* RecyclerShapeTriangle2D.swift in Sources */,
@@ -888,9 +939,14 @@
 				EB63A7552ACA51F8008C2D6E /* Sprite2D.swift in Sources */,
 				EB63A7492ACA51F8008C2D6E /* MacintoshApp.swift in Sources */,
 				EB63A7612ACA51F8008C2D6E /* RecyclerShapeQuad3D.swift in Sources */,
+				EB1BF13A2ACBBDED006C25B4 /* ApplicationController.swift in Sources */,
+				EB1BF1402ACBDA53006C25B4 /* ProcessingNode.swift in Sources */,
+				EB1BF1342ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift in Sources */,
 				EB63A7462ACA51F8008C2D6E /* SpriteNodeIndexed.metal in Sources */,
 				EB63A74B2ACA51F8008C2D6E /* MetalPipeline.swift in Sources */,
 				EB63A75F2ACA51F8008C2D6E /* Recycler.swift in Sources */,
+				EB1BF12F2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift in Sources */,
+				EB1BF1322ACB98F0006C25B4 /* ProcessingStepRGBA.swift in Sources */,
 				EB63A7602ACA51F8008C2D6E /* RecyclerSprite2D.swift in Sources */,
 				EB63A75C2ACA51F8008C2D6E /* UniformsSpriteNodeIndexed.swift in Sources */,
 				EB63A7632ACA51F8008C2D6E /* RecyclerShapeQuad2D.swift in Sources */,

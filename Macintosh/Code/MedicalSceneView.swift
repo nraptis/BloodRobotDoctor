@@ -36,6 +36,9 @@ struct MedicalSceneView: NSViewControllerRepresentable {
                                 context: NSViewControllerRepresentableContext<MedicalSceneView>) {
         let width = Float(Int(width + 0.5))
         let height = Float(Int(height + 0.5))
+        
+        print("updated to \(width) x \(height)")
+        
         nsViewController.graphics.update(width: width,
                                          height: height)
     }

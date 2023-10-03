@@ -14,16 +14,18 @@ class MedicalScene: GraphicsDelegate {
     
     var slices = [MedicalSceneSlice]()
     
+    let sliceWidth = 256
+    let sliceHeight = 256
+    let gridWidth = 3
+    let gridHeight = 3
+    let gridSpacing = Float(12.0)
+    
     func load() {
         //sprite.load(graphics: graphics, fileName: "test_image_8_4.png")
         
         let centerX = graphics.width * 0.5
         let centerY = graphics.height * 0.5
-        let sliceWidth = 256
-        let sliceHeight = 256
-        let gridWidth = 3
-        let gridHeight = 3
-        let gridSpacing = Float(16.0)
+        
         
         var startX = centerX
         startX -= Float(sliceWidth) * Float(gridWidth) * 0.5
@@ -127,8 +129,6 @@ class MedicalScene: GraphicsDelegate {
         
     }
     
-    var ROTATEEE = Float(0.0)
-    
     func jax() {
         for slice in slices {
             slice.jax()
@@ -137,12 +137,6 @@ class MedicalScene: GraphicsDelegate {
     
     func update() {
         
-        ROTATEEE += 0.005
-        if ROTATEEE >= Float.pi * 2.0 {
-            ROTATEEE -= Float.pi * 2.0
-        }
-        
-        
     }
     
     func draw3D(renderEncoder: MTLRenderCommandEncoder) {
@@ -150,6 +144,53 @@ class MedicalScene: GraphicsDelegate {
     }
     
     func draw2D(renderEncoder: MTLRenderCommandEncoder) {
+        
+        
+        let centerX = graphics.width * 0.5
+        let centerY = graphics.height * 0.5
+        
+        
+        var startX = centerX
+        startX -= Float(sliceWidth) * Float(gridWidth) * 0.5
+        if gridWidth > 1 {
+            startX -= Float(gridSpacing) * Float(gridWidth - 1) * 0.5
+        }
+        
+        //- (Float(sliceWidth) * Float(gridWidth) * 0.5 + gridSpacing * Float(gridWidth - 1))
+        var startY = centerY
+        startY -= Float(sliceHeight) * Float(gridHeight) * 0.5
+        if gridHeight > 1 {
+            startY -= Float(gridSpacing) * Float(gridHeight - 1) * 0.5
+        }
+        
+        var xList = [Float]()
+        var yList = [Float]()
+        
+        var gridX = 0
+        var gridY = 0
+        var x = startX
+        var y = startY
+        for index in 0..<slices.count {
+            
+            slices[index].x = x
+            slices[index].y = y
+            slices[index].width = Float(sliceWidth)
+            slices[index].height = Float(sliceWidth)
+            
+            
+            
+            gridX += 1
+            if gridX == gridWidth {
+                gridX = 0
+                gridY += 1
+                y += Float(sliceHeight) + gridSpacing
+                x = startX
+            } else {
+                x += Float(sliceWidth) + gridSpacing
+            }
+        }
+        
+        
         for slice in slices {
             slice.draw2D(renderEncoder: renderEncoder)
         }

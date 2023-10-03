@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct MacintoshApp: App {
+    let controlInterfaceViewModel = ControlInterfaceViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .frame(width: 1280.0, height: 960.0)
+            AppContainerView(appWidth: ApplicationController.shared.appWidth,
+                             appHeight: ApplicationController.shared.appHeight,
+                             toolbarHeight: ApplicationController.shared.toolbarHeight,
+                             controlInterfaceViewModel: controlInterfaceViewModel)
+            
         }
     }
 }
