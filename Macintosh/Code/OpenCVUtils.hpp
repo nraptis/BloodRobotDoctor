@@ -2,7 +2,7 @@
 //  OpenCVUtils.hpp
 //  BloodRobotDoctor
 //
-//  Created by Screwy Uncle Louie on 9/30/23.
+//  Created by Sports Dad on 9/30/23.
 //
 
 #ifndef OpenCVUtils_hpp

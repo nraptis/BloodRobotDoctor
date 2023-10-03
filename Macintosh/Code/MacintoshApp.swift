@@ -2,7 +2,7 @@
 //  MacintoshApp.swift
 //  Macintosh
 //
-//  Created by Screwy Uncle Louie on 10/1/23.
+//  Created by Sports Dad on 10/1/23.
 //
 
 import SwiftUI
