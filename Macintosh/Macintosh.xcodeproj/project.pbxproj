@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB1BF12F2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12B2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift */; };
-		EB1BF1302ACB98F0006C25B4 /* ProcessingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12C2ACB98F0006C25B4 /* ProcessingStep.swift */; };
-		EB1BF1312ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12D2ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift */; };
-		EB1BF1322ACB98F0006C25B4 /* ProcessingStepRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF12E2ACB98F0006C25B4 /* ProcessingStepRGBA.swift */; };
+		EB0FB2902ACBE8E100A8E3F0 /* ProcessingNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */; };
+		EB0FB2922ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */; };
 		EB1BF1342ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */; };
 		EB1BF1362ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */; };
 		EB1BF1382ACBBD91006C25B4 /* AppContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1372ACBBD91006C25B4 /* AppContainerView.swift */; };
@@ -233,10 +231,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EB1BF12B2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStepGrayscale.swift; sourceTree = "<group>"; };
-		EB1BF12C2ACB98F0006C25B4 /* ProcessingStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStep.swift; sourceTree = "<group>"; };
-		EB1BF12D2ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStepGaussianBlur.swift; sourceTree = "<group>"; };
-		EB1BF12E2ACB98F0006C25B4 /* ProcessingStepRGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingStepRGBA.swift; sourceTree = "<group>"; };
+		EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeType.swift; sourceTree = "<group>"; };
+		EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceNodeCell.swift; sourceTree = "<group>"; };
 		EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceViewModel.swift; sourceTree = "<group>"; };
 		EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceContainerView.swift; sourceTree = "<group>"; };
 		EB1BF1372ACBBD91006C25B4 /* AppContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerView.swift; sourceTree = "<group>"; };
@@ -524,6 +520,7 @@
 				EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */,
 				EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */,
 				EB1BF13D2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift */,
+				EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */,
 			);
 			path = "[Processing Interface]";
 			sourceTree = "<group>";
@@ -531,10 +528,7 @@
 		EB1BF12A2ACB98F0006C25B4 /* [Processing Data] */ = {
 			isa = PBXGroup;
 			children = (
-				EB1BF12C2ACB98F0006C25B4 /* ProcessingStep.swift */,
-				EB1BF12D2ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift */,
-				EB1BF12B2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift */,
-				EB1BF12E2ACB98F0006C25B4 /* ProcessingStepRGBA.swift */,
+				EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */,
 				EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */,
 			);
 			path = "[Processing Data]";
@@ -918,18 +912,18 @@
 				EB63A74F2ACA51F8008C2D6E /* OpenCVWrapper.m in Sources */,
 				EB63A7572ACA51F8008C2D6E /* Quaternion.swift in Sources */,
 				EB63A7502ACA51F8008C2D6E /* RGBImage.swift in Sources */,
-				EB1BF1312ACB98F0006C25B4 /* ProcessingStepGaussianBlur.swift in Sources */,
 				EB63A74E2ACA51F8008C2D6E /* RGB.swift in Sources */,
 				EB63A74D2ACA51F8008C2D6E /* MetalViewController.swift in Sources */,
 				EB63A75A2ACA51F8008C2D6E /* UniformsShape.swift in Sources */,
 				EB63A74A2ACA51F8008C2D6E /* MetalView.swift in Sources */,
 				EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */,
 				EB63A7532ACA51F8008C2D6E /* MedicalSceneView.swift in Sources */,
-				EB1BF1302ACB98F0006C25B4 /* ProcessingStep.swift in Sources */,
 				EB63A7592ACA51F8008C2D6E /* UniformsShapeNodeIndexed.swift in Sources */,
+				EB0FB2922ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift in Sources */,
 				EB1BF13C2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift in Sources */,
 				EB63A7542ACA51F8008C2D6E /* Math.swift in Sources */,
 				EB63A7482ACA51F8008C2D6E /* MedicalScene.swift in Sources */,
+				EB0FB2902ACBE8E100A8E3F0 /* ProcessingNodeType.swift in Sources */,
 				EB63A7622ACA51F8008C2D6E /* RecyclerShapeTriangle2D.swift in Sources */,
 				EB63A7442ACA51F8008C2D6E /* Shape.metal in Sources */,
 				EB63A75B2ACA51F8008C2D6E /* UniformsSprite.swift in Sources */,
@@ -945,8 +939,6 @@
 				EB63A7462ACA51F8008C2D6E /* SpriteNodeIndexed.metal in Sources */,
 				EB63A74B2ACA51F8008C2D6E /* MetalPipeline.swift in Sources */,
 				EB63A75F2ACA51F8008C2D6E /* Recycler.swift in Sources */,
-				EB1BF12F2ACB98F0006C25B4 /* ProcessingStepGrayscale.swift in Sources */,
-				EB1BF1322ACB98F0006C25B4 /* ProcessingStepRGBA.swift in Sources */,
 				EB63A7602ACA51F8008C2D6E /* RecyclerSprite2D.swift in Sources */,
 				EB63A75C2ACA51F8008C2D6E /* UniformsSpriteNodeIndexed.swift in Sources */,
 				EB63A7632ACA51F8008C2D6E /* RecyclerShapeQuad2D.swift in Sources */,

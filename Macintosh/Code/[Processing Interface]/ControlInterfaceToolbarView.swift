@@ -20,7 +20,6 @@ struct ControlInterfaceToolbarView: View {
     
     var body: some View {
         VStack(spacing: 0.0) {
-            
             HStack {
                 Button {
                     if controlInterfaceViewModel.expanded {
@@ -38,7 +37,7 @@ struct ControlInterfaceToolbarView: View {
                                 .padding(.all, 8.0)
                         }
                     }
-                    .frame(width: 72.0, height: 44.0)
+                    .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
                 
@@ -49,7 +48,7 @@ struct ControlInterfaceToolbarView: View {
                         Text("Add Node")
                             .padding(.all, 8.0)
                     }
-                    .frame(width: 72.0, height: 44.0)
+                    .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
                 
@@ -60,7 +59,7 @@ struct ControlInterfaceToolbarView: View {
                         Text("Delete Node")
                             .padding(.all, 8.0)
                     }
-                    .frame(width: 72.0, height: 44.0)
+                    .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
                 
@@ -71,7 +70,7 @@ struct ControlInterfaceToolbarView: View {
                         Text("-->")
                             .padding(.all, 8.0)
                     }
-                    .frame(width: 72.0, height: 44.0)
+                    .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
                 
@@ -82,7 +81,7 @@ struct ControlInterfaceToolbarView: View {
                         Text("<--")
                             .padding(.all, 8.0)
                     }
-                    .frame(width: 72.0, height: 44.0)
+                    .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
                 
@@ -93,7 +92,7 @@ struct ControlInterfaceToolbarView: View {
                         Text("Save")
                             .padding(.all, 8.0)
                     }
-                    .frame(width: 72.0, height: 44.0)
+                    .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
                 
@@ -104,10 +103,9 @@ struct ControlInterfaceToolbarView: View {
                         Text("Load")
                             .padding(.all, 8.0)
                     }
-                    .frame(width: 72.0, height: 44.0)
+                    .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
-                
             }
             
             HStack {
@@ -115,16 +113,19 @@ struct ControlInterfaceToolbarView: View {
                     
                     HStack {
                         ForEach(controlInterfaceViewModel.nodes) { node in
-                            ZStack {
-                                Text("\(node.id)")
-                                    .padding(.all, 8.0)
-                            }
-                            .frame(width: 72.0, height: 44.0)
-                            .background(LinearGradient(colors: [Color.blue, Color.green], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
+                            
+                            ControlInterfaceNodeCell(node: node,
+                                                     selected: controlInterfaceViewModel.selected(node: node),
+                                                     controlInterfaceViewModel: controlInterfaceViewModel)
+                            
+                            //Text("\(node.id)")
+                            //    .padding(.all, 8.0)
+                            
                         }
                     }
                 }
             }
+            .frame(height: 36.0)
 
         }
         .frame(width: width, height: height)

@@ -25,9 +25,17 @@ struct ControlInterfaceContainerView: View {
                                         height: ApplicationController.shared.toolbarHeight,
                                         controlInterfaceViewModel: controlInterfaceViewModel)
             if controlInterfaceViewModel.expanded {
-                ControlInterfaceContentContainerView(width: width,
-                                                     height: height - ApplicationController.shared.toolbarHeight,
-                                                     controlInterfaceViewModel: controlInterfaceViewModel)
+                if let node = controlInterfaceViewModel.selectedNode {
+                    ControlInterfaceContentContainerView(node: node,
+                                                         width: width,
+                                                         height: height - ApplicationController.shared.toolbarHeight,
+                                                         controlInterfaceViewModel: controlInterfaceViewModel)
+                } else {
+                    ZStack {
+                        
+                    }
+                    .frame(width: width, height: height - ApplicationController.shared.toolbarHeight)
+                }
             } else {
                 ZStack {
                     
