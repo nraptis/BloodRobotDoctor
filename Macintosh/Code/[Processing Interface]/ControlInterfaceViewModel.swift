@@ -13,7 +13,7 @@ class ControlInterfaceViewModel: ObservableObject {
     
     var expanded = true
     var nodes = [ProcessingNode]()
-    var selectedNode: ProcessingNode?
+    @Published var selectedNode: ProcessingNode?
     
     private var nodeID = 0
     
@@ -120,14 +120,14 @@ class ControlInterfaceViewModel: ObservableObject {
             nodes.remove(at: index)
             
             if nodes.count <= 0 {
-                postUpdate()
+                postUpdateAndEnqueueRebuild()
             } else {
                 if index < nodes.count {
                     selectedNode = nodes[index]
-                    postUpdate()
+                    postUpdateAndEnqueueRebuild()
                 } else {
                     selectedNode = nodes[nodes.count - 1]
-                    postUpdate()
+                    postUpdateAndEnqueueRebuild()
                 }
             }
         }

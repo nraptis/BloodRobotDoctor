@@ -66,8 +66,7 @@ struct ControlInterfaceContentContainerView: View {
                 if let data = node.data as? ProcessingNodeDataGaussian {
                     ControlInterfaceNodeMenuGaussianView(controlInterfaceViewModel: controlInterfaceViewModel,
                                                          node: node,
-                                                         data: data,
-                                                         id: id)
+                                                         data: data)
                 }
             case .gray:
                 ControlInterfaceNodeMenuGrayView()

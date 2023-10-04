@@ -12,16 +12,15 @@ struct ControlInterfaceNodeMenuGaussianView: View {
     @ObservedObject var controlInterfaceViewModel: ControlInterfaceViewModel
     let node: ProcessingNode
     let data: ProcessingNodeDataGaussian
-    let id: Int
     
     @State var size: Int
     @State var sigma: Float
     
-    init(controlInterfaceViewModel: ControlInterfaceViewModel, node: ProcessingNode, data: ProcessingNodeDataGaussian, id: Int) {
+    init(controlInterfaceViewModel: ControlInterfaceViewModel, node: ProcessingNode, data: ProcessingNodeDataGaussian) {
         self.controlInterfaceViewModel = controlInterfaceViewModel
         self.node = node
         self.data = data
-        self.id = id
+        
         _size = State(wrappedValue: data.size)
         _sigma = State(wrappedValue: data.sigma)
         
@@ -55,9 +54,7 @@ struct ControlInterfaceNodeMenuGaussianView: View {
             
             Text("value of size: \(data.size) vs \(size)")
             Text("value of sig: \(data.sigma) vs \(sigma)")
-            Text("Da id: \(id)")
             
-
         }
         .background(Color.red)
         .onChange(of: size) {
@@ -80,6 +77,5 @@ struct ControlInterfaceNodeMenuGaussianView: View {
 #Preview {
     ControlInterfaceNodeMenuGaussianView(controlInterfaceViewModel: ControlInterfaceViewModel.preview,
                                          node: ProcessingNode.preview,
-                                         data: ProcessingNodeDataGaussian(),
-                                         id: 0)
+                                         data: ProcessingNodeDataGaussian())
 }
