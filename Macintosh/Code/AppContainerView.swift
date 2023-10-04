@@ -27,7 +27,8 @@ struct AppContainerView: View {
                         .background(RoundedRectangle(cornerRadius: 40.0).foregroundColor(.orange.opacity(0.75)))
                         ZStack {
                             MedicalSceneView(width: geometry.size.width,
-                                             height: geometry.size.height - toolbarHeight)
+                                             height: geometry.size.height - toolbarHeight,
+                                             controlInterfaceViewModel: controlInterfaceViewModel)
                         }
                     }
                     .frame(width: geometry.size.width,

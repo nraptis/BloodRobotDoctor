@@ -10,4 +10,7 @@
 
 void process(unsigned char *input, unsigned char *output, int width, int height);
 
+void gaussian(unsigned char *input, unsigned char *output, int width, int height, int size, float sigma);
+
+
 #endif 

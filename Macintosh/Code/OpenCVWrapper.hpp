@@ -13,4 +13,7 @@
 
 + (RGBImage *)process:(RGBImage *)rgbImage;
 
++ (RGBImage *)gaussian:(RGBImage *)rgbImage size: (int) size sigma: (float) sigma;
+
+
 @end

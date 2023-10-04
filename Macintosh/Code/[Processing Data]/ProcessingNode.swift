@@ -15,6 +15,7 @@ class ProcessingNode {
     }
     
     var type = ProcessingNodeType.none
+    var data = ProcessingNodeData()
     
     var id: Int
     init(id: Int) {
@@ -22,10 +23,9 @@ class ProcessingNode {
     }
     
     func process(rgbaImage: RGBImage) -> RGBImage {
-        let result = RGBImage(width: rgbaImage.width,
-                              height: rgbaImage.height)
-        return result
+        return data.process(rgbaImage: rgbaImage)
     }
+    
     
 }
 

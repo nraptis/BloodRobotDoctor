@@ -17,11 +17,20 @@ struct MedicalSceneView: NSViewControllerRepresentable {
     let width: CGFloat
     let height: CGFloat
     
+    @ObservedObject var controlInterfaceViewModel: ControlInterfaceViewModel
+    
+    init(width: CGFloat, height: CGFloat, controlInterfaceViewModel: ControlInterfaceViewModel) {
+        self.width = width
+        self.height = height
+        self.controlInterfaceViewModel = controlInterfaceViewModel
+    }
+    
     func makeNSViewController(context: NSViewControllerRepresentableContext<MedicalSceneView>) -> MetalViewController {
         let width = Float(Int(width + 0.5))
         let height = Float(Int(height + 0.5))
         
-        let scene = MedicalScene()
+        let scene = MedicalScene(controlInterfaceViewModel: controlInterfaceViewModel,
+                                 medicalModel: controlInterfaceViewModel.medicalModel)
         let graphics = Graphics(delegate: scene,
                                 width: width,
                                 height: height)

@@ -183,18 +183,8 @@ class Graphics {
 #if os(macOS)
     
     func loadTexture(fileName: String) -> MTLTexture? {
-        
-        
         let filePath = assetsPath(fileName)
-        
-        print("filePath = \(filePath)")
-        
         let fileURL = URL(fileURLWithPath: filePath)
-        
-        let data = try? Data(contentsOf: fileURL, options: .uncached)
-        
-        print("data = \(data)")
-        
         return loadTexture(url: fileURL)
         
     }

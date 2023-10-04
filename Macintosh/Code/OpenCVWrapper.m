@@ -90,7 +90,7 @@ unsigned char *rgbaArrayFromRGBImage(RGBImage *rgbImage) {
     unsigned char *input = rgbaArrayFromRGBImage(rgbImage);
     unsigned char *output = rgbaArrayFromSize(width, height);
     
-    [OpenCVCPP process: input dest: output width: width height: height];
+    [OpenCVCPP process: input output: output width: width height: height];
     
     //________process(source, destination, width, height);
     
@@ -102,6 +102,31 @@ unsigned char *rgbaArrayFromRGBImage(RGBImage *rgbImage) {
     RGBImage *result = rgbImageFromRGBAArray(output, width, height);
     
     return result;
+}
+
++ (RGBImage *)gaussian:(RGBImage *)rgbImage size: (int) size sigma: (float) sigma {
+    
+    if (rgbImage == NULL) { return NULL; }
+    
+    int width = (int)rgbImage.width;
+    int height = (int)rgbImage.height;
+    
+    unsigned char *input = rgbaArrayFromRGBImage(rgbImage);
+    unsigned char *output = rgbaArrayFromSize(width, height);
+    
+    [OpenCVCPP gaussian: input output: output width: width height: height size: size sigma: sigma];
+    
+    //________process(source, destination, width, height);
+    
+    //aaa(100);
+    
+    //opencv::Mat f =
+    //auto a = rgbImageToMat(rgbImage);
+    
+    RGBImage *result = rgbImageFromRGBAArray(output, width, height);
+    
+    return result;
+    
 }
 
 @end

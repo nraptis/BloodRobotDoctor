@@ -196,4 +196,25 @@ import CoreGraphics
         return result
     }
     
+    func clone() -> RGBImage {
+        let result = RGBImage(width: width,
+                              height: height)
+        var x = 0
+        while x < width {
+            var y = 0
+            while y < height {
+                let red = rgb[x][y].red
+                let green = rgb[x][y].green
+                let blue = rgb[x][y].blue
+                result.set(x: x,
+                           y: y,
+                           red: red,
+                           green: green,
+                           blue: blue)
+                y += 1
+            }
+            x += 1
+        }
+        return result
+    }
 }

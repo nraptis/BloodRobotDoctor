@@ -9,6 +9,8 @@ import Foundation
 
 class ControlInterfaceViewModel: ObservableObject {
     
+    var isProcessingEnqueued = false
+    
     var expanded = true
     var nodes = [ProcessingNode]()
     var selectedNode: ProcessingNode?
@@ -19,15 +21,21 @@ class ControlInterfaceViewModel: ObservableObject {
         ControlInterfaceViewModel()
     }
     
+    let medicalModel = MedicalModel()
+    
     init() {
+        
         addNode()
         updateNodeType(node: selectedNode, type: .gray)
+        
+        
+        
+        addNode()
+        updateNodeType(node: selectedNode, type: .dilation)
         
         addNode()
         updateNodeType(node: selectedNode, type: .gauss)
         
-        addNode()
-        updateNodeType(node: selectedNode, type: .dilation)
     }
     
     func select(node: ProcessingNode) {
@@ -81,8 +89,28 @@ class ControlInterfaceViewModel: ObservableObject {
     
     func updateNodeType(node: ProcessingNode?, type: ProcessingNodeType) {
         if let index = nodeIndex(node) {
-            nodes[index].type = type
-            postUpdateAndEnqueueRebuild()
+            
+            if nodes[index].type != type {
+                
+                nodes[index].type = type
+             
+                switch type {
+                    
+                case .none:
+                    nodes[index].data = ProcessingNodeData()
+                case .gray:
+                    nodes[index].data = ProcessingNodeData()
+                case .gauss:
+                    nodes[index].data = ProcessingNodeDataGaussian()
+                case .erosion:
+                    nodes[index].data = ProcessingNodeData()
+                case .dilation:
+                    nodes[index].data = ProcessingNodeData()
+                }
+                
+                postUpdateAndEnqueueRebuild()
+                
+            }
         }
     }
     
@@ -134,6 +162,17 @@ class ControlInterfaceViewModel: ObservableObject {
         }
     }
     
+    func nodeGaussianChangeStep(node: ProcessingNode, delta: Int) {
+        if let data = node.data as? ProcessingNodeDataGaussian {
+            data.size += delta
+            postUpdateAndEnqueueRebuild()
+        }
+    }
+    
+    //let node: ProcessingNode
+    //let data: ProcessingNodeDataGaussian
+    
+    
     func save() {
         
     }
@@ -143,18 +182,24 @@ class ControlInterfaceViewModel: ObservableObject {
     }
     
     func postUpdate() {
-        if Thread.isMainThread {
-            objectWillChange.send()
-        } else {
-            DispatchQueue.main.async {
-                self.objectWillChange.send()
-            }
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
         }
     }
     
     func postUpdateAndEnqueueRebuild() {
-        postUpdate()
-        
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
+            self.isProcessingEnqueued = true
+        }
+    }
+    
+    func process(rgbaImage: RGBImage) -> RGBImage {
+        var result = rgbaImage.clone()
+        for node in nodes {
+            result = node.process(rgbaImage: result)
+        }
+        return result
     }
     
 }

@@ -56,6 +56,23 @@ struct ControlInterfaceContentContainerView: View {
                 }
             }
             
+            switch node.type {
+            case .none:
+                EmptyView()
+            case .gauss:
+                if let data = node.data as? ProcessingNodeDataGaussian {
+                    ControlInterfaceNodeMenuGaussianView(controlInterfaceViewModel: controlInterfaceViewModel,
+                                                         node: node,
+                                                         data: data)
+                }
+            case .gray:
+                ControlInterfaceNodeMenuGrayView()
+            case .erosion:
+                ControlInterfaceNodeMenuErosionView()
+            case .dilation:
+                ControlInterfaceNodeMenuDilationView()
+                
+            }
 
             /*
             Picker("Please choose a color", selection: $selectedType) {

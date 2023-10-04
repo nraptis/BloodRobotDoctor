@@ -19,6 +19,7 @@ class MedicalSceneSlice {
     var width: Float
     var height: Float
     var image: RGBImage
+    var imageProcessed: RGBImage
     let sprite = Sprite2D()
     
     init(graphics: Graphics, x: Float, y: Float, width: Float, height: Float, image: RGBImage) {
@@ -28,6 +29,9 @@ class MedicalSceneSlice {
         self.width = width
         self.height = height
         self.image = image
+        
+        self.imageProcessed = RGBImage(width: image.width,
+                                       height: image.height)
         if let texture = image.texture(device: graphics.device) {
             sprite.load(graphics: graphics, texture: texture)
         }
@@ -58,10 +62,20 @@ class MedicalSceneSlice {
                               sprite: sprite)
     }
     
+    func stampProcessedImageToTexture() {
+        
+        
+        if let texture = sprite.texture {
+            
+            //graphics.
+            sprite.load(graphics: graphics, texture: texture)
+        }
+        
+    }
     
     func jax() {
      
-        if let ggg = OpenCVWrapper.process(image) {
+        if let ggg = OpenCVWrapper.gaussian(image, size: 20, sigma: 0.0) {
             
             if let texture = ggg.texture(device: graphics.device) {
                 sprite.load(graphics: graphics, texture: texture)

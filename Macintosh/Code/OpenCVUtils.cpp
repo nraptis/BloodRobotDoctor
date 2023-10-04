@@ -117,3 +117,22 @@ void process(unsigned char *input, unsigned char *output, int width, int height)
     
     matRGBAToRGB(matty, output, width, height);
 }
+
+void gaussian(unsigned char *input, unsigned char *output, int width, int height, int size, float sigma) {
+    
+    
+    if (size <= 0) {
+        int area = 4 * width * height;
+        memcpy(output, input, area);
+    } else {
+        Mat rgbaInputMat = rgbToMatRGBA(input, width, height);
+        
+        size = size * 2 + 1;
+        
+        Mat rgbaOutputMat;
+        GaussianBlur(rgbaInputMat, rgbaOutputMat, Size(size, size), sigma);
+        rgbaOutputMat = matToRGBA(rgbaOutputMat);
+        matRGBAToRGB(rgbaOutputMat, output, width, height);
+    }
+    
+}

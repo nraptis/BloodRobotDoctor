@@ -22,7 +22,6 @@ struct ControlInterfaceNodeCell: View {
     }
     
     var body: some View {
-        
         ZStack {
             Button {
                 controlInterfaceViewModel.select(node: node)
@@ -39,8 +38,6 @@ struct ControlInterfaceNodeCell: View {
         VStack {
             
         }
-        
-        
     }
 }
 
