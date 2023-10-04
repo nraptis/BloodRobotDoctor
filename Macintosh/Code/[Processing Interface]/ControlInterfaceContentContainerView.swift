@@ -13,14 +13,16 @@ struct ControlInterfaceContentContainerView: View {
     
     let width: CGFloat
     let height: CGFloat
+    let id: Int
     
     @ObservedObject var controlInterfaceViewModel: ControlInterfaceViewModel
     
-    init(node: ProcessingNode, width: CGFloat, height: CGFloat, controlInterfaceViewModel: ControlInterfaceViewModel) {
+    init(node: ProcessingNode, width: CGFloat, height: CGFloat, controlInterfaceViewModel: ControlInterfaceViewModel, id: Int) {
         self.node = node
         self.width = width
         self.height = height
         self.controlInterfaceViewModel = controlInterfaceViewModel
+        self.id = id
         //
         //selectedType = type
         
@@ -31,6 +33,7 @@ struct ControlInterfaceContentContainerView: View {
     var body: some View {
         VStack {
             
+            Text("arch id: \(id)")
             Text("t1 = \(node.type.name)")
 
             
@@ -63,7 +66,8 @@ struct ControlInterfaceContentContainerView: View {
                 if let data = node.data as? ProcessingNodeDataGaussian {
                     ControlInterfaceNodeMenuGaussianView(controlInterfaceViewModel: controlInterfaceViewModel,
                                                          node: node,
-                                                         data: data)
+                                                         data: data,
+                                                         id: id)
                 }
             case .gray:
                 ControlInterfaceNodeMenuGrayView()
@@ -103,5 +107,6 @@ struct ControlInterfaceContentContainerView: View {
     ControlInterfaceContentContainerView(node: ProcessingNode.preview,
                                          width: ApplicationController.shared.appWidth,
                                          height: ApplicationController.shared.toolbarHeight,
-                                         controlInterfaceViewModel: ControlInterfaceViewModel.preview)
+                                         controlInterfaceViewModel: ControlInterfaceViewModel.preview,
+                                         id: 0)
 }

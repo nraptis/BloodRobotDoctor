@@ -169,6 +169,20 @@ class ControlInterfaceViewModel: ObservableObject {
         }
     }
     
+    func nodeGaussianSetSize(node: ProcessingNode, size: Int) {
+        if let data = node.data as? ProcessingNodeDataGaussian {
+            data.size = size
+            postUpdateAndEnqueueRebuild()
+        }
+    }
+    
+    func nodeGaussianSetSigma(node: ProcessingNode, sigma: Float) {
+        if let data = node.data as? ProcessingNodeDataGaussian {
+            data.sigma = sigma
+            postUpdateAndEnqueueRebuild()
+        }
+    }
+    
     //let node: ProcessingNode
     //let data: ProcessingNodeDataGaussian
     

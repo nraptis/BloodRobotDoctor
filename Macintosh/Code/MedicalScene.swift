@@ -95,38 +95,6 @@ class MedicalScene: GraphicsDelegate {
             }
         }
         
-        
-        
-        
-        
-        /*
-         callib_image_256_00.png
-         callib_image_256_01.png
-         callib_image_256_02.png
-         callib_image_256_03.png
-         callib_image_256_04.png
-         callib_image_256_05.png
-         callib_image_256_06.png
-         callib_image_256_07.png
-         callib_image_256_08.png
-
-         callib_image_512_08.png
-         callib_image_512_00.png
-         callib_image_512_01.png
-         callib_image_512_02.png
-         callib_image_512_03.png
-         callib_image_512_04.png
-         callib_image_512_05.png
-         callib_image_512_06.png
-         callib_image_512_07.png
-        */
-        
-        
-        
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-        //    self.jax()
-        //}
-        
     }
     
     @objc func receive(notification: Notification) {
@@ -135,9 +103,6 @@ class MedicalScene: GraphicsDelegate {
     
     func update() {
         
-        if Int.random(in: 0...100) == 25 {
-            print("controlInterfaceViewModel.isProcessingEnqueued = \(controlInterfaceViewModel.isProcessingEnqueued) | isProcessingExecuting = \(isProcessingExecuting)")
-        }
         if controlInterfaceViewModel.isProcessingEnqueued == true && isProcessingExecuting == false {
             controlInterfaceViewModel.isProcessingEnqueued = false
             isProcessingExecuting = true

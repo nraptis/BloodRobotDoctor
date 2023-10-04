@@ -29,7 +29,8 @@ struct ControlInterfaceContainerView: View {
                     ControlInterfaceContentContainerView(node: node,
                                                          width: width,
                                                          height: height - ApplicationController.shared.toolbarHeight,
-                                                         controlInterfaceViewModel: controlInterfaceViewModel)
+                                                         controlInterfaceViewModel: controlInterfaceViewModel,
+                                                         id: node.id)
                 } else {
                     ZStack {
                         
