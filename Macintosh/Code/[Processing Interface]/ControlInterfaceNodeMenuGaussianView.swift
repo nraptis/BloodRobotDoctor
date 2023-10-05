@@ -22,31 +22,29 @@ struct ControlInterfaceNodeMenuGaussianView: View {
     var body: some View {
         VStack {
             
-            SliderRow(title: "Sigma", value: data.sigma, minValue: 0.0, maxValue: 100.0) { sigma in
-                controlInterfaceViewModel.nodeGaussianSetSigma(node: node,
-                                                               sigma: sigma)
+            SliderRow(title: "SigmaX", value: data.sigmaX, minValue: 0.0, maxValue: 100.0) { sigmaX in
+                controlInterfaceViewModel.nodeGaussianSetSigmaX(node: node,
+                                                                sigmaX: sigmaX)
+            }
+            .id(controlInterfaceViewModel.selectedNodeUUID)
+            
+            SliderRow(title: "SigmaY", value: data.sigmaY, minValue: 0.0, maxValue: 100.0) { sigmaY in
+                controlInterfaceViewModel.nodeGaussianSetSigmaY(node: node,
+                                                                sigmaY: sigmaY)
             }
             .id(controlInterfaceViewModel.selectedNodeUUID)
             
             
-            StepperRow(title: "Size", value: data.size, minValue: -5, maxValue: 10, step: 2) { size in
-                controlInterfaceViewModel.nodeGaussianSetSize(node: node, size: size)
+            StepperRow(title: "SizeX", value: data.sizeX, minValue: 0, maxValue: 64, step: 4) { sizeX in
+                controlInterfaceViewModel.nodeGaussianSetSizeX(node: node, sizeX: sizeX)
             }
             .id(controlInterfaceViewModel.selectedNodeUUID)
             
-            Button {
-                controlInterfaceViewModel.nodeGaussianChangeStep(node: node, delta: 1)
-            } label: {
-                Text("incrase size")
-                    .padding()
+            StepperRow(title: "SizeY", value: data.sizeY, minValue: 0, maxValue: 64, step: 4) { sizeY in
+                controlInterfaceViewModel.nodeGaussianSetSizeY(node: node, sizeY: sizeY)
             }
-            
-            Button {
-                controlInterfaceViewModel.nodeGaussianChangeStep(node: node, delta: -1)
-            } label: {
-                Text("decreaz size")
-                    .padding()
-            }
+            .id(controlInterfaceViewModel.selectedNodeUUID)
+
         }
         .background(Color.red)
     }

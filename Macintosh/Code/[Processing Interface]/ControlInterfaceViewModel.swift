@@ -34,10 +34,14 @@ class ControlInterfaceViewModel: ObservableObject {
         updateNodeType(node: selectedNode, type: .gauss)
         
         if let node = selectedNode, let data = node.data as? ProcessingNodeDataGaussian {
-            data.size = 12
-            data.sigma = 40.0
+            data.sizeX = 12
+            data.sizeY = 0
+            
+            data.sigmaX = 0.0
+            data.sigmaY = 60.0
         }
         
+        /*
         addNode()
         updateNodeType(node: selectedNode, type: .gauss)
         
@@ -45,6 +49,7 @@ class ControlInterfaceViewModel: ObservableObject {
             data.size = 4
             data.sigma = 15.0
         }
+         */
         
         
         
@@ -110,13 +115,13 @@ class ControlInterfaceViewModel: ObservableObject {
                 case .none:
                     nodes[index].data = ProcessingNodeData()
                 case .gray:
-                    nodes[index].data = ProcessingNodeData()
+                    nodes[index].data = ProcessingNodeDataGray()
                 case .gauss:
                     nodes[index].data = ProcessingNodeDataGaussian()
                 case .erosion:
-                    nodes[index].data = ProcessingNodeData()
+                    nodes[index].data = ProcessingNodeDataErode()
                 case .dilation:
-                    nodes[index].data = ProcessingNodeData()
+                    nodes[index].data = ProcessingNodeDataDilate()
                 }
                 
                 postUpdateAndEnqueueRebuild()
@@ -173,29 +178,33 @@ class ControlInterfaceViewModel: ObservableObject {
         }
     }
     
-    func nodeGaussianChangeStep(node: ProcessingNode, delta: Int) {
+    func nodeGaussianSetSizeX(node: ProcessingNode, sizeX: Int) {
         if let data = node.data as? ProcessingNodeDataGaussian {
-            data.size += delta
+            data.sizeX = sizeX
             postUpdateAndEnqueueRebuild()
         }
     }
     
-    func nodeGaussianSetSize(node: ProcessingNode, size: Int) {
+    func nodeGaussianSetSizeY(node: ProcessingNode, sizeY: Int) {
         if let data = node.data as? ProcessingNodeDataGaussian {
-            data.size = size
+            data.sizeY = sizeY
             postUpdateAndEnqueueRebuild()
         }
     }
     
-    func nodeGaussianSetSigma(node: ProcessingNode, sigma: Float) {
+    func nodeGaussianSetSigmaX(node: ProcessingNode, sigmaX: Float) {
         if let data = node.data as? ProcessingNodeDataGaussian {
-            data.sigma = sigma
+            data.sigmaX = sigmaX
             postUpdateAndEnqueueRebuild()
         }
     }
     
-    //let node: ProcessingNode
-    //let data: ProcessingNodeDataGaussian
+    func nodeGaussianSetSigmaY(node: ProcessingNode, sigmaY: Float) {
+        if let data = node.data as? ProcessingNodeDataGaussian {
+            data.sigmaY = sigmaY
+            postUpdateAndEnqueueRebuild()
+        }
+    }
     
     
     func save() {

@@ -80,7 +80,7 @@ unsigned char *rgbaArrayFromRGBImage(RGBImage *rgbImage) {
 }
 
 
-+ (RGBImage *)process:(RGBImage *)rgbImage {
++ (RGBImage *)gaussian:(RGBImage *)rgbImage sizeX: (int) sizeX sizeY: (int) sizeY sigmaX: (float) sigmaX sigmaY: (float) sigmaY {
     
     if (rgbImage == NULL) { return NULL; }
     
@@ -90,22 +90,39 @@ unsigned char *rgbaArrayFromRGBImage(RGBImage *rgbImage) {
     unsigned char *input = rgbaArrayFromRGBImage(rgbImage);
     unsigned char *output = rgbaArrayFromSize(width, height);
     
-    [OpenCVCPP process: input output: output width: width height: height];
-    
-    //________process(source, destination, width, height);
-    
-    //aaa(100);
-    
-    //opencv::Mat f =
-    //auto a = rgbImageToMat(rgbImage);
+    [OpenCVCPP gaussian: input output: output width: width height: height sizeX: sizeX sizeY: sizeY sigmaX: sigmaX sigmaY: sigmaY];
     
     RGBImage *result = rgbImageFromRGBAArray(output, width, height);
+    
+    free(input);
+    free(output);
+    
+    return result;
+    
+}
+
+
++ (RGBImage *)gray:(RGBImage *)rgbImage {
+    if (rgbImage == NULL) { return NULL; }
+    
+    int width = (int)rgbImage.width;
+    int height = (int)rgbImage.height;
+    
+    unsigned char *input = rgbaArrayFromRGBImage(rgbImage);
+    unsigned char *output = rgbaArrayFromSize(width, height);
+    
+    [OpenCVCPP gray: input output: output width: width height: height];
+    
+    RGBImage *result = rgbImageFromRGBAArray(output, width, height);
+    
+    free(input);
+    free(output);
     
     return result;
 }
 
-+ (RGBImage *)gaussian:(RGBImage *)rgbImage size: (int) size sigma: (float) sigma {
-    
+
++ (RGBImage *)erode:(RGBImage *)rgbImage element: (int)element size: (int) size {
     if (rgbImage == NULL) { return NULL; }
     
     int width = (int)rgbImage.width;
@@ -114,19 +131,33 @@ unsigned char *rgbaArrayFromRGBImage(RGBImage *rgbImage) {
     unsigned char *input = rgbaArrayFromRGBImage(rgbImage);
     unsigned char *output = rgbaArrayFromSize(width, height);
     
-    [OpenCVCPP gaussian: input output: output width: width height: height size: size sigma: sigma];
-    
-    //________process(source, destination, width, height);
-    
-    //aaa(100);
-    
-    //opencv::Mat f =
-    //auto a = rgbImageToMat(rgbImage);
+    [OpenCVCPP erode: input output: output width: width height: height element: element size: size];
     
     RGBImage *result = rgbImageFromRGBAArray(output, width, height);
     
-    return result;
+    free(input);
+    free(output);
     
+    return result;
+}
+
++ (RGBImage *)dilate:(RGBImage *)rgbImage element: (int)element size: (int) size {
+    if (rgbImage == NULL) { return NULL; }
+    
+    int width = (int)rgbImage.width;
+    int height = (int)rgbImage.height;
+    
+    unsigned char *input = rgbaArrayFromRGBImage(rgbImage);
+    unsigned char *output = rgbaArrayFromSize(width, height);
+    
+    [OpenCVCPP dilate: input output: output width: width height: height element: element size: size];
+    
+    RGBImage *result = rgbImageFromRGBAArray(output, width, height);
+    
+    free(input);
+    free(output);
+    
+    return result;
 }
 
 @end

@@ -77,6 +77,7 @@ Mat matToRGBA(Mat mat) {
     return result;
 }
 
+/*
 void process(unsigned char *input, unsigned char *output, int width, int height) {
     
     
@@ -117,22 +118,113 @@ void process(unsigned char *input, unsigned char *output, int width, int height)
     
     matRGBAToRGB(matty, output, width, height);
 }
+*/
 
-void gaussian(unsigned char *input, unsigned char *output, int width, int height, int size, float sigma) {
+void gaussian(unsigned char *input, unsigned char *output, int width, int height, int sizeX, int sizeY, float sigmaX, float sigmaY) {
     
+    if (width <= 0 || height <= 0) {
+        int area = 4 * width * height;
+        memcpy(output, input, area);
+        return;
+    }
     
-    if (size <= 0) {
+    if (sizeX < 0) { sizeX = 0; }
+    if (sizeY < 0) { sizeY = 0; }
+    
+    Mat rgbaInputMat = rgbToMatRGBA(input, width, height);
+    
+    sizeX = sizeX * 2 + 1;
+    sizeY = sizeY * 2 + 1;
+    
+    Mat rgbaOutputMat;
+    GaussianBlur(rgbaInputMat, rgbaOutputMat, Size(sizeX, sizeY), sigmaX, sigmaY);
+    rgbaOutputMat = matToRGBA(rgbaOutputMat);
+    matRGBAToRGB(rgbaOutputMat, output, width, height);
+    
+    /*
+    if (sizeX <= 0 || sizeY <= 0) {
         int area = 4 * width * height;
         memcpy(output, input, area);
     } else {
+        
         Mat rgbaInputMat = rgbToMatRGBA(input, width, height);
         
-        size = size * 2 + 1;
+        sizeX = sizeX * 2 + 1;
+        sizeY = sizeY * 2 + 1;
         
         Mat rgbaOutputMat;
-        GaussianBlur(rgbaInputMat, rgbaOutputMat, Size(size, size), sigma);
+        GaussianBlur(rgbaInputMat, rgbaOutputMat, Size(sizeX, sizeY), sigmaX, sigmaY);
         rgbaOutputMat = matToRGBA(rgbaOutputMat);
         matRGBAToRGB(rgbaOutputMat, output, width, height);
     }
-    
+    */
 }
+
+void gray(unsigned char *input, unsigned char *output, int width, int height) {
+    if (width <= 0 || height <= 0) {
+        int area = 4 * width * height;
+        memcpy(output, input, area);
+        return;
+    }
+    Mat rgbaInputMat = rgbToMatRGBA(input, width, height);
+    Mat rgbaOutputMat = matToGrayscale(rgbaInputMat);
+    rgbaOutputMat = matToRGBA(rgbaOutputMat);
+    matRGBAToRGB(rgbaOutputMat, output, width, height);
+}
+
+void erode(unsigned char *input, unsigned char *output, int width, int height, int element, int size) {
+    if (width <= 0 || height <= 0 || size <= 0) {
+        int area = 4 * width * height;
+        memcpy(output, input, area);
+        return;
+    }
+    Mat rgbaInputMat = rgbToMatRGBA(input, width, height);
+    //rgbaInputMat = matToGrayscale(rgbaInputMat);
+    
+    int type = MORPH_RECT;
+    if (element == 1) { type = MORPH_CROSS; }
+    if (element == 2) { type = MORPH_ELLIPSE; }
+    
+    Mat structuringElement = getStructuringElement(type,
+                                                   Size(2 * size + 1, 2 * size + 1 ),
+                                                   Point(size, size));
+    
+    Mat rgbaOutputMat;
+    erode(rgbaInputMat, rgbaOutputMat, structuringElement);
+    
+    rgbaOutputMat = matToRGBA(rgbaOutputMat);
+    matRGBAToRGB(rgbaOutputMat, output, width, height);
+
+    
+    rgbaOutputMat = matToRGBA(rgbaOutputMat);
+    matRGBAToRGB(rgbaOutputMat, output, width, height);
+}
+
+void dilate(unsigned char *input, unsigned char *output, int width, int height, int element, int size) {
+    if (width <= 0 || height <= 0 || size <= 0) {
+        int area = 4 * width * height;
+        memcpy(output, input, area);
+        return;
+    }
+    Mat rgbaInputMat = rgbToMatRGBA(input, width, height);
+    //rgbaInputMat = matToGrayscale(rgbaInputMat);
+    
+    int type = MORPH_RECT;
+    if (element == 1) { type = MORPH_CROSS; }
+    if (element == 2) { type = MORPH_ELLIPSE; }
+    
+    Mat structuringElement = getStructuringElement(type,
+                                                   Size(2 * size + 1, 2 * size + 1 ),
+                                                   Point(size, size));
+    
+    Mat rgbaOutputMat;
+    dilate(rgbaInputMat, rgbaOutputMat, structuringElement);
+    
+    rgbaOutputMat = matToRGBA(rgbaOutputMat);
+    matRGBAToRGB(rgbaOutputMat, output, width, height);
+    
+    rgbaOutputMat = matToRGBA(rgbaOutputMat);
+    matRGBAToRGB(rgbaOutputMat, output, width, height);
+}
+
+

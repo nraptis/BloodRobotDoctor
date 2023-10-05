@@ -9,10 +9,13 @@ import Foundation
 
 class ProcessingNodeDataGaussian: ProcessingNodeData {
     
-    var size: Int = 8
-    var sigma: Float = 0.0
+    var sizeX: Int = 8
+    var sizeY: Int = 8
+    
+    var sigmaX: Float = 0.0
+    var sigmaY: Float = 0.0
     
     override func process(rgbaImage: RGBImage) -> RGBImage {
-        return OpenCVWrapper.gaussian(rgbaImage, size: Int32(size), sigma: sigma)
+        return OpenCVWrapper.gaussian(rgbaImage, sizeX: Int32(sizeX), sizeY: Int32(sizeY), sigmaX: sigmaX, sigmaY: sigmaY)
     }
 }

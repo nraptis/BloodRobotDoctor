@@ -62,27 +62,4 @@ class MedicalSceneSlice {
                               sprite: sprite)
     }
     
-    func stampProcessedImageToTexture() {
-        
-        
-        if let texture = sprite.texture {
-            
-            //graphics.
-            sprite.load(graphics: graphics, texture: texture)
-        }
-        
-    }
-    
-    func jax() {
-     
-        if let ggg = OpenCVWrapper.gaussian(image, size: 20, sigma: 0.0) {
-            
-            if let texture = ggg.texture(device: graphics.device) {
-                sprite.load(graphics: graphics, texture: texture)
-            }
-            
-        }
-        
-    }
-    
 }

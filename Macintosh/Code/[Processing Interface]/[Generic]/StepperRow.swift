@@ -34,6 +34,7 @@ struct StepperRow: View {
             HStack {
                 Text(title)
                 Stepper("abw", value: $value, in: minValue...maxValue, step: step)
+                Text("v: \(value)")
             }
         }
         .frame(height: 80.0)

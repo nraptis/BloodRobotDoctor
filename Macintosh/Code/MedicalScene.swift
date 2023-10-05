@@ -148,7 +148,8 @@ class MedicalScene: GraphicsDelegate {
                                     withBytes: bytes,
                                     bytesPerRow: bytesPerRow)
                 }
-                slice.stampProcessedImageToTexture()
+                //slice.stampProcessedImageToTexture()
+                
             }
             
             isProcessingComplete = false

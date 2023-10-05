@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0EAA1D2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA1C2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift */; };
+		EB0EAA1F2ACE6693006F30CB /* ErosionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA1E2ACE6693006F30CB /* ErosionElement.swift */; };
+		EB0EAA212ACE66C6006F30CB /* DilationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA202ACE66C6006F30CB /* DilationElement.swift */; };
+		EB0EAA232ACE6E74006F30CB /* ProcessingNodeDataGray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA222ACE6E74006F30CB /* ProcessingNodeDataGray.swift */; };
+		EB0EAA252ACE6E7E006F30CB /* ProcessingNodeDataErode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA242ACE6E7E006F30CB /* ProcessingNodeDataErode.swift */; };
+		EB0EAA272ACE6E88006F30CB /* ProcessingNodeDataDilate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA262ACE6E88006F30CB /* ProcessingNodeDataDilate.swift */; };
 		EB0FB2902ACBE8E100A8E3F0 /* ProcessingNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */; };
 		EB0FB2922ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */; };
 		EB1BF1342ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */; };
@@ -240,6 +246,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB0EAA1C2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProcessingNodeDummyModel.swift; path = ../../../../../../../Documents/ProcessingNodeDummyModel.swift; sourceTree = "<group>"; };
+		EB0EAA1E2ACE6693006F30CB /* ErosionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErosionElement.swift; sourceTree = "<group>"; };
+		EB0EAA202ACE66C6006F30CB /* DilationElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilationElement.swift; sourceTree = "<group>"; };
+		EB0EAA222ACE6E74006F30CB /* ProcessingNodeDataGray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataGray.swift; sourceTree = "<group>"; };
+		EB0EAA242ACE6E7E006F30CB /* ProcessingNodeDataErode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataErode.swift; sourceTree = "<group>"; };
+		EB0EAA262ACE6E88006F30CB /* ProcessingNodeDataDilate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataDilate.swift; sourceTree = "<group>"; };
 		EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeType.swift; sourceTree = "<group>"; };
 		EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceNodeCell.swift; sourceTree = "<group>"; };
 		EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceViewModel.swift; sourceTree = "<group>"; };
@@ -531,6 +543,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB0EAA1A2ACE4FC0006F30CB /* [Artificial Intelligence] */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "[Artificial Intelligence]";
+			sourceTree = "<group>";
+		};
+		EB0EAA1B2ACE4FCD006F30CB /* [Machine Learning] */ = {
+			isa = PBXGroup;
+			children = (
+				EB0EAA1C2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift */,
+			);
+			path = "[Machine Learning]";
+			sourceTree = "<group>";
+		};
 		EB1BF1292ACB98F0006C25B4 /* [Processing Interface] */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,9 +578,9 @@
 		EB1BF12A2ACB98F0006C25B4 /* [Processing Data] */ = {
 			isa = PBXGroup;
 			children = (
-				EBC7E2FE2ACE14B9002803A7 /* [Artificial Intelligence] */,
+				EB0EAA1B2ACE4FCD006F30CB /* [Machine Learning] */,
+				EB0EAA1A2ACE4FC0006F30CB /* [Artificial Intelligence] */,
 				EBC7E2FF2ACE14B9002803A7 /* [Image Processing] */,
-				EBC7E2FD2ACE14B9002803A7 /* [Machine Learning] */,
 				EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */,
 				EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */,
 				EBA25E6B2ACD18770015A508 /* ProcessingNodeData.swift */,
@@ -866,24 +893,15 @@
 			path = "[Generic]";
 			sourceTree = "<group>";
 		};
-		EBC7E2FD2ACE14B9002803A7 /* [Machine Learning] */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "[Machine Learning]";
-			sourceTree = "<group>";
-		};
-		EBC7E2FE2ACE14B9002803A7 /* [Artificial Intelligence] */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "[Artificial Intelligence]";
-			sourceTree = "<group>";
-		};
 		EBC7E2FF2ACE14B9002803A7 /* [Image Processing] */ = {
 			isa = PBXGroup;
 			children = (
 				EBC7E3002ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift */,
+				EB0EAA222ACE6E74006F30CB /* ProcessingNodeDataGray.swift */,
+				EB0EAA242ACE6E7E006F30CB /* ProcessingNodeDataErode.swift */,
+				EB0EAA262ACE6E88006F30CB /* ProcessingNodeDataDilate.swift */,
+				EB0EAA1E2ACE6693006F30CB /* ErosionElement.swift */,
+				EB0EAA202ACE66C6006F30CB /* DilationElement.swift */,
 			);
 			path = "[Image Processing]";
 			sourceTree = "<group>";
@@ -963,6 +981,8 @@
 				EB63A7512ACA51F8008C2D6E /* OpenCVCPP.mm in Sources */,
 				EB63A7472ACA51F8008C2D6E /* Sprite.metal in Sources */,
 				EB63A75D2ACA51F8008C2D6E /* Uniforms.swift in Sources */,
+				EB0EAA252ACE6E7E006F30CB /* ProcessingNodeDataErode.swift in Sources */,
+				EB0EAA272ACE6E88006F30CB /* ProcessingNodeDataDilate.swift in Sources */,
 				EBA25E642ACD0D810015A508 /* ControlInterfaceNodeMenuGaussianView.swift in Sources */,
 				EB63A7522ACA51F8008C2D6E /* OpenCVUtils.cpp in Sources */,
 				EB63A7582ACA51F8008C2D6E /* Graphics.swift in Sources */,
@@ -972,6 +992,7 @@
 				EB63A74F2ACA51F8008C2D6E /* OpenCVWrapper.m in Sources */,
 				EBC7E2FC2ACDFE2F002803A7 /* StepperRow.swift in Sources */,
 				EB63A7572ACA51F8008C2D6E /* Quaternion.swift in Sources */,
+				EB0EAA1D2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift in Sources */,
 				EB63A7502ACA51F8008C2D6E /* RGBImage.swift in Sources */,
 				EB63A74E2ACA51F8008C2D6E /* RGB.swift in Sources */,
 				EB63A74D2ACA51F8008C2D6E /* MetalViewController.swift in Sources */,
@@ -980,11 +1001,14 @@
 				EB63A75A2ACA51F8008C2D6E /* UniformsShape.swift in Sources */,
 				EB63A74A2ACA51F8008C2D6E /* MetalView.swift in Sources */,
 				EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */,
+				EB0EAA212ACE66C6006F30CB /* DilationElement.swift in Sources */,
 				EBA25E622ACD0A220015A508 /* MedicalModel.swift in Sources */,
 				EB63A7532ACA51F8008C2D6E /* MedicalSceneView.swift in Sources */,
 				EBC7E2FA2ACDF394002803A7 /* SliderRow.swift in Sources */,
+				EB0EAA232ACE6E74006F30CB /* ProcessingNodeDataGray.swift in Sources */,
 				EB63A7592ACA51F8008C2D6E /* UniformsShapeNodeIndexed.swift in Sources */,
 				EB0FB2922ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift in Sources */,
+				EB0EAA1F2ACE6693006F30CB /* ErosionElement.swift in Sources */,
 				EB1BF13C2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift in Sources */,
 				EB63A7542ACA51F8008C2D6E /* Math.swift in Sources */,
 				EB63A7482ACA51F8008C2D6E /* MedicalScene.swift in Sources */,
