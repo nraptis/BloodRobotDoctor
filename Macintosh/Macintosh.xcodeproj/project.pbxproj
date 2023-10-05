@@ -165,8 +165,10 @@
 		EBA25E682ACD0F3D0015A508 /* ControlInterfaceNodeMenuErosionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA25E672ACD0F3D0015A508 /* ControlInterfaceNodeMenuErosionView.swift */; };
 		EBA25E6A2ACD0F500015A508 /* ControlInterfaceNodeMenuDilationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA25E692ACD0F500015A508 /* ControlInterfaceNodeMenuDilationView.swift */; };
 		EBA25E6C2ACD18770015A508 /* ProcessingNodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA25E6B2ACD18770015A508 /* ProcessingNodeData.swift */; };
-		EBA25E6E2ACD18800015A508 /* ProcessingNodeDataGaussian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA25E6D2ACD18800015A508 /* ProcessingNodeDataGaussian.swift */; };
 		EBC49F542ACA36E4002E75E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC49F532ACA36E4002E75E5 /* Preview Assets.xcassets */; };
+		EBC7E2FA2ACDF394002803A7 /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7E2F92ACDF394002803A7 /* SliderRow.swift */; };
+		EBC7E2FC2ACDFE2F002803A7 /* StepperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7E2FB2ACDFE2F002803A7 /* StepperRow.swift */; };
+		EBC7E3012ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7E3002ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -344,7 +346,6 @@
 		EBA25E672ACD0F3D0015A508 /* ControlInterfaceNodeMenuErosionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceNodeMenuErosionView.swift; sourceTree = "<group>"; };
 		EBA25E692ACD0F500015A508 /* ControlInterfaceNodeMenuDilationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceNodeMenuDilationView.swift; sourceTree = "<group>"; };
 		EBA25E6B2ACD18770015A508 /* ProcessingNodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeData.swift; sourceTree = "<group>"; };
-		EBA25E6D2ACD18800015A508 /* ProcessingNodeDataGaussian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataGaussian.swift; sourceTree = "<group>"; };
 		EBC49F492ACA36E3002E75E5 /* Macintosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macintosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC49F532ACA36E4002E75E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBC49F552ACA36E4002E75E5 /* Macintosh.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Macintosh.entitlements; sourceTree = "<group>"; };
@@ -459,6 +460,9 @@
 		EBC4A0372ACA3854002E75E5 /* libopencv_superres.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_superres.a; path = ../open_cv/opencv2_libraries/libopencv_superres.a; sourceTree = "<group>"; };
 		EBC4A0382ACA3854002E75E5 /* libopencv_freetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_freetype.a; path = ../open_cv/opencv2_libraries/libopencv_freetype.a; sourceTree = "<group>"; };
 		EBC4A0A72ACA38D1002E75E5 /* libopencv_alphamat.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_alphamat.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_alphamat.4.8.1.dylib; sourceTree = "<group>"; };
+		EBC7E2F92ACDF394002803A7 /* SliderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderRow.swift; sourceTree = "<group>"; };
+		EBC7E2FB2ACDFE2F002803A7 /* StepperRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperRow.swift; sourceTree = "<group>"; };
+		EBC7E3002ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataGaussian.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,6 +534,7 @@
 		EB1BF1292ACB98F0006C25B4 /* [Processing Interface] */ = {
 			isa = PBXGroup;
 			children = (
+				EBC7E2F82ACDF381002803A7 /* [Generic] */,
 				EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */,
 				EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */,
 				EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */,
@@ -546,10 +551,12 @@
 		EB1BF12A2ACB98F0006C25B4 /* [Processing Data] */ = {
 			isa = PBXGroup;
 			children = (
+				EBC7E2FE2ACE14B9002803A7 /* [Artificial Intelligence] */,
+				EBC7E2FF2ACE14B9002803A7 /* [Image Processing] */,
+				EBC7E2FD2ACE14B9002803A7 /* [Machine Learning] */,
 				EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */,
 				EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */,
 				EBA25E6B2ACD18770015A508 /* ProcessingNodeData.swift */,
-				EBA25E6D2ACD18800015A508 /* ProcessingNodeDataGaussian.swift */,
 			);
 			path = "[Processing Data]";
 			sourceTree = "<group>";
@@ -850,6 +857,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EBC7E2F82ACDF381002803A7 /* [Generic] */ = {
+			isa = PBXGroup;
+			children = (
+				EBC7E2F92ACDF394002803A7 /* SliderRow.swift */,
+				EBC7E2FB2ACDFE2F002803A7 /* StepperRow.swift */,
+			);
+			path = "[Generic]";
+			sourceTree = "<group>";
+		};
+		EBC7E2FD2ACE14B9002803A7 /* [Machine Learning] */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "[Machine Learning]";
+			sourceTree = "<group>";
+		};
+		EBC7E2FE2ACE14B9002803A7 /* [Artificial Intelligence] */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "[Artificial Intelligence]";
+			sourceTree = "<group>";
+		};
+		EBC7E2FF2ACE14B9002803A7 /* [Image Processing] */ = {
+			isa = PBXGroup;
+			children = (
+				EBC7E3002ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift */,
+			);
+			path = "[Image Processing]";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -932,10 +970,10 @@
 				EB1BF13E2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift in Sources */,
 				EB1BF1362ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift in Sources */,
 				EB63A74F2ACA51F8008C2D6E /* OpenCVWrapper.m in Sources */,
+				EBC7E2FC2ACDFE2F002803A7 /* StepperRow.swift in Sources */,
 				EB63A7572ACA51F8008C2D6E /* Quaternion.swift in Sources */,
 				EB63A7502ACA51F8008C2D6E /* RGBImage.swift in Sources */,
 				EB63A74E2ACA51F8008C2D6E /* RGB.swift in Sources */,
-				EBA25E6E2ACD18800015A508 /* ProcessingNodeDataGaussian.swift in Sources */,
 				EB63A74D2ACA51F8008C2D6E /* MetalViewController.swift in Sources */,
 				EBA25E682ACD0F3D0015A508 /* ControlInterfaceNodeMenuErosionView.swift in Sources */,
 				EBA25E6C2ACD18770015A508 /* ProcessingNodeData.swift in Sources */,
@@ -944,6 +982,7 @@
 				EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */,
 				EBA25E622ACD0A220015A508 /* MedicalModel.swift in Sources */,
 				EB63A7532ACA51F8008C2D6E /* MedicalSceneView.swift in Sources */,
+				EBC7E2FA2ACDF394002803A7 /* SliderRow.swift in Sources */,
 				EB63A7592ACA51F8008C2D6E /* UniformsShapeNodeIndexed.swift in Sources */,
 				EB0FB2922ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift in Sources */,
 				EB1BF13C2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift in Sources */,
@@ -957,6 +996,7 @@
 				EB63A7642ACA51F8008C2D6E /* RecyclerShapeTriangle3D.swift in Sources */,
 				EB63A7562ACA51F8008C2D6E /* Matrix.swift in Sources */,
 				EBA25E662ACD0F1F0015A508 /* ControlInterfaceNodeMenuGrayView.swift in Sources */,
+				EBC7E3012ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift in Sources */,
 				EB63A7552ACA51F8008C2D6E /* Sprite2D.swift in Sources */,
 				EB63A7492ACA51F8008C2D6E /* MacintoshApp.swift in Sources */,
 				EB63A7612ACA51F8008C2D6E /* RecyclerShapeQuad3D.swift in Sources */,

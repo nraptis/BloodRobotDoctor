@@ -21,25 +21,6 @@ struct ControlInterfaceToolbarView: View {
     var body: some View {
         VStack(spacing: 0.0) {
             HStack {
-                Button {
-                    if controlInterfaceViewModel.expanded {
-                        controlInterfaceViewModel.collapse()
-                    } else {
-                        controlInterfaceViewModel.expand()
-                    }
-                } label: {
-                    ZStack {
-                        if controlInterfaceViewModel.expanded {
-                            Text("Expand")
-                                .padding(.all, 8.0)
-                        } else {
-                            Text("Collapse")
-                                .padding(.all, 8.0)
-                        }
-                    }
-                    .frame(width: 128.0, height: 36.0)
-                    .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
-                }
                 
                 Button {
                     controlInterfaceViewModel.addNode()

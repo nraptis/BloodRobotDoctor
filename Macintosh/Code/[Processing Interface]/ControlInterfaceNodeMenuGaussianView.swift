@@ -13,64 +13,42 @@ struct ControlInterfaceNodeMenuGaussianView: View {
     let node: ProcessingNode
     let data: ProcessingNodeDataGaussian
     
-    @State var size: Int
-    @State var sigma: Float
-    
     init(controlInterfaceViewModel: ControlInterfaceViewModel, node: ProcessingNode, data: ProcessingNodeDataGaussian) {
         self.controlInterfaceViewModel = controlInterfaceViewModel
         self.node = node
         self.data = data
-        
-        _size = State(wrappedValue: data.size)
-        _sigma = State(wrappedValue: data.sigma)
-        
-        print("initializing with \(data.size) and \(data.sigma)")
     }
     
     var body: some View {
         VStack {
-
-            Stepper("Stepa \(size)", value: $size, in: 0...20)
-
-            Slider(value: $sigma, in: 0.0...100.0)
+            
+            SliderRow(title: "Sigma", value: data.sigma, minValue: 0.0, maxValue: 100.0) { sigma in
+                controlInterfaceViewModel.nodeGaussianSetSigma(node: node,
+                                                               sigma: sigma)
+            }
+            .id(controlInterfaceViewModel.selectedNodeUUID)
+            
+            
+            StepperRow(title: "Size", value: data.size, minValue: -5, maxValue: 10, step: 2) { size in
+                controlInterfaceViewModel.nodeGaussianSetSize(node: node, size: size)
+            }
+            .id(controlInterfaceViewModel.selectedNodeUUID)
             
             Button {
-                
                 controlInterfaceViewModel.nodeGaussianChangeStep(node: node, delta: 1)
-                
             } label: {
                 Text("incrase size")
                     .padding()
             }
             
             Button {
-                
                 controlInterfaceViewModel.nodeGaussianChangeStep(node: node, delta: -1)
-                
             } label: {
                 Text("decreaz size")
                     .padding()
             }
-            
-            Text("value of size: \(data.size) vs \(size)")
-            Text("value of sig: \(data.sigma) vs \(sigma)")
-            
         }
         .background(Color.red)
-        .onChange(of: size) {
-            print("size is now \(size)")
-            controlInterfaceViewModel.nodeGaussianSetSize(node: node,
-                                                          size: size)
-        }
-        .onChange(of: sigma) {
-            print("sigma is now \(sigma)")
-            controlInterfaceViewModel.nodeGaussianSetSigma(node: node,
-                                                           sigma: sigma)
-        }
-        .onAppear {
-            print("did on sppear called")
-        }
-        
     }
 }
 

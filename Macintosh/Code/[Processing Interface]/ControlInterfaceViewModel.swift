@@ -11,9 +11,9 @@ class ControlInterfaceViewModel: ObservableObject {
     
     var isProcessingEnqueued = false
     
-    var expanded = true
     var nodes = [ProcessingNode]()
-    @Published var selectedNode: ProcessingNode?
+    var selectedNode: ProcessingNode?
+    var selectedNodeUUID = 0
     
     private var nodeID = 0
     
@@ -24,18 +24,37 @@ class ControlInterfaceViewModel: ObservableObject {
     let medicalModel = MedicalModel()
     
     init() {
+        //addNode()
+        //updateNodeType(node: selectedNode, type: .gray)
         
-        addNode()
-        updateNodeType(node: selectedNode, type: .gray)
-        
-        
-        
-        addNode()
-        updateNodeType(node: selectedNode, type: .dilation)
+        //addNode()
+        //updateNodeType(node: selectedNode, type: .dilation)
         
         addNode()
         updateNodeType(node: selectedNode, type: .gauss)
         
+        if let node = selectedNode, let data = node.data as? ProcessingNodeDataGaussian {
+            data.size = 12
+            data.sigma = 40.0
+        }
+        
+        addNode()
+        updateNodeType(node: selectedNode, type: .gauss)
+        
+        if let node = selectedNode, let data = node.data as? ProcessingNodeDataGaussian {
+            data.size = 4
+            data.sigma = 15.0
+        }
+        
+        
+        
+    }
+    
+    private func incrementSelectedNodeUUID() {
+        selectedNodeUUID += 1
+        if selectedNodeUUID >= 1000 {
+            selectedNodeUUID = 0
+        }
     }
     
     func select(node: ProcessingNode) {
@@ -43,6 +62,7 @@ class ControlInterfaceViewModel: ObservableObject {
         if let selectedNode = selectedNode {
             if selectedNode.id == node.id {
                 self.selectedNode = nil
+                
                 postUpdate()
                 return
             }
@@ -51,6 +71,7 @@ class ControlInterfaceViewModel: ObservableObject {
         for _node in nodes {
             if _node.id == node.id {
                 selectedNode = _node
+                incrementSelectedNodeUUID()
                 postUpdate()
                 return
             }
@@ -66,16 +87,6 @@ class ControlInterfaceViewModel: ObservableObject {
             }
         }
         return false
-    }
-    
-    func expand() {
-        expanded = true
-        postUpdate()
-    }
-    
-    func collapse() {
-        expanded = false
-        postUpdate()
     }
     
     func addNode() {

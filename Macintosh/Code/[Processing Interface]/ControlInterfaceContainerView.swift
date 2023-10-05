@@ -24,25 +24,21 @@ struct ControlInterfaceContainerView: View {
             ControlInterfaceToolbarView(width: width,
                                         height: ApplicationController.shared.toolbarHeight,
                                         controlInterfaceViewModel: controlInterfaceViewModel)
-            if controlInterfaceViewModel.expanded {
-                if let node = controlInterfaceViewModel.selectedNode {
-                    ControlInterfaceContentContainerView(node: node,
-                                                         width: width,
-                                                         height: height - ApplicationController.shared.toolbarHeight,
-                                                         controlInterfaceViewModel: controlInterfaceViewModel,
-                                                         id: node.id)
-                } else {
-                    ZStack {
-                        
-                    }
-                    .frame(width: width, height: height - ApplicationController.shared.toolbarHeight)
-                }
+            
+            if let node = controlInterfaceViewModel.selectedNode {
+                ControlInterfaceContentContainerView(node: node,
+                                                     width: width,
+                                                     height: height - ApplicationController.shared.toolbarHeight,
+                                                     controlInterfaceViewModel: controlInterfaceViewModel,
+                                                     id: node.id)
             } else {
                 ZStack {
                     
                 }
                 .frame(width: width, height: height - ApplicationController.shared.toolbarHeight)
             }
+
+            
         }
         .frame(width: width, height: height)
     }
