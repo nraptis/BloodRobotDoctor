@@ -77,7 +77,11 @@ struct ControlInterfaceContentContainerView: View {
                                                         data: data)
                 }
             case .dilation:
-                ControlInterfaceNodeMenuDilationView()
+                if let data = node.data as? ProcessingNodeDataDilate {
+                    ControlInterfaceNodeMenuDilationView(controlInterfaceViewModel: controlInterfaceViewModel,
+                                                         node: node,
+                                                         data: data)
+                }
             }
 
             /*

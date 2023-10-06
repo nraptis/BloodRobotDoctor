@@ -9,20 +9,11 @@ import Foundation
 
 class ProcessingNodeDataDilate: ProcessingNodeData {
     
-    var element = ErosionElement.ellipse
+    var element = DilationElement.ellipse
     var size: Int = 4
     
     override func process(rgbaImage: RGBImage) -> RGBImage {
-        
-        let _element: Int32
-        switch element {
-        case .rect:
-            _element = 0
-        case .cross:
-            _element = 1
-        case .ellipse:
-            _element = 2
-        }
-        return OpenCVWrapper.dilate(rgbaImage, element: _element, size: Int32(size))
+        let elementIndex = Int32(element.index)
+        return OpenCVWrapper.dilate(rgbaImage, element: elementIndex, size: Int32(size))
     }
 }

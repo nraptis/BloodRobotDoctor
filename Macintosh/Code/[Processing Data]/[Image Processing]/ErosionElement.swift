@@ -26,6 +26,12 @@ extension ErosionElement: Identifiable {
     }
 }
 
+extension ErosionElement {
+    var index: Int {
+        return id
+    }
+}
+
 extension ErosionElement: Hashable {
     
 }

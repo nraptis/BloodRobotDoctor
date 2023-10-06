@@ -220,6 +220,20 @@ class ControlInterfaceViewModel: ObservableObject {
         }
     }
     
+    func nodeDilateSetElement(node: ProcessingNode, element: DilationElement) {
+        if let data = node.data as? ProcessingNodeDataDilate {
+            data.element = element
+            postUpdateAndEnqueueRebuild()
+        }
+    }
+    
+    func nodeDilateSetSize(node: ProcessingNode, size: Int) {
+        if let data = node.data as? ProcessingNodeDataDilate {
+            data.size = size
+            postUpdateAndEnqueueRebuild()
+        }
+    }
+    
     func save() {
         
     }
