@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB0EAA1D2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA1C2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift */; };
 		EB0EAA1F2ACE6693006F30CB /* ErosionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA1E2ACE6693006F30CB /* ErosionElement.swift */; };
 		EB0EAA212ACE66C6006F30CB /* DilationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA202ACE66C6006F30CB /* DilationElement.swift */; };
 		EB0EAA232ACE6E74006F30CB /* ProcessingNodeDataGray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA222ACE6E74006F30CB /* ProcessingNodeDataGray.swift */; };
@@ -133,6 +132,7 @@
 		EB478F142ACA402800213214 /* libopencv_xobjdetect.4.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = EBC49F612ACA37EA002E75E5 /* libopencv_xobjdetect.4.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EB478F152ACA402800213214 /* libopencv_xphoto.4.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC49F782ACA37EA002E75E5 /* libopencv_xphoto.4.8.1.dylib */; };
 		EB478F162ACA402800213214 /* libopencv_xphoto.4.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = EBC49F782ACA37EA002E75E5 /* libopencv_xphoto.4.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EB52EB102ACF695800CD4914 /* SegmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB52EB0F2ACF695800CD4914 /* SegmentRow.swift */; };
 		EB63A7442ACA51F8008C2D6E /* Shape.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB63A71B2ACA51F8008C2D6E /* Shape.metal */; };
 		EB63A7452ACA51F8008C2D6E /* ShapeNodeIndexed.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB63A71C2ACA51F8008C2D6E /* ShapeNodeIndexed.metal */; };
 		EB63A7462ACA51F8008C2D6E /* SpriteNodeIndexed.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB63A71D2ACA51F8008C2D6E /* SpriteNodeIndexed.metal */; };
@@ -246,7 +246,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EB0EAA1C2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProcessingNodeDummyModel.swift; path = ../../../../../../../Documents/ProcessingNodeDummyModel.swift; sourceTree = "<group>"; };
 		EB0EAA1E2ACE6693006F30CB /* ErosionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErosionElement.swift; sourceTree = "<group>"; };
 		EB0EAA202ACE66C6006F30CB /* DilationElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilationElement.swift; sourceTree = "<group>"; };
 		EB0EAA222ACE6E74006F30CB /* ProcessingNodeDataGray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataGray.swift; sourceTree = "<group>"; };
@@ -316,6 +315,7 @@
 		EB478E362ACA3CE200213214 /* libopencv_superres.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_superres.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_superres.4.8.1.dylib; sourceTree = "<group>"; };
 		EB478E372ACA3CE200213214 /* libopencv_surface_matching.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_surface_matching.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_surface_matching.4.8.1.dylib; sourceTree = "<group>"; };
 		EB478E382ACA3CE200213214 /* libopencv_video.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_video.4.8.1.dylib; sourceTree = "<group>"; };
+		EB52EB0F2ACF695800CD4914 /* SegmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentRow.swift; sourceTree = "<group>"; };
 		EB63A71B2ACA51F8008C2D6E /* Shape.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shape.metal; sourceTree = "<group>"; };
 		EB63A71C2ACA51F8008C2D6E /* ShapeNodeIndexed.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ShapeNodeIndexed.metal; sourceTree = "<group>"; };
 		EB63A71D2ACA51F8008C2D6E /* SpriteNodeIndexed.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SpriteNodeIndexed.metal; sourceTree = "<group>"; };
@@ -543,21 +543,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB0EAA1A2ACE4FC0006F30CB /* [Artificial Intelligence] */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "[Artificial Intelligence]";
-			sourceTree = "<group>";
-		};
-		EB0EAA1B2ACE4FCD006F30CB /* [Machine Learning] */ = {
-			isa = PBXGroup;
-			children = (
-				EB0EAA1C2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift */,
-			);
-			path = "[Machine Learning]";
-			sourceTree = "<group>";
-		};
 		EB1BF1292ACB98F0006C25B4 /* [Processing Interface] */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,8 +563,6 @@
 		EB1BF12A2ACB98F0006C25B4 /* [Processing Data] */ = {
 			isa = PBXGroup;
 			children = (
-				EB0EAA1B2ACE4FCD006F30CB /* [Machine Learning] */,
-				EB0EAA1A2ACE4FC0006F30CB /* [Artificial Intelligence] */,
 				EBC7E2FF2ACE14B9002803A7 /* [Image Processing] */,
 				EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */,
 				EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */,
@@ -889,6 +872,7 @@
 			children = (
 				EBC7E2F92ACDF394002803A7 /* SliderRow.swift */,
 				EBC7E2FB2ACDFE2F002803A7 /* StepperRow.swift */,
+				EB52EB0F2ACF695800CD4914 /* SegmentRow.swift */,
 			);
 			path = "[Generic]";
 			sourceTree = "<group>";
@@ -992,7 +976,6 @@
 				EB63A74F2ACA51F8008C2D6E /* OpenCVWrapper.m in Sources */,
 				EBC7E2FC2ACDFE2F002803A7 /* StepperRow.swift in Sources */,
 				EB63A7572ACA51F8008C2D6E /* Quaternion.swift in Sources */,
-				EB0EAA1D2ACE4FF0006F30CB /* ProcessingNodeDummyModel.swift in Sources */,
 				EB63A7502ACA51F8008C2D6E /* RGBImage.swift in Sources */,
 				EB63A74E2ACA51F8008C2D6E /* RGB.swift in Sources */,
 				EB63A74D2ACA51F8008C2D6E /* MetalViewController.swift in Sources */,
@@ -1031,6 +1014,7 @@
 				EB63A7462ACA51F8008C2D6E /* SpriteNodeIndexed.metal in Sources */,
 				EB63A74B2ACA51F8008C2D6E /* MetalPipeline.swift in Sources */,
 				EB63A75F2ACA51F8008C2D6E /* Recycler.swift in Sources */,
+				EB52EB102ACF695800CD4914 /* SegmentRow.swift in Sources */,
 				EB63A7602ACA51F8008C2D6E /* RecyclerSprite2D.swift in Sources */,
 				EB63A75C2ACA51F8008C2D6E /* UniformsSpriteNodeIndexed.swift in Sources */,
 				EB63A7632ACA51F8008C2D6E /* RecyclerShapeQuad2D.swift in Sources */,

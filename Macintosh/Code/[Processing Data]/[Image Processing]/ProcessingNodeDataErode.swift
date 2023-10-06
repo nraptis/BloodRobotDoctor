@@ -9,7 +9,7 @@ import Foundation
 
 class ProcessingNodeDataErode: ProcessingNodeData {
     
-    var element = ErosionElement.ellipse
+    var element = ErosionElement.cross
     var size: Int = 4
     
     override func process(rgbaImage: RGBImage) -> RGBImage {

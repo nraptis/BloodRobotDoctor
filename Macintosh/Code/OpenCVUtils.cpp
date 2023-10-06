@@ -77,49 +77,6 @@ Mat matToRGBA(Mat mat) {
     return result;
 }
 
-/*
-void process(unsigned char *input, unsigned char *output, int width, int height) {
-    
-    
-    Mat matty = rgbToMatRGBA(input, width, height);
-
-    
-    // Convert to graycsale
-
-    //Mat img_blur;
-    //GaussianBlur(matty, img_blur, Size(3,3), 0);
-    //ConvertBaq(img_blur, output, width, height);
-    
-    //Mat odm = convertMatToGrayscale(matty);
-    
-    
-    //Mat gray;
-    //cvtColor(matty, gray, COLOR_BGR2GRAY);
-    
-    matty = matToGrayscale(matty);
-    
-    cv::Mat contours;
-    
-    if (rand() % 2 == 0) {
-        
-        Mat contours;
-        //Canny(matty,contours,10,350);
-        Canny(matty,contours,6,100);
-        
-        matty = contours;
-    }
-    //cv::Canny(matty,contours,10,350);
-    
-    //matty = matToRGBA(contours);
-    
-    
-    matty = matToRGBA(matty);
-    
-    
-    matRGBAToRGB(matty, output, width, height);
-}
-*/
-
 void gaussian(unsigned char *input, unsigned char *output, int width, int height, int sizeX, int sizeY, float sigmaX, float sigmaY) {
     
     if (width <= 0 || height <= 0) {
@@ -172,7 +129,7 @@ void gray(unsigned char *input, unsigned char *output, int width, int height) {
     matRGBAToRGB(rgbaOutputMat, output, width, height);
 }
 
-void erode(unsigned char *input, unsigned char *output, int width, int height, int element, int size) {
+void erodeOrDilate(unsigned char *input, unsigned char *output, int width, int height, int element, int size, bool isErode) {
     if (width <= 0 || height <= 0 || size <= 0) {
         int area = 4 * width * height;
         memcpy(output, input, area);
@@ -190,41 +147,23 @@ void erode(unsigned char *input, unsigned char *output, int width, int height, i
                                                    Point(size, size));
     
     Mat rgbaOutputMat;
-    erode(rgbaInputMat, rgbaOutputMat, structuringElement);
+    if (isErode) {
+        erode(rgbaInputMat, rgbaOutputMat, structuringElement);
+    } else {
+        dilate(rgbaInputMat, rgbaOutputMat, structuringElement);
+    }
     
     rgbaOutputMat = matToRGBA(rgbaOutputMat);
     matRGBAToRGB(rgbaOutputMat, output, width, height);
+    
+    rgbaOutputMat = matToRGBA(rgbaOutputMat);
+    matRGBAToRGB(rgbaOutputMat, output, width, height);
+}
 
-    
-    rgbaOutputMat = matToRGBA(rgbaOutputMat);
-    matRGBAToRGB(rgbaOutputMat, output, width, height);
+void erode(unsigned char *input, unsigned char *output, int width, int height, int element, int size) {
+    erodeOrDilate(input, output, width, height, element, size, true);
 }
 
 void dilate(unsigned char *input, unsigned char *output, int width, int height, int element, int size) {
-    if (width <= 0 || height <= 0 || size <= 0) {
-        int area = 4 * width * height;
-        memcpy(output, input, area);
-        return;
-    }
-    Mat rgbaInputMat = rgbToMatRGBA(input, width, height);
-    //rgbaInputMat = matToGrayscale(rgbaInputMat);
-    
-    int type = MORPH_RECT;
-    if (element == 1) { type = MORPH_CROSS; }
-    if (element == 2) { type = MORPH_ELLIPSE; }
-    
-    Mat structuringElement = getStructuringElement(type,
-                                                   Size(2 * size + 1, 2 * size + 1 ),
-                                                   Point(size, size));
-    
-    Mat rgbaOutputMat;
-    dilate(rgbaInputMat, rgbaOutputMat, structuringElement);
-    
-    rgbaOutputMat = matToRGBA(rgbaOutputMat);
-    matRGBAToRGB(rgbaOutputMat, output, width, height);
-    
-    rgbaOutputMat = matToRGBA(rgbaOutputMat);
-    matRGBAToRGB(rgbaOutputMat, output, width, height);
+    erodeOrDilate(input, output, width, height, element, size, false);
 }
-
-

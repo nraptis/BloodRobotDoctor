@@ -206,6 +206,19 @@ class ControlInterfaceViewModel: ObservableObject {
         }
     }
     
+    func nodeErodeSetElement(node: ProcessingNode, element: ErosionElement) {
+        if let data = node.data as? ProcessingNodeDataErode {
+            data.element = element
+            postUpdateAndEnqueueRebuild()
+        }
+    }
+    
+    func nodeErodeSetSize(node: ProcessingNode, size: Int) {
+        if let data = node.data as? ProcessingNodeDataErode {
+            data.size = size
+            postUpdateAndEnqueueRebuild()
+        }
+    }
     
     func save() {
         

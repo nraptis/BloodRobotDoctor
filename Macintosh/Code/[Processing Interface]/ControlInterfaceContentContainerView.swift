@@ -71,10 +71,13 @@ struct ControlInterfaceContentContainerView: View {
             case .gray:
                 ControlInterfaceNodeMenuGrayView()
             case .erosion:
-                ControlInterfaceNodeMenuErosionView()
+                if let data = node.data as? ProcessingNodeDataErode {
+                    ControlInterfaceNodeMenuErosionView(controlInterfaceViewModel: controlInterfaceViewModel,
+                                                        node: node,
+                                                        data: data)
+                }
             case .dilation:
                 ControlInterfaceNodeMenuDilationView()
-                
             }
 
             /*
