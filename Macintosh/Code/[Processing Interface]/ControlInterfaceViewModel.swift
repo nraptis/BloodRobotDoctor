@@ -24,35 +24,7 @@ class ControlInterfaceViewModel: ObservableObject {
     let medicalModel = MedicalModel()
     
     init() {
-        //addNode()
-        //updateNodeType(node: selectedNode, type: .gray)
-        
-        //addNode()
-        //updateNodeType(node: selectedNode, type: .dilation)
-        
-        addNode()
-        updateNodeType(node: selectedNode, type: .gauss)
-        
-        if let node = selectedNode, let data = node.data as? ProcessingNodeDataGaussian {
-            data.sizeX = 12
-            data.sizeY = 0
-            
-            data.sigmaX = 0.0
-            data.sigmaY = 60.0
-        }
-        
-        /*
-        addNode()
-        updateNodeType(node: selectedNode, type: .gauss)
-        
-        if let node = selectedNode, let data = node.data as? ProcessingNodeDataGaussian {
-            data.size = 4
-            data.sigma = 15.0
-        }
-         */
-        
-        
-        
+        load()
     }
     
     private func incrementSelectedNodeUUID() {
@@ -136,6 +108,7 @@ class ControlInterfaceViewModel: ObservableObject {
             nodes.remove(at: index)
             
             if nodes.count <= 0 {
+                selectedNode = nil
                 postUpdateAndEnqueueRebuild()
             } else {
                 if index < nodes.count {
@@ -235,11 +208,40 @@ class ControlInterfaceViewModel: ObservableObject {
     }
     
     func save() {
-        
+        let filePath = FileUtils.shared.documentsPath("saved.json")
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(nodes)
+            FileUtils.shared.saveDataToFilePath(data, filePath)
+        } catch let error {
+            print("Error encoding: \(error.localizedDescription)")
+            print("Error encoding: \(self)")
+        }
     }
     
     func load() {
+        selectedNode = nil
+        let decoder = JSONDecoder()
+        do {
+            if let data = FileUtils.shared.dataFromDocumentsFile("saved.json") {
+                
+                nodes = try decoder.decode([ProcessingNode].self, from: data)
+                
+                for index in 0..<nodes.count {
+                    nodes[index].id = index
+                    selectedNode = nodes[index]
+                }
+            }
+            
+            //let data = try encoder.encode(nodes)
+            
+        } catch let error {
+            print("Error decoding: \(error.localizedDescription)")
+            print("Error decoding: \(self)")
+        }
         
+        incrementSelectedNodeUUID()
+        postUpdateAndEnqueueRebuild()
     }
     
     func postUpdate() {

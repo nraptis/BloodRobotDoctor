@@ -7,10 +7,11 @@
 
 import Foundation
 
-class ProcessingNodeData {
+class ProcessingNodeData: Codable {
     
     func process(rgbaImage: RGBImage) -> RGBImage {
         return rgbaImage.clone()
     }
+    
     
 }

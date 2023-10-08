@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ErosionElement: Int {
+enum ErosionElement: String {
     case rect // 0
     case cross // 1
     case ellipse // 2
@@ -24,6 +24,10 @@ extension ErosionElement: Identifiable {
             return 2
         }
     }
+}
+
+extension ErosionElement: Codable {
+    
 }
 
 extension ErosionElement {

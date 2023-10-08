@@ -1,0 +1,1 @@
+[{"type":"gray","data":{}},{"type":"gauss","data":{"sizeY":0,"sizeX":8,"sigmaX":10.532934,"sigmaY":10.491437}},{"data":{"size":6,"element":"ellipse"},"type":"erosion"},{"type":"dilation","data":{"element":"ellipse","size":14}},{"type":"erosion","data":{"element":"ellipse","size":4}}]

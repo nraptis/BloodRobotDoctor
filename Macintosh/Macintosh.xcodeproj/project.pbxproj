@@ -175,6 +175,7 @@
 		EBC7E2FA2ACDF394002803A7 /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7E2F92ACDF394002803A7 /* SliderRow.swift */; };
 		EBC7E2FC2ACDFE2F002803A7 /* StepperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7E2FB2ACDFE2F002803A7 /* StepperRow.swift */; };
 		EBC7E3012ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7E3002ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift */; };
+		EBDF85BF2AD23E990028C823 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF85BE2AD23E990028C823 /* FileUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -475,6 +476,7 @@
 		EBC7E2F92ACDF394002803A7 /* SliderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderRow.swift; sourceTree = "<group>"; };
 		EBC7E2FB2ACDFE2F002803A7 /* StepperRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperRow.swift; sourceTree = "<group>"; };
 		EBC7E3002ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataGaussian.swift; sourceTree = "<group>"; };
+		EBDF85BE2AD23E990028C823 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -605,6 +607,7 @@
 				EB63A72B2ACA51F8008C2D6E /* OpenCVWrapper.m */,
 				EB63A7292ACA51F8008C2D6E /* RGB.swift */,
 				EB63A72C2ACA51F8008C2D6E /* RGBImage.swift */,
+				EBDF85BE2AD23E990028C823 /* FileUtils.swift */,
 			);
 			path = Code;
 			sourceTree = SOURCE_ROOT;
@@ -998,6 +1001,7 @@
 				EB0FB2902ACBE8E100A8E3F0 /* ProcessingNodeType.swift in Sources */,
 				EB63A7622ACA51F8008C2D6E /* RecyclerShapeTriangle2D.swift in Sources */,
 				EB63A7442ACA51F8008C2D6E /* Shape.metal in Sources */,
+				EBDF85BF2AD23E990028C823 /* FileUtils.swift in Sources */,
 				EB63A75B2ACA51F8008C2D6E /* UniformsSprite.swift in Sources */,
 				EB63A7452ACA51F8008C2D6E /* ShapeNodeIndexed.metal in Sources */,
 				EB63A7642ACA51F8008C2D6E /* RecyclerShapeTriangle3D.swift in Sources */,

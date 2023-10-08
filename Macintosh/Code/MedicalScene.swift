@@ -34,32 +34,18 @@ class MedicalScene: GraphicsDelegate {
     }
     
     func load() {
-        //sprite.load(graphics: graphics, fileName: "test_image_8_4.png")
+
         
-        let centerX = graphics.width * 0.5
-        let centerY = graphics.height * 0.5
-        
-        
-        var startX = centerX
-        startX -= Float(sliceWidth) * Float(gridWidth) * 0.5
-        if gridWidth > 1 {
-            startX -= Float(gridSpacing) * Float(gridWidth - 1) * 0.5
-        }
-        
-        var startY = centerY
-        startY -= Float(sliceHeight) * Float(gridHeight) * 0.5
-        if gridHeight > 1 {
-            startY -= Float(gridSpacing) * Float(gridHeight - 1) * 0.5
-        }
         
         let imageNameList = [
-            "callib_image_256_00.png", "callib_image_256_01.png", "callib_image_256_02.png",
+            "cat_and_dog_1_256.png", "cat_and_dog_2_256.png", "callib_image_256_02.png",
             "callib_image_256_03.png", "callib_image_256_04.png", "callib_image_256_05.png",
             "callib_image_256_06.png", "callib_image_256_07.png", "callib_image_256_08.png"]
         
-        var xList = [Float]()
-        var yList = [Float]()
+        //var xList = [Float]()
+        //var yList = [Float]()
         
+        /*
         var gridX = 0
         var gridY = 0
         var x = startX
@@ -77,23 +63,26 @@ class MedicalScene: GraphicsDelegate {
                 x += Float(sliceWidth) + gridSpacing
             }
         }
+        */
         
         for index in imageNameList.indices {
             let imageName = imageNameList[index]
-            let x = xList[index]
-            let y = yList[index]
+            //let x = xList[index]
+            //let y = yList[index]
             
             if let texture = graphics.loadTexture(fileName: imageName) {
                 let rgbImage = RGBImage(texture: texture)
                 let slice = MedicalSceneSlice(graphics: graphics,
-                                              x: x,
-                                              y: y,
+                                              x: 0.0,
+                                              y: 0.0,
                                               width: Float(sliceWidth),
                                               height: Float(sliceHeight),
                                               image: rgbImage)
                 slices.append(slice)
             }
         }
+        
+        repositionTiles()
         
     }
     
@@ -156,6 +145,15 @@ class MedicalScene: GraphicsDelegate {
             isProcessingExecuting = false
         }
         
+        
+        repositionTiles()
+        
+        for slice in slices {
+            slice.draw2D(renderEncoder: renderEncoder)
+        }
+    }
+    
+    func repositionTiles() {
         let centerX = graphics.width * 0.5
         let centerY = graphics.height * 0.5
         
@@ -192,11 +190,6 @@ class MedicalScene: GraphicsDelegate {
             } else {
                 x += Float(sliceWidth) + gridSpacing
             }
-        }
-        
-        
-        for slice in slices {
-            slice.draw2D(renderEncoder: renderEncoder)
         }
     }
     

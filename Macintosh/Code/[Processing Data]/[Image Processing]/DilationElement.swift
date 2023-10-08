@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DilationElement: Int {
+enum DilationElement: String {
     case rect // 0
     case cross // 1
     case ellipse // 2
@@ -24,6 +24,10 @@ extension DilationElement: Identifiable {
             return 2
         }
     }
+}
+
+extension DilationElement: Codable {
+    
 }
 
 extension DilationElement {

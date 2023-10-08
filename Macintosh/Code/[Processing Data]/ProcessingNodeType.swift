@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ProcessingNodeType: Int, CaseIterable {
+enum ProcessingNodeType: String, CaseIterable, Codable {
     case none
     case gray
     case gauss
@@ -61,7 +61,7 @@ extension ProcessingNodeType {
 }
 
 extension ProcessingNodeType: Identifiable {
-    var id: Int {
+    var id: String {
         rawValue
     }
 }
