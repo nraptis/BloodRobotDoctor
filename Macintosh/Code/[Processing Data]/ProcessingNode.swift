@@ -23,10 +23,12 @@ class ProcessingNode: GenericNode {
     
     init() {
         super.init(id: 0)
+        nodeType = .processing
     }
     
     override init(id: Int) {
         super.init(id: id)
+        nodeType = .processing
     }
     
     required init(from decoder: Decoder) throws {
@@ -46,6 +48,7 @@ class ProcessingNode: GenericNode {
             self.data = try container.decode(ProcessingNodeDataDilate.self, forKey: .data)
         }
         try super.init(from: decoder)
+        nodeType = .processing
     }
     
     override func encode(to encoder: Encoder) throws {

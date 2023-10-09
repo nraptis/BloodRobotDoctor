@@ -23,10 +23,12 @@ class LearningNode: GenericNode {
     
     init() {
         super.init(id: 0)
+        nodeType = .learning
     }
     
     override init(id: Int) {
         super.init(id: id)
+        nodeType = .learning
     }
     
     required init(from decoder: Decoder) throws {
@@ -39,6 +41,7 @@ class LearningNode: GenericNode {
             self.data = try container.decode(LearningNodeDataMobileNet.self, forKey: .data)
         }
         try super.init(from: decoder)
+        nodeType = .learning
     }
     
     override func encode(to encoder: Encoder) throws {

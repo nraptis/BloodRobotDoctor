@@ -2,7 +2,7 @@
 //  SliderRow.swift
 //  Macintosh
 //
-//  Created by Screwy Uncle Louie on 10/4/23.
+//  Created by Sports Dad on 10/4/23.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  ProcessingNodeDataErode.swift
 //  Macintosh
 //
-//  Created by Screwy Uncle Louie on 10/5/23.
+//  Created by Sports Dad on 10/5/23.
 //
 
 import Foundation
