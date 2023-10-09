@@ -12,7 +12,7 @@ class ProcessingNodeDataErode: ProcessingNodeData {
     var element = ErosionElement.cross
     var size: Int = 4
     
-    override func process(rgbaImage: RGBImage) -> RGBImage {
+    override func process(rgbaImage: RGBImage, slice: MedicalSceneSlice) -> RGBImage {
         let elementIndex = Int32(element.index)
         return OpenCVWrapper.erode(rgbaImage, element: elementIndex, size: Int32(size))
     }

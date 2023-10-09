@@ -12,7 +12,7 @@ class ProcessingNodeDataDilate: ProcessingNodeData {
     var element = DilationElement.ellipse
     var size: Int = 4
     
-    override func process(rgbaImage: RGBImage) -> RGBImage {
+    override func process(rgbaImage: RGBImage, slice: MedicalSceneSlice) -> RGBImage {
         let elementIndex = Int32(element.index)
         return OpenCVWrapper.dilate(rgbaImage, element: elementIndex, size: Int32(size))
     }

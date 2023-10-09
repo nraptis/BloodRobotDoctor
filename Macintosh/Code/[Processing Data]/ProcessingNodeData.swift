@@ -9,7 +9,7 @@ import Foundation
 
 class ProcessingNodeData: Codable {
     
-    func process(rgbaImage: RGBImage) -> RGBImage {
+    func process(rgbaImage: RGBImage, slice: MedicalSceneSlice) -> RGBImage {
         return rgbaImage.clone()
     }
     

@@ -9,7 +9,7 @@ import Foundation
 
 class ProcessingNodeDataGray: ProcessingNodeData {
     
-    override func process(rgbaImage: RGBImage) -> RGBImage {
+    override func process(rgbaImage: RGBImage, slice: MedicalSceneSlice) -> RGBImage {
         return OpenCVWrapper.gray(rgbaImage)
     }
 }

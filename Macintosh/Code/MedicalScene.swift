@@ -34,36 +34,11 @@ class MedicalScene: GraphicsDelegate {
     }
     
     func load() {
-
-        
         
         let imageNameList = [
             "cat_and_dog_1_256.png", "cat_and_dog_2_256.png", "callib_image_256_02.png",
             "callib_image_256_03.png", "callib_image_256_04.png", "callib_image_256_05.png",
             "callib_image_256_06.png", "callib_image_256_07.png", "callib_image_256_08.png"]
-        
-        //var xList = [Float]()
-        //var yList = [Float]()
-        
-        /*
-        var gridX = 0
-        var gridY = 0
-        var x = startX
-        var y = startY
-        for _ in 0..<imageNameList.count {
-            xList.append(x)
-            yList.append(y)
-            gridX += 1
-            if gridX == gridWidth {
-                gridX = 0
-                gridY += 1
-                y += Float(sliceHeight) + gridSpacing
-                x = startX
-            } else {
-                x += Float(sliceWidth) + gridSpacing
-            }
-        }
-        */
         
         for index in imageNameList.indices {
             let imageName = imageNameList[index]
@@ -81,9 +56,7 @@ class MedicalScene: GraphicsDelegate {
                 slices.append(slice)
             }
         }
-        
         repositionTiles()
-        
     }
     
     @objc func receive(notification: Notification) {
@@ -97,14 +70,18 @@ class MedicalScene: GraphicsDelegate {
             isProcessingExecuting = true
             
             var processingNodes = [ProcessingNode]()
-            for processingNode in controlInterfaceViewModel.nodes {
+            for processingNode in controlInterfaceViewModel.processingNodes {
                 processingNodes.append(processingNode)
             }
             
-            print("Process In Background...!!!")
+            var learningNodes = [LearningNode]()
+            for learningNode in controlInterfaceViewModel.learningNodes {
+                learningNodes.append(learningNode)
+            }
             
             processingQueue.async {
                 self.processInBackground(processingNodes: processingNodes)
+                self.learnInBackground(learningNodes: learningNodes)
                 self.isProcessingComplete = true
                 
                 // Note: isProcessingExecuting gets reset on the draw as we update textures...
@@ -119,9 +96,6 @@ class MedicalScene: GraphicsDelegate {
     func draw2D(renderEncoder: MTLRenderCommandEncoder) {
         
         if isProcessingComplete {
-            
-            print("isProcessingComplete ==> STAMP")
-            
             for slice in slices {
                 if let texture = slice.sprite.texture {
                     let bytes = slice.imageProcessed.arrayBGRA()
@@ -137,14 +111,10 @@ class MedicalScene: GraphicsDelegate {
                                     withBytes: bytes,
                                     bytesPerRow: bytesPerRow)
                 }
-                //slice.stampProcessedImageToTexture()
-                
             }
-            
             isProcessingComplete = false
             isProcessingExecuting = false
         }
-        
         
         repositionTiles()
         
@@ -163,7 +133,6 @@ class MedicalScene: GraphicsDelegate {
             startX -= Float(gridSpacing) * Float(gridWidth - 1) * 0.5
         }
         
-        //- (Float(sliceWidth) * Float(gridWidth) * 0.5 + gridSpacing * Float(gridWidth - 1))
         var startY = centerY
         startY -= Float(sliceHeight) * Float(gridHeight) * 0.5
         if gridHeight > 1 {
@@ -194,11 +163,16 @@ class MedicalScene: GraphicsDelegate {
     }
     
     private func processInBackground(processingNodes: [ProcessingNode]) {
-        print("processInBackground ==> START")
         for slice in slices {
-            slice.imageProcessed = controlInterfaceViewModel.process(rgbaImage: slice.image)
+            slice.imageProcessed = controlInterfaceViewModel.process(rgbaImage: slice.image, slice: slice)
         }
-        print("processInBackground ==> DONE")
+    }
+    
+    private func learnInBackground(learningNodes: [LearningNode]) {
+        for slice in slices {
+            _ = controlInterfaceViewModel.process(rgbaImage: slice.image, slice: slice)
+            
+        }
     }
     
     

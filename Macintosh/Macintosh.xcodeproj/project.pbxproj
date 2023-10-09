@@ -13,14 +13,23 @@
 		EB0EAA252ACE6E7E006F30CB /* ProcessingNodeDataErode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA242ACE6E7E006F30CB /* ProcessingNodeDataErode.swift */; };
 		EB0EAA272ACE6E88006F30CB /* ProcessingNodeDataDilate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EAA262ACE6E88006F30CB /* ProcessingNodeDataDilate.swift */; };
 		EB0FB2902ACBE8E100A8E3F0 /* ProcessingNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */; };
-		EB0FB2922ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */; };
 		EB1BF1342ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */; };
 		EB1BF1362ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */; };
 		EB1BF1382ACBBD91006C25B4 /* AppContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1372ACBBD91006C25B4 /* AppContainerView.swift */; };
 		EB1BF13A2ACBBDED006C25B4 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF1392ACBBDED006C25B4 /* ApplicationController.swift */; };
 		EB1BF13C2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */; };
-		EB1BF13E2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF13D2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift */; };
 		EB1BF1402ACBDA53006C25B4 /* ProcessingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */; };
+		EB234DE72AD3B4660073C39C /* LearningNodeDataMobileNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DE32AD3B4660073C39C /* LearningNodeDataMobileNet.swift */; };
+		EB234DE82AD3B4660073C39C /* LearningNodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DE42AD3B4660073C39C /* LearningNodeData.swift */; };
+		EB234DE92AD3B4660073C39C /* LearningNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DE52AD3B4660073C39C /* LearningNode.swift */; };
+		EB234DEA2AD3B4660073C39C /* LearningNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DE62AD3B4660073C39C /* LearningNodeType.swift */; };
+		EB234DED2AD3BC2D0073C39C /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DEC2AD3BC2D0073C39C /* GenericNode.swift */; };
+		EB234DEF2AD3BC5C0073C39C /* GenericNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DEE2AD3BC5C0073C39C /* GenericNodeType.swift */; };
+		EB234DF12AD3C7410073C39C /* ControlInterfaceProcessingNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DF02AD3C7410073C39C /* ControlInterfaceProcessingNodeCell.swift */; };
+		EB234DF32AD3C7550073C39C /* ControlInterfaceLearningNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DF22AD3C7550073C39C /* ControlInterfaceLearningNodeCell.swift */; };
+		EB234DF52AD3C8300073C39C /* ControlInterfaceProcessingContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DF42AD3C8300073C39C /* ControlInterfaceProcessingContentContainerView.swift */; };
+		EB234DF72AD3C83D0073C39C /* ControlInterfaceLearningContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DF62AD3C83D0073C39C /* ControlInterfaceLearningContentContainerView.swift */; };
+		EB234DF92AD3C8970073C39C /* ControlInterfaceNodeMenuMobileNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234DF82AD3C8970073C39C /* ControlInterfaceNodeMenuMobileNet.swift */; };
 		EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */; };
 		EB478EA92ACA402700213214 /* libopencv_alphamat.4.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC49F5F2ACA37EA002E75E5 /* libopencv_alphamat.4.8.1.dylib */; };
 		EB478EAA2ACA402700213214 /* libopencv_alphamat.4.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = EBC49F5F2ACA37EA002E75E5 /* libopencv_alphamat.4.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -253,14 +262,23 @@
 		EB0EAA242ACE6E7E006F30CB /* ProcessingNodeDataErode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataErode.swift; sourceTree = "<group>"; };
 		EB0EAA262ACE6E88006F30CB /* ProcessingNodeDataDilate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeDataDilate.swift; sourceTree = "<group>"; };
 		EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNodeType.swift; sourceTree = "<group>"; };
-		EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceNodeCell.swift; sourceTree = "<group>"; };
 		EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceViewModel.swift; sourceTree = "<group>"; };
 		EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceContainerView.swift; sourceTree = "<group>"; };
 		EB1BF1372ACBBD91006C25B4 /* AppContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerView.swift; sourceTree = "<group>"; };
 		EB1BF1392ACBBDED006C25B4 /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceToolbarView.swift; sourceTree = "<group>"; };
-		EB1BF13D2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceContentContainerView.swift; sourceTree = "<group>"; };
 		EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingNode.swift; sourceTree = "<group>"; };
+		EB234DE32AD3B4660073C39C /* LearningNodeDataMobileNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningNodeDataMobileNet.swift; sourceTree = "<group>"; };
+		EB234DE42AD3B4660073C39C /* LearningNodeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningNodeData.swift; sourceTree = "<group>"; };
+		EB234DE52AD3B4660073C39C /* LearningNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningNode.swift; sourceTree = "<group>"; };
+		EB234DE62AD3B4660073C39C /* LearningNodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningNodeType.swift; sourceTree = "<group>"; };
+		EB234DEC2AD3BC2D0073C39C /* GenericNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
+		EB234DEE2AD3BC5C0073C39C /* GenericNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNodeType.swift; sourceTree = "<group>"; };
+		EB234DF02AD3C7410073C39C /* ControlInterfaceProcessingNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceProcessingNodeCell.swift; sourceTree = "<group>"; };
+		EB234DF22AD3C7550073C39C /* ControlInterfaceLearningNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceLearningNodeCell.swift; sourceTree = "<group>"; };
+		EB234DF42AD3C8300073C39C /* ControlInterfaceProcessingContentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceProcessingContentContainerView.swift; sourceTree = "<group>"; };
+		EB234DF62AD3C83D0073C39C /* ControlInterfaceLearningContentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceLearningContentContainerView.swift; sourceTree = "<group>"; };
+		EB234DF82AD3C8970073C39C /* ControlInterfaceNodeMenuMobileNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceNodeMenuMobileNet.swift; sourceTree = "<group>"; };
 		EB3941FD2ACA874300DF1C2A /* MedicalSceneSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalSceneSlice.swift; sourceTree = "<group>"; };
 		EB478E032ACA3CE200213214 /* libopencv_phase_unwrapping.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_phase_unwrapping.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_phase_unwrapping.4.8.1.dylib; sourceTree = "<group>"; };
 		EB478E042ACA3CE200213214 /* libopencv_optflow.4.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_optflow.4.8.1.dylib; path = ../../../../../../opt/homebrew/Cellar/opencv/4.8.1/lib/libopencv_optflow.4.8.1.dylib; sourceTree = "<group>"; };
@@ -552,12 +570,15 @@
 				EB1BF1332ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift */,
 				EB1BF1352ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift */,
 				EB1BF13B2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift */,
-				EB1BF13D2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift */,
-				EB0FB2912ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift */,
+				EB234DF82AD3C8970073C39C /* ControlInterfaceNodeMenuMobileNet.swift */,
 				EBA25E632ACD0D810015A508 /* ControlInterfaceNodeMenuGaussianView.swift */,
 				EBA25E652ACD0F1F0015A508 /* ControlInterfaceNodeMenuGrayView.swift */,
 				EBA25E672ACD0F3D0015A508 /* ControlInterfaceNodeMenuErosionView.swift */,
 				EBA25E692ACD0F500015A508 /* ControlInterfaceNodeMenuDilationView.swift */,
+				EB234DF02AD3C7410073C39C /* ControlInterfaceProcessingNodeCell.swift */,
+				EB234DF22AD3C7550073C39C /* ControlInterfaceLearningNodeCell.swift */,
+				EB234DF42AD3C8300073C39C /* ControlInterfaceProcessingContentContainerView.swift */,
+				EB234DF62AD3C83D0073C39C /* ControlInterfaceLearningContentContainerView.swift */,
 			);
 			path = "[Processing Interface]";
 			sourceTree = "<group>";
@@ -566,11 +587,39 @@
 			isa = PBXGroup;
 			children = (
 				EBC7E2FF2ACE14B9002803A7 /* [Image Processing] */,
-				EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */,
 				EB1BF13F2ACBDA53006C25B4 /* ProcessingNode.swift */,
 				EBA25E6B2ACD18770015A508 /* ProcessingNodeData.swift */,
+				EB0FB28F2ACBE8E100A8E3F0 /* ProcessingNodeType.swift */,
 			);
 			path = "[Processing Data]";
+			sourceTree = "<group>";
+		};
+		EB234DE12AD3B4660073C39C /* [Learning Data] */ = {
+			isa = PBXGroup;
+			children = (
+				EB234DE22AD3B4660073C39C /* [Machine Learning] */,
+				EB234DE42AD3B4660073C39C /* LearningNodeData.swift */,
+				EB234DE52AD3B4660073C39C /* LearningNode.swift */,
+				EB234DE62AD3B4660073C39C /* LearningNodeType.swift */,
+			);
+			path = "[Learning Data]";
+			sourceTree = "<group>";
+		};
+		EB234DE22AD3B4660073C39C /* [Machine Learning] */ = {
+			isa = PBXGroup;
+			children = (
+				EB234DE32AD3B4660073C39C /* LearningNodeDataMobileNet.swift */,
+			);
+			path = "[Machine Learning]";
+			sourceTree = "<group>";
+		};
+		EB234DEB2AD3BBEC0073C39C /* [Abstract Data] */ = {
+			isa = PBXGroup;
+			children = (
+				EB234DEC2AD3BC2D0073C39C /* GenericNode.swift */,
+				EB234DEE2AD3BC5C0073C39C /* GenericNodeType.swift */,
+			);
+			path = "[Abstract Data]";
 			sourceTree = "<group>";
 		};
 		EB63A71A2ACA51F8008C2D6E /* Shaders */ = {
@@ -587,6 +636,8 @@
 		EB63A71F2ACA51F8008C2D6E /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				EB234DEB2AD3BBEC0073C39C /* [Abstract Data] */,
+				EB234DE12AD3B4660073C39C /* [Learning Data] */,
 				EB1BF12A2ACB98F0006C25B4 /* [Processing Data] */,
 				EB1BF1292ACB98F0006C25B4 /* [Processing Interface] */,
 				EB63A7302ACA51F8008C2D6E /* [Graphics] */,
@@ -974,16 +1025,17 @@
 				EB63A7522ACA51F8008C2D6E /* OpenCVUtils.cpp in Sources */,
 				EB63A7582ACA51F8008C2D6E /* Graphics.swift in Sources */,
 				EB63A74C2ACA51F8008C2D6E /* MetalEngine.swift in Sources */,
-				EB1BF13E2ACBC56A006C25B4 /* ControlInterfaceContentContainerView.swift in Sources */,
 				EB1BF1362ACBAA7B006C25B4 /* ControlInterfaceContainerView.swift in Sources */,
 				EB63A74F2ACA51F8008C2D6E /* OpenCVWrapper.m in Sources */,
 				EBC7E2FC2ACDFE2F002803A7 /* StepperRow.swift in Sources */,
 				EB63A7572ACA51F8008C2D6E /* Quaternion.swift in Sources */,
 				EB63A7502ACA51F8008C2D6E /* RGBImage.swift in Sources */,
 				EB63A74E2ACA51F8008C2D6E /* RGB.swift in Sources */,
+				EB234DE92AD3B4660073C39C /* LearningNode.swift in Sources */,
 				EB63A74D2ACA51F8008C2D6E /* MetalViewController.swift in Sources */,
 				EBA25E682ACD0F3D0015A508 /* ControlInterfaceNodeMenuErosionView.swift in Sources */,
 				EBA25E6C2ACD18770015A508 /* ProcessingNodeData.swift in Sources */,
+				EB234DEF2AD3BC5C0073C39C /* GenericNodeType.swift in Sources */,
 				EB63A75A2ACA51F8008C2D6E /* UniformsShape.swift in Sources */,
 				EB63A74A2ACA51F8008C2D6E /* MetalView.swift in Sources */,
 				EB3941FE2ACA874300DF1C2A /* MedicalSceneSlice.swift in Sources */,
@@ -993,7 +1045,10 @@
 				EBC7E2FA2ACDF394002803A7 /* SliderRow.swift in Sources */,
 				EB0EAA232ACE6E74006F30CB /* ProcessingNodeDataGray.swift in Sources */,
 				EB63A7592ACA51F8008C2D6E /* UniformsShapeNodeIndexed.swift in Sources */,
-				EB0FB2922ACBEBA700A8E3F0 /* ControlInterfaceNodeCell.swift in Sources */,
+				EB234DE82AD3B4660073C39C /* LearningNodeData.swift in Sources */,
+				EB234DF72AD3C83D0073C39C /* ControlInterfaceLearningContentContainerView.swift in Sources */,
+				EB234DE72AD3B4660073C39C /* LearningNodeDataMobileNet.swift in Sources */,
+				EB234DEA2AD3B4660073C39C /* LearningNodeType.swift in Sources */,
 				EB0EAA1F2ACE6693006F30CB /* ErosionElement.swift in Sources */,
 				EB1BF13C2ACBC557006C25B4 /* ControlInterfaceToolbarView.swift in Sources */,
 				EB63A7542ACA51F8008C2D6E /* Math.swift in Sources */,
@@ -1011,13 +1066,18 @@
 				EB63A7552ACA51F8008C2D6E /* Sprite2D.swift in Sources */,
 				EB63A7492ACA51F8008C2D6E /* MacintoshApp.swift in Sources */,
 				EB63A7612ACA51F8008C2D6E /* RecyclerShapeQuad3D.swift in Sources */,
+				EB234DF12AD3C7410073C39C /* ControlInterfaceProcessingNodeCell.swift in Sources */,
 				EB1BF13A2ACBBDED006C25B4 /* ApplicationController.swift in Sources */,
 				EB1BF1402ACBDA53006C25B4 /* ProcessingNode.swift in Sources */,
 				EBA25E6A2ACD0F500015A508 /* ControlInterfaceNodeMenuDilationView.swift in Sources */,
 				EB1BF1342ACBA9D8006C25B4 /* ControlInterfaceViewModel.swift in Sources */,
+				EB234DED2AD3BC2D0073C39C /* GenericNode.swift in Sources */,
+				EB234DF92AD3C8970073C39C /* ControlInterfaceNodeMenuMobileNet.swift in Sources */,
 				EB63A7462ACA51F8008C2D6E /* SpriteNodeIndexed.metal in Sources */,
+				EB234DF32AD3C7550073C39C /* ControlInterfaceLearningNodeCell.swift in Sources */,
 				EB63A74B2ACA51F8008C2D6E /* MetalPipeline.swift in Sources */,
 				EB63A75F2ACA51F8008C2D6E /* Recycler.swift in Sources */,
+				EB234DF52AD3C8300073C39C /* ControlInterfaceProcessingContentContainerView.swift in Sources */,
 				EB52EB102ACF695800CD4914 /* SegmentRow.swift in Sources */,
 				EB63A7602ACA51F8008C2D6E /* RecyclerSprite2D.swift in Sources */,
 				EB63A75C2ACA51F8008C2D6E /* UniformsSpriteNodeIndexed.swift in Sources */,

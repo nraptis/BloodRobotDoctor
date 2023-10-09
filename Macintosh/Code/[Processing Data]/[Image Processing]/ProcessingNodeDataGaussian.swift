@@ -15,7 +15,7 @@ class ProcessingNodeDataGaussian: ProcessingNodeData {
     var sigmaX: Float = 0.0
     var sigmaY: Float = 0.0
     
-    override func process(rgbaImage: RGBImage) -> RGBImage {
+    override func process(rgbaImage: RGBImage, slice: MedicalSceneSlice) -> RGBImage {
         return OpenCVWrapper.gaussian(rgbaImage, sizeX: Int32(sizeX), sizeY: Int32(sizeY), sigmaX: sigmaX, sigmaY: sigmaY)
     }
     

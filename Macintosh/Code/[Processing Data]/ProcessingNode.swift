@@ -7,10 +7,10 @@
 
 import Foundation
 
-class ProcessingNode: Codable {
+class ProcessingNode: GenericNode {
     
     static var preview: ProcessingNode {
-        let result = ProcessingNode(id: 0)
+        let result = ProcessingNode()
         return result
     }
     
@@ -21,11 +21,17 @@ class ProcessingNode: Codable {
         case type, data
     }
     
+    init() {
+        super.init(id: 0)
+    }
+    
+    override init(id: Int) {
+        super.init(id: id)
+    }
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = 0
         self.type = try container.decode(ProcessingNodeType.self, forKey: .type)
-        
         switch self.type {
             
         case .none:
@@ -39,38 +45,17 @@ class ProcessingNode: Codable {
         case .dilation:
             self.data = try container.decode(ProcessingNodeDataDilate.self, forKey: .data)
         }
+        try super.init(from: decoder)
     }
     
-    func encode(to encoder: Encoder) throws {
+    override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(type, forKey: .type)
         try container.encode(data, forKey: .data)
+        try super.encode(to: encoder)
     }
     
-    var id: Int
-    init(id: Int) {
-        self.id = id
+    override func process(rgbaImage: RGBImage, slice: MedicalSceneSlice) -> RGBImage {
+        return data.process(rgbaImage: rgbaImage, slice: slice)
     }
-    
-    func process(rgbaImage: RGBImage) -> RGBImage {
-        return data.process(rgbaImage: rgbaImage)
-    }
-    
-    func save() -> Data {
-        
-        let encoder = JSONEncoder()
-        do {
-            let data = try encoder.encode(self)
-            return data
-        } catch let error {
-            print("Error encoding: \(error.localizedDescription)")
-            print("Error encoding: \(self)")
-            return Data()
-        }
-    }
-    
-}
-
-extension ProcessingNode: Identifiable {
-    
 }

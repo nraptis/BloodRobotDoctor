@@ -23,14 +23,25 @@ struct ControlInterfaceToolbarView: View {
             HStack {
                 
                 Button {
-                    controlInterfaceViewModel.addNode()
+                    controlInterfaceViewModel.addProcessingNode()
                 } label: {
                     ZStack {
-                        Text("Add Node")
+                        Text("Add Processing Node")
                             .padding(.all, 8.0)
                     }
                     .frame(width: 128.0, height: 36.0)
                     .background(LinearGradient(colors: [Color.red, Color.blue], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
+                }
+                
+                Button {
+                    controlInterfaceViewModel.addLearningNode()
+                } label: {
+                    ZStack {
+                        Text("Add Learning Node")
+                            .padding(.all, 8.0)
+                    }
+                    .frame(width: 128.0, height: 36.0)
+                    .background(LinearGradient(colors: [Color.brown, Color.purple], startPoint: UnitPoint(x: 0.5, y: 1.0), endPoint: UnitPoint(x: 0.5, y: 0.0)))
                 }
                 
                 Button {
@@ -91,17 +102,25 @@ struct ControlInterfaceToolbarView: View {
             
             HStack {
                 ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(controlInterfaceViewModel.processingNodes) { node in
+                            ControlInterfaceProcessingNodeCell(node: node,
+                                                               selected: controlInterfaceViewModel.selected(processingNode: node),
+                                                               controlInterfaceViewModel: controlInterfaceViewModel)
+                        }
+                    }
+                }
+            }
+            .frame(height: 36.0)
+            
+            HStack {
+                ScrollView(.horizontal) {
                     
                     HStack {
-                        ForEach(controlInterfaceViewModel.nodes) { node in
-                            
-                            ControlInterfaceNodeCell(node: node,
-                                                     selected: controlInterfaceViewModel.selected(node: node),
-                                                     controlInterfaceViewModel: controlInterfaceViewModel)
-                            
-                            //Text("\(node.id)")
-                            //    .padding(.all, 8.0)
-                            
+                        ForEach(controlInterfaceViewModel.learningNodes) { node in
+                            ControlInterfaceLearningNodeCell(node: node,
+                                                             selected: controlInterfaceViewModel.selected(learningNode: node),
+                                                             controlInterfaceViewModel: controlInterfaceViewModel)
                         }
                     }
                 }

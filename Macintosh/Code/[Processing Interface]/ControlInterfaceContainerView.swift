@@ -25,12 +25,18 @@ struct ControlInterfaceContainerView: View {
                                         height: ApplicationController.shared.toolbarHeight,
                                         controlInterfaceViewModel: controlInterfaceViewModel)
             
-            if let node = controlInterfaceViewModel.selectedNode {
-                ControlInterfaceContentContainerView(node: node,
-                                                     width: width,
-                                                     height: height - ApplicationController.shared.toolbarHeight,
-                                                     controlInterfaceViewModel: controlInterfaceViewModel,
-                                                     id: node.id)
+            if let processingNode = controlInterfaceViewModel.selectedNode as? ProcessingNode {
+                ControlInterfaceProcessingContentContainerView(node: processingNode,
+                                                         width: width,
+                                                         height: height - ApplicationController.shared.toolbarHeight,
+                                                         controlInterfaceViewModel: controlInterfaceViewModel,
+                                                         id: processingNode.id)
+            } else if let learningNode = controlInterfaceViewModel.selectedNode as? LearningNode {
+                ControlInterfaceLearningContentContainerView(node: learningNode,
+                                                             width: width,
+                                                             height: height - ApplicationController.shared.toolbarHeight,
+                                                             controlInterfaceViewModel: controlInterfaceViewModel,
+                                                             id: learningNode.id)
             } else {
                 ZStack {
                     
