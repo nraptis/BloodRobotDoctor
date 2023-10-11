@@ -12,15 +12,15 @@ final class ApplicationController {
     static let shared = ApplicationController()
     
     lazy var appWidth: CGFloat = {
-        1280.0
+        1400.0
     }()
     
     lazy var appHeight: CGFloat = {
-        936.0
+        986.0
     }()
     
     lazy var toolbarHeight: CGFloat = {
-        88.0
+        150.0
     }()
     
     private init() {

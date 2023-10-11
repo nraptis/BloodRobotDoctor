@@ -1,2 +1,4 @@
 Macintosh/Assets/SegmentationModel_no_metadata.mlpackage/Data/com.apple.CoreML/weights/weight.bin filter=lfs diff=lfs merge=lfs -text
 Macintosh/Assets/SegmentationModel_with_metadata.mlpackage/Data/com.apple.CoreML/weights/weight.bin filter=lfs diff=lfs merge=lfs -text
+Macintosh/Models/SegmentationModel_no_metadata.mlpackage/Data/com.apple.CoreML/weights/weight.bin filter=lfs diff=lfs merge=lfs -text
+Macintosh/Models/SegmentationModel_with_metadata.mlpackage/Data/com.apple.CoreML/weights/weight.bin filter=lfs diff=lfs merge=lfs -text

@@ -34,6 +34,11 @@ struct AppContainerView: View {
                     .frame(width: geometry.size.width,
                            height: geometry.size.height)
                     
+                    MarkUpView(medicalScene: controlInterfaceViewModel.scene,
+                               width: geometry.size.width,
+                               height: geometry.size.height,
+                               controlInterfaceViewModel: controlInterfaceViewModel)
+                    
                     ControlInterfaceContainerView(width: geometry.size.width,
                                                   height: geometry.size.height,
                                                   controlInterfaceViewModel: controlInterfaceViewModel)

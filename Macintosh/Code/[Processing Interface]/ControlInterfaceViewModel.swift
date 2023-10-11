@@ -9,6 +9,8 @@ import Foundation
 
 class ControlInterfaceViewModel: ObservableObject {
     
+    
+    
     var isProcessingEnqueued = false
     
     var processingNodes = [ProcessingNode]()
@@ -26,8 +28,32 @@ class ControlInterfaceViewModel: ObservableObject {
     
     let medicalModel = MedicalModel()
     
+    lazy var scene: MedicalScene = {
+        MedicalScene(controlInterfaceViewModel: self,
+                                 medicalModel: medicalModel)
+    }()
+    
+    
+    
+    
+    
     init() {
         load()
+        NotificationCenter.default.addObserver(self, selector: #selector(receive(notification:)),
+                                               name: MedicalScene.processingCompleteNotificationName,
+                                               object: nil)
+    }
+    
+    @objc func receive(notification: Notification) {
+        if Thread.isMainThread {
+            print("churp mt")
+            objectWillChange.send()
+        } else {
+            DispatchQueue.main.async {
+                print("churp bt")
+                self.objectWillChange.send()
+            }
+        }
     }
     
     private func incrementSelectedNodeUUID() {
@@ -367,7 +393,10 @@ class ControlInterfaceViewModel: ObservableObject {
     
     func postUpdateAndEnqueueRebuild() {
         DispatchQueue.main.async {
-            self.objectWillChange.send()
+            
+            // TODO: If the medical scene is detached, this will need comment removed
+            //self.objectWillChange.send()
+            
             self.isProcessingEnqueued = true
         }
     }

@@ -10,6 +10,14 @@ import Metal
 import simd
 
 class MedicalScene: GraphicsDelegate {
+    
+    static var preview: MedicalScene {
+        MedicalScene(controlInterfaceViewModel: ControlInterfaceViewModel.preview,
+                     medicalModel: MedicalModel.preview)
+    }
+    
+    static let processingCompleteNotificationName = NSNotification.Name("processing.complete")
+    
     var graphics: Graphics!
     
     var slices = [MedicalSceneSlice]()
@@ -47,7 +55,8 @@ class MedicalScene: GraphicsDelegate {
             
             if let texture = graphics.loadTexture(fileName: imageName) {
                 let rgbImage = RGBImage(texture: texture)
-                let slice = MedicalSceneSlice(graphics: graphics,
+                let slice = MedicalSceneSlice(id: index,
+                                              graphics: graphics,
                                               x: 0.0,
                                               y: 0.0,
                                               width: Float(sliceWidth),
@@ -85,6 +94,8 @@ class MedicalScene: GraphicsDelegate {
                 self.isProcessingComplete = true
                 
                 // Note: isProcessingExecuting gets reset on the draw as we update textures...
+                // Instruct the UI to Re-Draw
+                NotificationCenter.default.post(name: Self.processingCompleteNotificationName, object: nil)
             }
         }
     }

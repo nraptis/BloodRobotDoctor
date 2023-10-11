@@ -9,10 +9,21 @@ import Foundation
 import Metal
 import simd
 
-class MedicalSceneSlice {
+class MedicalSceneSlice: Identifiable {
+    
+    static var preview: MedicalSceneSlice {
+        let scene = MedicalScene.preview
+        let image = RGBImage(width: 256, height: 256)
+        let graphics = Graphics(delegate: scene, width: 256.0, height: 256.0)
+        return MedicalSceneSlice(id: 0, graphics: graphics,
+                                 x: 0.0, y: 0.0,
+                                 width: 256.0, height: 256.0,
+                                 image: image)
+    }
     
     let recyclerSprite2D = RecyclerSprite2D()
     
+    let id: Int
     let graphics: Graphics
     var x: Float
     var y: Float
@@ -22,7 +33,8 @@ class MedicalSceneSlice {
     var imageProcessed: RGBImage
     let sprite = Sprite2D()
     
-    init(graphics: Graphics, x: Float, y: Float, width: Float, height: Float, image: RGBImage) {
+    init(id: Int, graphics: Graphics, x: Float, y: Float, width: Float, height: Float, image: RGBImage) {
+        self.id = id
         self.graphics = graphics
         self.x = x
         self.y = y
