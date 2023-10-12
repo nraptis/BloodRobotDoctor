@@ -7,6 +7,7 @@
 
 import Foundation
 import Metal
+import Cocoa
 import simd
 
 class MedicalScene: GraphicsDelegate {
@@ -44,26 +45,52 @@ class MedicalScene: GraphicsDelegate {
     func load() {
         
         let imageNameList = [
+            "test_image_272_380.png",
+            "test_image_420_236.png",
+            "test_image_440_800.png",
+            "test_image_880_520.png",
+            
             "cat_and_dog_1_256.png", "cat_and_dog_2_256.png", "callib_image_256_02.png",
-            "callib_image_256_03.png", "callib_image_256_04.png", "callib_image_256_05.png",
-            "callib_image_256_06.png", "callib_image_256_07.png", "callib_image_256_08.png"]
+            "callib_image_256_03.png", "callib_image_256_04.png",
+            //"callib_image_256_05.png",
+            //"callib_image_256_06.png", "callib_image_256_07.png", "callib_image_256_08.png"
+        ]
+        
+        
+        
         
         for index in imageNameList.indices {
             let imageName = imageNameList[index]
             //let x = xList[index]
             //let y = yList[index]
             
-            if let texture = graphics.loadTexture(fileName: imageName) {
-                let rgbImage = RGBImage(texture: texture)
-                let slice = MedicalSceneSlice(id: index,
-                                              graphics: graphics,
-                                              x: 0.0,
-                                              y: 0.0,
-                                              width: Float(sliceWidth),
-                                              height: Float(sliceHeight),
-                                              image: rgbImage)
-                slices.append(slice)
+            let filePath = FileUtils.shared.assetsPath(imageName)
+            let url = URL(filePath: filePath)
+            
+            print("url = \(url)")
+            
+            if let nsImage = NSImage(contentsOf: url) {
+                
+                print("ns image: \(nsImage.size.width) x \(nsImage.size.height)")
+                
+                if let downsize = NSImage.cropAndFit(image: nsImage, width: CGFloat(sliceWidth), height: CGFloat(sliceHeight)) {
+                    
+                    //if let texture = graphics.loadTexture(fileName: imageName) {
+                    if let texture = graphics.loadTexture(image: nsImage) {
+                        let rgbImage = RGBImage(texture: texture)
+                        let slice = MedicalSceneSlice(id: index,
+                                                      graphics: graphics,
+                                                      x: 0.0,
+                                                      y: 0.0,
+                                                      width: Float(sliceWidth),
+                                                      height: Float(sliceHeight),
+                                                      image: rgbImage)
+                        slices.append(slice)
+                        
+                    }
+                }
             }
+            
         }
         repositionTiles()
     }

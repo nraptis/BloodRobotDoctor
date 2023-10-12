@@ -179,6 +179,8 @@
 		EB78D7F22AD73E150043BCD9 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EB78D7EF2AD73E150043BCD9 /* MobileNet.mlmodel */; };
 		EB78D7F32AD73E150043BCD9 /* SegmentationModel_with_metadata.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = EB78D7F02AD73E150043BCD9 /* SegmentationModel_with_metadata.mlpackage */; };
 		EB78D7F42AD73E150043BCD9 /* SegmentationModel_no_metadata.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = EB78D7F12AD73E150043BCD9 /* SegmentationModel_no_metadata.mlpackage */; };
+		EB78D7F62AD743820043BCD9 /* CGSize+Aspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78D7F52AD743820043BCD9 /* CGSize+Aspect.swift */; };
+		EB78D7F82AD78E650043BCD9 /* NSImage+CropAndFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78D7F72AD78E650043BCD9 /* NSImage+CropAndFit.swift */; };
 		EBA25E622ACD0A220015A508 /* MedicalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA25E612ACD0A220015A508 /* MedicalModel.swift */; };
 		EBA25E642ACD0D810015A508 /* ControlInterfaceNodeMenuGaussianView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA25E632ACD0D810015A508 /* ControlInterfaceNodeMenuGaussianView.swift */; };
 		EBA25E662ACD0F1F0015A508 /* ControlInterfaceNodeMenuGrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA25E652ACD0F1F0015A508 /* ControlInterfaceNodeMenuGrayView.swift */; };
@@ -380,6 +382,8 @@
 		EB78D7EF2AD73E150043BCD9 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		EB78D7F02AD73E150043BCD9 /* SegmentationModel_with_metadata.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = SegmentationModel_with_metadata.mlpackage; sourceTree = "<group>"; };
 		EB78D7F12AD73E150043BCD9 /* SegmentationModel_no_metadata.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = SegmentationModel_no_metadata.mlpackage; sourceTree = "<group>"; };
+		EB78D7F52AD743820043BCD9 /* CGSize+Aspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Aspect.swift"; sourceTree = "<group>"; };
+		EB78D7F72AD78E650043BCD9 /* NSImage+CropAndFit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+CropAndFit.swift"; sourceTree = "<group>"; };
 		EB7F557D2ACA472700A5D84C /* Macintosh-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Macintosh-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBA25E612ACD0A220015A508 /* MedicalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalModel.swift; sourceTree = "<group>"; };
 		EBA25E632ACD0D810015A508 /* ControlInterfaceNodeMenuGaussianView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlInterfaceNodeMenuGaussianView.swift; sourceTree = "<group>"; };
@@ -679,6 +683,8 @@
 				EB63A7292ACA51F8008C2D6E /* RGB.swift */,
 				EB63A72C2ACA51F8008C2D6E /* RGBImage.swift */,
 				EBDF85BE2AD23E990028C823 /* FileUtils.swift */,
+				EB78D7F52AD743820043BCD9 /* CGSize+Aspect.swift */,
+				EB78D7F72AD78E650043BCD9 /* NSImage+CropAndFit.swift */,
 			);
 			path = Code;
 			sourceTree = SOURCE_ROOT;
@@ -1095,6 +1101,7 @@
 				EB63A7452ACA51F8008C2D6E /* ShapeNodeIndexed.metal in Sources */,
 				EB63A7642ACA51F8008C2D6E /* RecyclerShapeTriangle3D.swift in Sources */,
 				EB78D7F22AD73E150043BCD9 /* MobileNet.mlmodel in Sources */,
+				EB78D7F62AD743820043BCD9 /* CGSize+Aspect.swift in Sources */,
 				EB63A7562ACA51F8008C2D6E /* Matrix.swift in Sources */,
 				EBA25E662ACD0F1F0015A508 /* ControlInterfaceNodeMenuGrayView.swift in Sources */,
 				EBC7E3012ACE14B9002803A7 /* ProcessingNodeDataGaussian.swift in Sources */,
@@ -1109,6 +1116,7 @@
 				EB234DED2AD3BC2D0073C39C /* GenericNode.swift in Sources */,
 				EB234DF92AD3C8970073C39C /* ControlInterfaceNodeMenuMobileNet.swift in Sources */,
 				EB63A7462ACA51F8008C2D6E /* SpriteNodeIndexed.metal in Sources */,
+				EB78D7F82AD78E650043BCD9 /* NSImage+CropAndFit.swift in Sources */,
 				EB234DF32AD3C7550073C39C /* ControlInterfaceLearningNodeCell.swift in Sources */,
 				EB63A74B2ACA51F8008C2D6E /* MetalPipeline.swift in Sources */,
 				EB63A75F2ACA51F8008C2D6E /* Recycler.swift in Sources */,

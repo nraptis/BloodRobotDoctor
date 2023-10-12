@@ -180,13 +180,27 @@ class Graphics {
         return try? loader.newTexture(URL: url, options: nil)
     }
     
+    func loadTexture(cgImage: CGImage?) -> MTLTexture? {
+        if let cgImage = cgImage {
+            let loader = MTKTextureLoader(device: engine.device)
+            return try? loader.newTexture(cgImage: cgImage)
+        }
+        return nil
+    }
+    
 #if os(macOS)
     
     func loadTexture(fileName: String) -> MTLTexture? {
         let filePath = assetsPath(fileName)
         let fileURL = URL(fileURLWithPath: filePath)
         return loadTexture(url: fileURL)
-        
+    }
+    
+    func loadTexture(image: NSImage?) -> MTLTexture? {
+        if let cgImage = image?.cgImage(forProposedRect: nil, context: nil, hints: nil) {
+            return loadTexture(cgImage: cgImage)
+        }
+        return nil
     }
     
 #else
