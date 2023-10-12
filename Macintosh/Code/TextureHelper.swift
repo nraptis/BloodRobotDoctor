@@ -11,7 +11,12 @@ import CoreImage
 
 class TextureHelper {
     
-    static func cgImage(from metalTexture: MTLTexture, engine: MetalEngine) -> CGImage? {
+    static func cgImage(from metalTexture: MTLTexture?, engine: MetalEngine) -> CGImage? {
+        
+        guard let metalTexture = metalTexture else {
+            print("metal texture was nil")
+            return nil
+        }
         
         // Ensure the Metal texture is in a format that's readable by the CPU
         //let format = MTLPixelFormat.bgra8Unorm

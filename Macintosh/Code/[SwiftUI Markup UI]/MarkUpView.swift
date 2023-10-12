@@ -26,6 +26,7 @@ struct MarkUpView: View {
                 MarkUpTileView(slice: slice)
                     .offset(x: CGFloat(slice.x),
                             y: CGFloat(slice.y) + ApplicationController.shared.toolbarHeight)
+                    .id(UUID())
                 
             }
         }

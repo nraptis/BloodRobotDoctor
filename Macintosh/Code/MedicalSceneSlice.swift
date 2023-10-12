@@ -32,6 +32,7 @@ class MedicalSceneSlice: Identifiable {
     var image: RGBImage
     var imageProcessed: RGBImage
     let sprite = Sprite2D()
+    @Published var tags = [String]()
     
     init(id: Int, graphics: Graphics, x: Float, y: Float, width: Float, height: Float, image: RGBImage) {
         self.id = id

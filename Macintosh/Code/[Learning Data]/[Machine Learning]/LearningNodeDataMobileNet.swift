@@ -12,9 +12,51 @@ import Cocoa
 
 class LearningNodeDataMobileNet: LearningNodeData {
     
+    private static let MODEL_WIDTH = 224
+    private static let MODEL_Height = 224
+    
+    
     var junq: Int = 8
     
+    let dispatchGroup = DispatchGroup()
+    
     override func process(rgbaImage: RGBImage, slice: MedicalSceneSlice) -> RGBImage {
+        
+        print("a mobile net is processing...")
+        slice.tags.removeAll()
+        if let cgImage = rgbaImage.cgImage(device: slice.graphics.device,
+                                           graphics: slice.graphics) {
+            if let resizedImage = CGImage.cropAndFit(image: cgImage, width: Self.MODEL_WIDTH, height: Self.MODEL_Height) {
+                
+                print("MobileNet => Ready To Go @ \(resizedImage.width) x \(resizedImage.height)")
+                
+                dispatchGroup.enter()
+                
+                classify(image: resizedImage)
+                
+                dispatchGroup.wait()
+                print("never get here")
+                
+                if let s1 = classification1, let c1 = confidence1 {
+                    slice.tags.append("\(s1) | \(c1)")
+                }
+                if let s2 = classification2, let c2 = confidence2 {
+                    slice.tags.append("\(s2) | \(c2)")
+                }
+                if let s3 = classification3, let c3 = confidence3 {
+                    slice.tags.append("\(s3) | \(c3)")
+                }
+                
+                print("slice.tags = \(slice.tags)")
+                
+            } else {
+                print("MobileNet => Could Not Resize")
+            }
+            
+        } else {
+            print("MobileNet => Could Not Have CGImage")
+        }
+        
         return rgbaImage.clone()
     }
     
@@ -36,9 +78,6 @@ class LearningNodeDataMobileNet: LearningNodeData {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(junq, forKey: .junq)
     }
-    
-    //@Published var image: UIImage?
-    @Published var image: NSImage?
     
     @Published var classification1: String?
     @Published var confidence1: String?
@@ -73,26 +112,6 @@ class LearningNodeDataMobileNet: LearningNodeData {
         }
     }()
     
-    func dragImageIntent(image: NSImage?) {
-        guard let image = image else {
-            failed(reason: "null image")
-            return
-        }
-        
-        guard let image = NSImage.cropAndFit(image: image, width: 224.0, height: 224.0) else {
-            failed(reason: "image invalid crop")
-            return
-        }
-        
-        DispatchQueue.main.async {
-            self.image = image
-        }
-        
-        DispatchQueue.global(qos: .default).async {
-            self.classify(image: image)
-        }
-    }
-    
     /*
     func dragURLIntent(url: URL?) {
         guard let url = url else {
@@ -120,14 +139,12 @@ class LearningNodeDataMobileNet: LearningNodeData {
     
     
     
-    func classify(image: NSImage?) {
+    func classify(image: CGImage?) {
+        
+        
         guard let image = image else {
             failed(reason: "null image")
-            return
-        }
-        
-        guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
-            failed(reason: "image null cgImage")
+            dispatchGroup.leave()
             return
         }
         
@@ -138,13 +155,14 @@ class LearningNodeDataMobileNet: LearningNodeData {
         
         guard let visionModel = visionModel else {
             failed(reason: "vision model null")
+            dispatchGroup.leave()
             return
         }
         
         let request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestHandler)
         let requests = [request]
         
-        let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage,
+        let imageRequestHandler = VNImageRequestHandler(cgImage: image,
                                                         orientation: .up)
         
         do {
@@ -152,6 +170,7 @@ class LearningNodeDataMobileNet: LearningNodeData {
         } catch let error {
             print("Vision Image Request Error: \(error.localizedDescription)")
             failed(reason: "vision image request error")
+            dispatchGroup.leave()
             return
         }
     }
@@ -161,11 +180,13 @@ class LearningNodeDataMobileNet: LearningNodeData {
         if let error = error {
             print("Vision Request Error: \(error.localizedDescription)")
             failed(reason: "vision request error")
+            dispatchGroup.leave()
             return
         }
         
         guard let results = request.results else {
             failed(reason: "vision request missing results")
+            dispatchGroup.leave()
             return
         }
         
@@ -177,34 +198,37 @@ class LearningNodeDataMobileNet: LearningNodeData {
         
         guard classifications.count > 0 else {
             failed(reason: "no classifications found")
+            dispatchGroup.leave()
             return
         }
         
-        DispatchQueue.main.async {
-            if classifications.count > 0 {
-                self.classification1 = classifications[0].identifier
-                self.confidence1 = self.string(percent: classifications[0].confidence)
-            } else {
-                self.classification1 = nil
-                self.confidence1 = nil
-            }
-            
-            if classifications.count > 1 {
-                self.classification2 = classifications[1].identifier
-                self.confidence2 = self.string(percent: classifications[1].confidence)
-            } else {
-                self.classification2 = nil
-                self.confidence2 = nil
-            }
-            
-            if classifications.count > 2 {
-                self.classification3 = classifications[2].identifier
-                self.confidence3 = self.string(percent: classifications[2].confidence)
-            } else {
-                self.classification3 = nil
-                self.confidence3 = nil
-            }
+        if classifications.count > 0 {
+            self.classification1 = classifications[0].identifier
+            self.confidence1 = self.string(percent: classifications[0].confidence)
+        } else {
+            self.classification1 = nil
+            self.confidence1 = nil
         }
+        
+        if classifications.count > 1 {
+            self.classification2 = classifications[1].identifier
+            self.confidence2 = self.string(percent: classifications[1].confidence)
+        } else {
+            self.classification2 = nil
+            self.confidence2 = nil
+        }
+        
+        if classifications.count > 2 {
+            self.classification3 = classifications[2].identifier
+            self.confidence3 = self.string(percent: classifications[2].confidence)
+        } else {
+            self.classification3 = nil
+            self.confidence3 = nil
+        }
+        
+        print("classified \(classification1), \(classification2), \(classification3)")
+        dispatchGroup.leave()
+        
     }
     
     private func clearClassifications() {
@@ -223,6 +247,7 @@ class LearningNodeDataMobileNet: LearningNodeData {
     func failed(reason: String) {
         print("Failed: \(reason)")
         clearClassifications()
+        
     }
     
     private func string(percent: VNConfidence) -> String {

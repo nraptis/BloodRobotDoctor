@@ -176,6 +176,10 @@ import CoreGraphics
         return result
     }
     
+    func cgImage(device: MTLDevice?, graphics: Graphics) -> CGImage? {
+        return TextureHelper.cgImage(from: texture(device: device), engine: graphics.engine)
+    }
+    
     func arrayBGRA() -> [UInt8] {
         guard width > 0 && height > 0 else { return [] }
         let bytesPerPixel = 4
