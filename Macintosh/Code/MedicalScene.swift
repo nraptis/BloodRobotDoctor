@@ -69,6 +69,44 @@ class MedicalScene: GraphicsDelegate {
             
             print("url = \(url)")
             
+            if let texture = graphics.loadTexture(url: url) {
+                if let cgImage = TextureHelper.cgImage(from: texture, engine: graphics.engine) {
+                    
+                    print("no whiff a, \(cgImage.width) x \(cgImage.height) \(imageName)")
+                    if let fixxxt = CGImage.cropAndFit(image: cgImage, width: sliceWidth, height: sliceHeight) {
+                        
+                        print("no whiff b, \(fixxxt.width) x \(fixxxt.height) \(imageName)")
+                        if let t2 = graphics.loadTexture(cgImage: fixxxt) {
+                            print("tra two, \(cgImage.width) x \(cgImage.height) \(imageName)")
+                            
+                            let rgbImage = RGBImage(texture: t2)
+                            let slice = MedicalSceneSlice(id: index,
+                                                          graphics: graphics,
+                                                          x: 0.0,
+                                                          y: 0.0,
+                                                          width: Float(sliceWidth),
+                                                          height: Float(sliceHeight),
+                                                          image: rgbImage)
+                            slices.append(slice)
+                            
+                        } else {
+                            print("whiffed t2")
+                        }
+                        
+                        
+                    } else {
+                        print("whiffed fixxt")
+                    }
+                    
+                    
+                } else {
+                    print("Whiffed image...")
+                    
+                }
+                
+            }
+            
+            /*
             if let nsImage = NSImage(contentsOf: url) {
                 
                 print("ns image: \(nsImage.size.width) x \(nsImage.size.height)")
@@ -90,6 +128,7 @@ class MedicalScene: GraphicsDelegate {
                     }
                 }
             }
+            */
             
         }
         repositionTiles()

@@ -1,1 +1,1 @@
-[{"nodeType":"none","type":"mobileNet","data":{"junq":8}},{"nodeType":"none","data":{},"type":"none"},{"data":{"junq":8},"nodeType":"none","type":"mobileNet"}]
+[{"nodeType":"learning","data":{"junq":8},"type":"mobileNet"}]

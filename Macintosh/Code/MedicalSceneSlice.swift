@@ -46,6 +46,20 @@ class MedicalSceneSlice: Identifiable {
                                        height: image.height)
         if let texture = image.texture(device: graphics.device) {
             sprite.load(graphics: graphics, texture: texture)
+            
+            let width_2 = width * 0.5
+            let height_2 = height * 0.5
+            let _width_2 = -(width_2)
+            let _height_2 = -(height_2)
+            
+            sprite.positions[0] = _width_2
+            sprite.positions[1] = _height_2
+            sprite.positions[2] = width_2
+            sprite.positions[3] = _height_2
+            sprite.positions[4] = _width_2
+            sprite.positions[5] = height_2
+            sprite.positions[6] = width_2
+            sprite.positions[7] = height_2
         }
     }
     

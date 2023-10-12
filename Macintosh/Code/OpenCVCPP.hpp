@@ -21,7 +21,6 @@
 + (void)erode:(unsigned char *)input output: (unsigned char *)output width: (int)width height: (int)height element: (int)element size: (int) size;
 + (void)dilate:(unsigned char *)input output: (unsigned char *)output width: (int)width height: (int)height element: (int)element size: (int) size;
 
-
 @end
 
 #endif

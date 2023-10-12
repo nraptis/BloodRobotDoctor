@@ -27,5 +27,4 @@
     dilate(input, output, width, height, element, size);
 }
 
-
 @end
